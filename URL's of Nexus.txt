@@ -1,0 +1,52 @@
+*****URL Mapping for Internet Plan Entity****
+
+1.Display Plan Details:
+	GET
+	http://localhost:9090/nexusInternet/display
+
+2.Insert Plan Details:
+	POST
+	http://localhost:9090/nexusInternet/store
+	{"planid":4,"speed":"10Mbps","cost":4000,"duration":"3 months"}
+
+
+3.Delete Plan By Id:
+	DELETE
+	http://localhost:9090/nexusInternet/delete/4
+
+
+4.Update Plan Cost:
+	PUT
+	http://localhost:9090/nexusInternet/update
+	{"planid":3,"speed":"10Mbps","cost":3000,"duration":"3 months"}
+
+
+
+
+
+*****URL Mapping for Vendor Entity****
+Simple Message
+	GET
+	http://localhost:9090/vendor/info
+Display All Vendors and details
+	GET
+	http://localhost:9090/vendor/allVendor
+Add a Vendor
+	POST
+	http://localhost:9090/vendor/addVendor
+	{"vid": 109,"router_count": 0,"wire_count": 0,"land_count": 100}
+Update Router Count
+	PUT
+	http://localhost:9090/vendor/updateRouterCount
+	{"vid": 101,"router_count": 0,"wire_count": 0,"land_count": 100}
+Update Wire Count
+	PUT
+	http://localhost:9090/vendor/updateWireCount
+	{"vid": 101,"router_count": 0,"wire_count": 0,"land_count": 100}
+Update Land Line Count
+	PUT
+	http://localhost:9090/vendor/updateLandLCount
+	{"vid": 101,"router_count": 0,"wire_count": 0,"land_count": 100}
+Delete Vendor
+	DELETE
+	http://localhost:9090/vendor/deleteVendor/100
