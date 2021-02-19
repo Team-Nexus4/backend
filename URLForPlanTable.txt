@@ -1,0 +1,20 @@
+*****URL Mapping****
+
+1.Display Plan Details:
+	GET
+	http://localhost:9090/internet/display
+
+2.Insert Plan Details:
+	POST
+	http://localhost:9090/internet/store
+	{"planid":4,"speed":"10Mbps","cost":4000,"duration":"3 months"}
+
+
+3.Delete Plan By Id:
+	http://localhost:9090/internet/delete/4
+
+
+4.Update Plan Cost:
+	PUT
+	http://localhost:9090/internet/update
+	{"planid":3,"speed":"10Mbps","cost":3000,"duration":"3 months"}	
