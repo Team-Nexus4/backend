@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bean.Customer;
+import com.bean.Order;
+import com.bean.OrderRequest;
+import com.dao.CustomerDao;
 import com.dao.CustomerRepository;
 
 @Service
@@ -14,6 +17,9 @@ public class CustomerService {
 
 	@Autowired
 	CustomerRepository cr;
+	
+	@Autowired
+	CustomerDao cd;
 	
 	public List<Customer> getCustomer() {
 		
@@ -59,6 +65,26 @@ public class CustomerService {
 		 }else {
 			 return "updated failed";
 		 }
+	}
+
+	public String orderCustomerService(OrderRequest o) 
+	{
+		long rid = cd.checkPincode(o.getPincode());
+		if(rid>0)
+		{
+			Order order = new Order();
+			order.setRid(rid);
+			order.setCid(o.getCid());
+			System.out.println(o.getRequested_plan());
+			order.setRequested_plan(o.getRequested_plan());
+			order.setStatus("false");
+			String res = cd.placeOrder(order);
+			return res;
+		}
+		else
+		{
+			return "Not Reacheable";
+		}	
 	}
 
 }

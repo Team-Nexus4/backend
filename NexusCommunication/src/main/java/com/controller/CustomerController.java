@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Customer;
+import com.bean.OrderRequest;
 import com.service.CustomerService;
 
 @RestController
@@ -51,8 +52,19 @@ public class CustomerController {
 		cust.setLname(c.getLname());
 		cust.setPhone(c.getPhone());
 		cust.setAddres(c.getAddres());
-		return cs.updateCustomer(c);
-		
-		
+		return cs.updateCustomer(c);	
+	}
+	
+	//http://localhost:9070/customer/orderCustomer
+//	{
+//		"cid": 3333000004,
+//		"pincode": 440013,
+//		  "requested_plan": 8888000003
+//
+//		}
+	@PostMapping(value="orderCustomer" , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.TEXT_PLAIN_VALUE)
+	public String order(@RequestBody OrderRequest o)
+	{
+		return cs.orderCustomerService(o);
 	}
 }

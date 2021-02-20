@@ -10,11 +10,11 @@ public class Customer {
 	@Id
 	private long cid;
 	private String fname;
-	private String lname;
-	private String addres;
-	private long phone;
-	private String username;
-	private String password;
+	@Override
+	public String toString() {
+		return "Customer [cid=" + cid + ", fname=" + fname + ", lname=" + lname + ", addres=" + addres + ", pincode="
+				+ pincode + ", phone=" + phone + ", username=" + username + ", password=" + password + "]";
+	}
 	public long getCid() {
 		return cid;
 	}
@@ -39,6 +39,12 @@ public class Customer {
 	public void setAddres(String addres) {
 		this.addres = addres;
 	}
+	public int getPincode() {
+		return pincode;
+	}
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
+	}
 	public long getPhone() {
 		return phone;
 	}
@@ -57,5 +63,11 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	private String lname;
+	private String addres;
+	private int pincode;
+	private long phone;
+	private String username;
+	private String password;
 	
 }
