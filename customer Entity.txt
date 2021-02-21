@@ -1,6 +1,0 @@
-create table customer(cid int primary key AUTO_INCREMENT,fname varchar(20) not null , lname varchar(20) , city varchar(20) , phno bigint , username varchar(20) unique ,pass varchar(20) not null);
-
-alter table customer auto_increment=3333000001;
-
-
-
