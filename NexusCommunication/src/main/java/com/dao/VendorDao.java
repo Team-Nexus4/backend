@@ -57,7 +57,7 @@ public class VendorDao {
 		}
 	}
 
-	public int updateRouterCount(Vendor vv) {
+	public int updateInternetKit(Vendor vv) {
 		EntityManager manager=emf.createEntityManager();
 		EntityTransaction tran=manager.getTransaction();
 		Vendor v=manager.find(Vendor.class,vv.getVid());
@@ -67,14 +67,14 @@ public class VendorDao {
 		}else
 		{
 			tran.begin();
-			v.setRouter_count(v.getRouter_count()+vv.getRouter_count());
+			v.setInternetKit(v.getInternetKit()+vv.getInternetKit());
 			manager.merge(v);
 			tran.commit();
 			return 1;
 		}
 	}
 
-	public int updateWireCount(Vendor vv) {
+	public int updateLandLineKit(Vendor vv) {
 		EntityManager manager=emf.createEntityManager();
 		EntityTransaction tran=manager.getTransaction();
 		Vendor v=manager.find(Vendor.class,vv.getVid());
@@ -84,27 +84,11 @@ public class VendorDao {
 		}else
 		{
 			tran.begin();
-			v.setWire_count(v.getWire_count()+vv.getWire_count());
+			v.setLandlineKit(v.getLandlineKit()+vv.getLandlineKit());
 			manager.merge(v);
 			tran.commit();
 			return 1;
 		}
 	}
 
-	public int updateLandLCount(Vendor vv) {
-		EntityManager manager=emf.createEntityManager();
-		EntityTransaction tran=manager.getTransaction();
-		Vendor v=manager.find(Vendor.class,vv.getVid());
-		if(v==null)
-		{
-			return 0;
-		}else
-		{
-			tran.begin();
-			v.setLand_count(v.getLand_count()+vv.getLand_count());
-			manager.merge(v);
-			tran.commit();
-			return 1;
-		}
-	}
 }

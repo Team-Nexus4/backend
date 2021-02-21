@@ -23,48 +23,41 @@ public class VendorController
 	@Autowired
 	VendorService vendorService;
 	
-	// http://localhost:9090/vendor/info
+	// http://localhost:9070/vendor/info
 	@GetMapping(value = "info")
 	public String simpleMessage()
 	{
 		return "Welcome to Spring Rest Nexus Vendor Controller";
 	}
-	// http://localhost:9090/vendor/allVendor
+	// http://localhost:9070/vendor/allVendor
 	@GetMapping(value = "allVendor",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Vendor> getAllVendorDetails() 
 	{
 		return vendorService.getAllVendor();
 	}
 	
-	// http://localhost:9090/vendor/addVendor
+	// http://localhost:9070/vendor/addVendor
 	@PostMapping(value = "addVendor",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String addVendor(@RequestBody Vendor pp)
 	{
 		return vendorService.addVendor(pp);
 	}
 	
-	// http://localhost:9090/vendor/updateRouterCount
-	@PutMapping(value = "updateRouterCount",consumes = MediaType.APPLICATION_JSON_VALUE)
-	public String updateRouterCount(@RequestBody Vendor pp)
+	// http://localhost:9070/vendor/updateInternetKit
+	@PutMapping(value = "updateInternetKit",consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateInternetKit(@RequestBody Vendor vv)
 	{
-		return vendorService.updateRouterCount(pp);
-	}
-	
-	// http://localhost:9090/vendor/updateWireCount
-	@PutMapping(value = "updateWireCount",consumes = MediaType.APPLICATION_JSON_VALUE)
-	public String updateWireCount(@RequestBody Vendor pp)
-	{
-		return vendorService.updateWireCount(pp);
+		return vendorService.updateInternetKit(vv);
 	}
 		
-	// http://localhost:9090/vendor/updateLandLCount
-	@PutMapping(value = "updateLandLCount",consumes = MediaType.APPLICATION_JSON_VALUE)
-	public String updateLAndL(@RequestBody Vendor pp)
+	// http://localhost:9070/vendor/updateLandlineKit
+	@PutMapping(value = "updateLandineKit",consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateLAndL(@RequestBody Vendor vv)
 	{
-		return vendorService.updateLandLCount(pp);
+		return vendorService.updateLandlineKit(vv);
 	}
 		
-	// http://localhost:9090/vendor/deleteVendor/100
+	// http://localhost:9070/vendor/deleteVendor/100
 	@DeleteMapping(value = "deleteVendor/{vid}")
 	public String deletevendor(@PathVariable("vid") int vid)
 	{
