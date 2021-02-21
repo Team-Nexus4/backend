@@ -1,6 +1,6 @@
 landline_plan:
 -----------------------------------------------------------------------
-create table landline_plan( lid bigint auto_increment primary key , duration int not null, coast float price not null);
+create table landline_plan( lid bigint auto_increment primary key , duration int not null, coast float not null);
 alter table landline_plan auto_increment=8888000001;
 ------------------------------------------------------------------------
 insert into landline_plan(duration,coast) values(1,200);
@@ -67,6 +67,32 @@ insert into retailer_mapping values(2222000001,440011);
 insert into retailer_mapping values(2222000002,440012);
 
 ================================================================
+
+
+vendor
+--------------------------------------------------
+create table vendor(vid bigint primary key auto_increment,internet_kit int, landline_kit int);
+alter table vendor auto_increment=1111000001;
+-----------------------------------------------
+insert into vendor(internet_kit,landline_kit)values(100,100);
+insert into vendor(internet_kit,landline_kit)values(150,150);
+
+================================================================
+
+ show tables;
++-------------------+
+| Tables_in_project |
++-------------------+
+| customer          |
+| internet_plan     |
+| landline_plan     |
+| order_table       |
+| retailer_mapping  |
+| retailer_table    |
+| vendor            |
++-------------------+
+7 rows in set (0.03 sec)
+
 
 
 
