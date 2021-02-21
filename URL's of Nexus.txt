@@ -7,46 +7,92 @@
 2.Insert Plan Details:
 	POST
 	http://localhost:9090/nexusInternet/store
-	{"planid":4,"speed":"10Mbps","cost":4000,"duration":"3 months"}
-
 
 3.Delete Plan By Id:
 	DELETE
-	http://localhost:9090/nexusInternet/delete/4
-
+	http://localhost:9070/nexusInternet/delete/9999000004
 
 4.Update Plan Cost:
 	PUT
 	http://localhost:9090/nexusInternet/update
-	{"planid":3,"speed":"10Mbps","cost":3000,"duration":"3 months"}
-
-
-
+	
 
 
 *****URL Mapping for Vendor Entity****
-Simple Message
+1.Simple Message
 	GET
 	http://localhost:9090/vendor/info
-Display All Vendors and details
+
+2.Display All Vendors and details
 	GET
 	http://localhost:9090/vendor/allVendor
-Add a Vendor
+
+3.Add a Vendor
 	POST
 	http://localhost:9090/vendor/addVendor
-	{"vid": 109,"router_count": 0,"wire_count": 0,"land_count": 100}
-Update Router Count
+
+4.Update Internet Kit
 	PUT
-	http://localhost:9090/vendor/updateRouterCount
-	{"vid": 101,"router_count": 0,"wire_count": 0,"land_count": 100}
-Update Wire Count
+	 http://localhost:9070/vendor/updateInternetKit
+
+5.Update Landline Kit
 	PUT
-	http://localhost:9090/vendor/updateWireCount
-	{"vid": 101,"router_count": 0,"wire_count": 0,"land_count": 100}
-Update Land Line Count
-	PUT
-	http://localhost:9090/vendor/updateLandLCount
-	{"vid": 101,"router_count": 0,"wire_count": 0,"land_count": 100}
-Delete Vendor
+	 http://localhost:9070/vendor/updateLandlineKit
+
+6.Delete Vendor
 	DELETE
-	http://localhost:9090/vendor/deleteVendor/100
+	http://localhost:9090/vendor/deleteVendor/1111000002
+
+
+
+*****URL Mapping for Customer Entity****
+1.Display All Customer Details
+	GET	
+	http://localhost:9070/customer/displayCustomer
+
+2.Insert Customer Details:
+	POST
+	http://localhost:9070/customer/storeCustomer
+
+3.Delete Customer By Id:
+	DELETE
+	http://localhost:9070/customer/deleteCustomer/3333000001
+
+4.Update Customer Details:
+	PUT
+	http://localhost:9070/customer/updateCustomer
+
+
+
+*****URL Mapping for LandLine Entity****
+1.Display All Landline Plan Details
+	GET	
+	http://localhost:9070/connection/landlinePlan
+
+2.Insert Landline Plan Details:
+	POST
+	http://localhost:9070/connection/addLandlinePlan
+
+3.Delete Landline Plan By Id:
+	DELETE
+	http://localhost:9070/connection/deleteLandlinePlan/8888000001
+
+4.Update Landline Plan Details:
+	PUT
+	http://localhost:9070/connection/updateLandlinePlan
+
+
+
+*****URL Mapping for Retailer Entity****
+
+1.Display All Retailer Details
+	GET	
+	http://localhost:9070/retailer/display/2222000001
+
+2.Delete Landline Plan By Id:
+	DELETE
+	http://localhost:9070/retailer/deleteRetailer
+
+
+
+

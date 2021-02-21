@@ -34,27 +34,20 @@ public class VendorService {
 		}
 	}
 	
-	public String updateRouterCount(Vendor vv) {
-		if(vendorDao.updateRouterCount(vv)>0) {
-			return "Router Count updated successfully";
+	public String updateInternetKit(Vendor vv) {
+		if(vendorDao.updateInternetKit(vv)>0) {
+			return "Internet Kit updated successfully";
 		}else {
-			return "Updating Rounter Count Failed. Try Again......";
+			return "Updating Internet Kit Failed. Try Again......";
 		}
 	}
 	
-	public String updateWireCount(Vendor vv) {
-		if(vendorDao.updateWireCount(vv)>0) {
-			return "Wire Count updated successfully";
-		}else {
-			return "Updating Wire Count Failed. Try Again......";
-		}
-	}
 	
-	public String updateLandLCount(Vendor vv) {
-		if(vendorDao.updateLandLCount(vv)>0) {
-			return "Land Line Count updated successfully";
+	public String updateLandlineKit(Vendor vv) {
+		if(vendorDao.updateLandLineKit(vv)>0) {
+			return "Landline Kit updated successfully";
 		}else {
-			return "Updating Land Line Count Failed. Try Again......";
+			return "Updating Landline Kit Failed. Try Again......";
 		}
 	}
 }
