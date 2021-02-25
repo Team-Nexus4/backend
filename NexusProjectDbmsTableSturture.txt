@@ -78,6 +78,11 @@ insert into vendor(internet_kit,landline_kit)values(100,100);
 insert into vendor(internet_kit,landline_kit)values(150,150);
 
 ================================================================
+order_stock
+------------------------------------------------------------------
+create table order_stock(oid bigint primary key auto_increment, rid bigint not null, vid bigint not null,reqested_item enum ('ik','lk'), requested_stock int not null);
+alter table order_stock auto_increment=5555000001;
+========================================================
 
  show tables;
 +-------------------+
@@ -90,8 +95,13 @@ insert into vendor(internet_kit,landline_kit)values(150,150);
 | retailer_mapping  |
 | retailer_table    |
 | vendor            |
+| order_stock       |
 +-------------------+
 7 rows in set (0.03 sec)
+
+==============================================================
+refer for All Rest url
+http://localhost:9070/swagger-ui.html#/
 
 
 

@@ -32,7 +32,7 @@ public class LandlinePlan
 	}
 	@Override
 	public String toString() {
-		return "LandlinePlan [lid=" + lid + ", duration=" + duration + ", cost=" + cost + "]";
+		return "LandlinePlan [lid=" + lid + ", duration=" + duration + ", coast=" + cost + "]";
 	}
 	
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Order;
 import com.bean.OrderRequest;
+import com.bean.OrderStock;
 import com.bean.Retailer;
 import com.service.RetailerService;
 
@@ -45,6 +46,14 @@ public class RetailerController
 		String res = os.placeOrderService(o.getOid());
 		return res;
 	}
+	
+	@PostMapping(value = "placeOrderStock",consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String placeOrderStock(@RequestBody OrderStock o)
+	{
+		String res = os.placeOrderStockService(o);
+		return null;
+	}
+	
 	
 	//http://localhost:9070/retailer/deleteRetailer
 	@DeleteMapping(value="deleteRetailer",consumes = MediaType.APPLICATION_JSON_VALUE)
