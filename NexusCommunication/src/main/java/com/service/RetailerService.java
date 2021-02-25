@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bean.Order;
 import com.bean.OrderRequest;
+import com.bean.OrderStock;
 import com.dao.RetailerDao;
 
 
@@ -23,8 +24,8 @@ public class RetailerService
 	
 	public String placeOrderService(long oid)
 	{
-		int check = dao.checkStock(oid);
-		if(check==1)
+		String check = dao.checkStock(oid);
+		if(check.equals("1"))
 		{
 			int res = dao.placeOrder(oid);
 			if(res == 1)
@@ -36,13 +37,13 @@ public class RetailerService
 				return "Order Didnt Placed";
 			}
 		}
-		else if(check == 2)
+		else if(check.equals("1"))
 		{
 			return "Order Didnt Placed";
 		}
 		else
 		{
-			return "didn't have sufficient stock";
+			return "didn't have sufficient stock You Need To Place Order For Vendor for " + check;
 		}
 	}
 
@@ -51,5 +52,11 @@ public class RetailerService
 		int res = dao.replaceRetailer(o);
 		
 		return null;
+	}
+
+	public String placeOrderStockService(OrderStock o)
+	{
+		String res = dao.placeOrderStock(o);
+		return res;
 	}
 }

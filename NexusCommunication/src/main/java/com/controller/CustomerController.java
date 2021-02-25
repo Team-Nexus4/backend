@@ -57,9 +57,7 @@ public class CustomerController {
 	
 	//http://localhost:9070/customer/orderCustomer
 //	{
-//		"cid": 3333000004,
-//		"pincode": 440013,
-//		  "requested_plan": 8888000003
+//		a
 //
 //		}
 	@PostMapping(value="orderCustomer" , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.TEXT_PLAIN_VALUE)

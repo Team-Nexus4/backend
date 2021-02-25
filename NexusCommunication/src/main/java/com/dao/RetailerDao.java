@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bean.Order;
 import com.bean.OrderRequest;
+import com.bean.OrderStock;
 import com.bean.Retailer;
 import com.bean.Technical;
 
@@ -96,7 +97,7 @@ public class RetailerDao
 		}
 	}
 
-	public int checkStock(long oid) 
+	public String checkStock(long oid) 
 	{
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
@@ -104,7 +105,7 @@ public class RetailerDao
 		
 		if(o==null)
 		{
-			return 2;
+			return "2";
 		}
 		else
 		{
@@ -121,9 +122,9 @@ public class RetailerDao
 				qry.setParameter(1, rid);
 				Retailer robj = (Retailer) qry.getSingleResult();
 				if(robj.getLandlineKit()>0)
-					return 1;
+					return "1";
 				else
-					return 0;
+					return "landline kit";
 			}
 			else if(request>fromi && request<toi)
 			{
@@ -131,13 +132,13 @@ public class RetailerDao
 				qry.setParameter(1, rid);
 				Retailer robj = (Retailer) qry.getSingleResult();
 				if(robj.getInternetKit()>0)
-					return 1;
+					return "1";
 				else
-					return 0;
+					return "internet kit";
 			}
-			else
-				return 0;
+			
 		}
+		return null;
 		
 	}
 
@@ -153,5 +154,21 @@ public class RetailerDao
 			System.out.println(o1);
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	public String placeOrderStock(OrderStock o)
+	{
+		EntityManager manager = emf.createEntityManager();
+		EntityTransaction tran = manager.getTransaction();
+		o.setStatus("false");
+		tran.begin();
+			manager.persist(o);
+		tran.commit();
+		String com = o.getReqestedItem();
+		if(com.equals("lk"))
+			com = "landline kit";
+		else
+			com = "internet kit ";
+		return "Oder For " + com + "to Vendor " + o.getVid() + " is placed";
 	}
 }

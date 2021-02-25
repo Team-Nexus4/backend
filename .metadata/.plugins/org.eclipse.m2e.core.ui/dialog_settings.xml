@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Zensar\New folder\backend\NexusCommunication"/>
 			<item value="D:\Workspace\Nexus\backend\NexusCommunication"/>
 			<item value="D:\Workspace\Nexus\backend\HandsOnProject"/>
 			<item value="D:\Workspace\Nexus\backend\NexusCommunications"/>
