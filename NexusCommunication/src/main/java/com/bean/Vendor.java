@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Vendor {
 	@Id
-	private int vid;
+	private long vid;
 	@Column(name="internet_kit")
 	private int internetKit;
 	@Column(name="landline_kit")
@@ -21,10 +21,10 @@ public class Vendor {
 	
 
 	
-	public int getVid() {
+	public long getVid() {
 		return vid;
 	}
-	public void setVid(int vid) {
+	public void setVid(long vid) {
 		this.vid = vid;
 	}
 	public int getInternetKit() {

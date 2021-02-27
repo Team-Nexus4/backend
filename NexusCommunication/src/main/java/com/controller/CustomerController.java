@@ -88,4 +88,10 @@ public class CustomerController {
 			
 		}
 	}
+	
+	@GetMapping(value="displayCustomersPlan/{cid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Object> getCustomersPlan(@PathVariable("cid") long cid)
+	{
+		return cs.getCustomersPlan(cid);
+	}
 }

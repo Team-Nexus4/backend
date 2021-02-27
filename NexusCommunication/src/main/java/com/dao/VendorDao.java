@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -98,6 +99,42 @@ public class VendorDao {
 		Query qry = manager.createQuery("select r from Retailer r where r.vid=?1");
 		qry.setParameter(1, vid);
 		return qry.getResultList();	
+	}
+
+	public int replaceWithAnotherVendorE(Retailer r) 
+	{
+		EntityManager manager = emf.createEntityManager();
+		EntityTransaction  tran = manager.getTransaction();
+		Vendor v = manager.find(Vendor.class,r.getRid());
+		if(v == null)
+			return 0;
+		else
+		{
+			Query qry = manager.createQuery("select r.rid from Retailer r where r.vid=?1");
+			qry.setParameter(1, r.getRid());
+			List<Long> listOfRid = qry.getResultList();
+			Iterator<Long> li = listOfRid.iterator();
+				tran.begin();
+				int internet_kit = v.getInternetKit();
+				int landline_kit = v.getLandlineKit();
+				Vendor v1 = manager.find(Vendor.class, r.getVid());
+				v1.setInternetKit(internet_kit+v1.getInternetKit());
+				v1.setLandlineKit(landline_kit+v1.getLandlineKit());
+				manager.merge(v1);
+				manager.remove(v);
+				while(li.hasNext())
+				{
+					
+					qry = manager.createNativeQuery("update retailer_table set vid = ? where rid = ?");
+					qry.setParameter(1, r.getVid());
+					qry.setParameter(2, li.next());
+					System.out.println(qry.executeUpdate());
+					
+				}
+				tran.commit();
+			return 1;
+		}
+		
 	}
 
 }

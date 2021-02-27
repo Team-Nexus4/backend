@@ -53,9 +53,12 @@ public class VendorService {
 	}
 
 
-	public String replaceVendorWithAnother(Retailer r) 
+	public String replaceVendorWithAnotherE(Retailer r) 
 	{
-		
-		return null;
+		if(vendorDao.replaceWithAnotherVendorE(r)>0) {
+			return "Replaced Successfully";
+		}else {
+			return "Replacd Failed";
+		}
 	}
 }

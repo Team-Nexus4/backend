@@ -59,11 +59,11 @@ public class VendorController
 	}
 		
 	// http://localhost:9070/vendor/deleteVendor/100
-	@PostMapping(value = "getAllRetailerVendor",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "replaceRetailerVendor",produces = MediaType.APPLICATION_JSON_VALUE)
 	public String deletevendor(@RequestBody Retailer r)
 	{
-		String res = vendorService.replaceVendorWithAnother(r);
-		return null;
+		String res = vendorService.replaceVendorWithAnotherE(r);
+		return res;
 	}
 	
 }
