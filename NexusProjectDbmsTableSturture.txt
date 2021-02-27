@@ -83,7 +83,10 @@ order_stock
 create table order_stock(oid bigint primary key auto_increment, rid bigint not null, vid bigint not null,reqested_item enum ('ik','lk'), requested_stock int not null);
 alter table order_stock auto_increment=5555000001;
 ========================================================
+create table connection(cnid bigint primary key , cid bigint , reqplan bigint , startdate date ,enddate date,status varchar(20), bill int);
 
+alter table connection auto_increment=7777000001;
+========================================================
  show tables;
 +-------------------+
 | Tables_in_project |
@@ -95,7 +98,8 @@ alter table order_stock auto_increment=5555000001;
 | retailer_mapping  |
 | retailer_table    |
 | vendor            |
-| order_stock       |
+| order_stock   
+  connection    |
 +-------------------+
 7 rows in set (0.03 sec)
 
