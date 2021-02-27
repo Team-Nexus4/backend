@@ -61,7 +61,7 @@ alter table order_tablecopy auto_increment = 4444000001;
 
 retailer_mapping
 --------------------------------------------------
-create table retailer_mapping(rid bigint , pincode int);
+create table retailer_mapping(rid bigint primarykey, pincode int);
 -----------------------------------------------
 insert into retailer_mapping values(2222000001,440011);
 insert into retailer_mapping values(2222000002,440012);
@@ -83,10 +83,18 @@ order_stock
 create table order_stock(oid bigint primary key auto_increment, rid bigint not null, vid bigint not null,reqested_item enum ('ik','lk'), requested_stock int not null);
 alter table order_stock auto_increment=5555000001;
 ========================================================
+connection
+------------------------------------------------------------------
 create table connection(cnid bigint primary key , cid bigint , reqplan bigint , startdate date ,enddate date,status varchar(20), bill int);
 
 alter table connection auto_increment=7777000001;
 ========================================================
+technical
+------------------------------------------------------------------
+create table technical(oid bigint primary key,rid bigint);
+
+
+
  show tables;
 +-------------------+
 | Tables_in_project |
