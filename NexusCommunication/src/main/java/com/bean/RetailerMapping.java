@@ -8,8 +8,9 @@ import javax.persistence.Table;
 @Table(name = "retailer_mapping")
 public class RetailerMapping
 {
-	@Id
+	
 	private long rid;
+	@Id
 	private int pincode;
 	public long getRid() {
 		return rid;

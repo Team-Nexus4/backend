@@ -27,12 +27,16 @@ public class CustomerDao
 		Query qry = manager.createQuery("select r.rid from RetailerMapping r where r.pincode=?1");
 		qry.setParameter(1, pincode);
 		List<Long> li = qry.getResultList();
-		long pin=li.get(0);
-		if(pin==0)
+		if(li.isEmpty())
 			return 0;
 		else
 		{
-			return pin;
+			long rid=0;
+			for( Long r:li)
+			{
+				 rid = r;
+			}
+			return rid;
 		}
 	}
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bean.Order;
+import com.bean.OrderRequest;
 import com.bean.OrderStock;
 import com.dao.RetailerDao;
 
@@ -42,17 +43,16 @@ public class RetailerService
 		}
 		else
 		{
-			return "didn't have sufficient stock";
+			return "didn't have sufficient stock You Need To Place Order For Vendor for " + check;
 		}
 	}
 
 //	public String replaceRetailerService(OrderRequest o) 
 //	{
-//		int res = dao.replaceRetailer(o);
-//		
+//		int res = dao.replaceRetailer(o);		
 //		return null;
 //	}
-	
+
 	public String placeOrderStockService(OrderStock o)
 	{
 		String res = dao.placeOrderStock(o);

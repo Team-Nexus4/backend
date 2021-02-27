@@ -82,7 +82,7 @@ public class LandlineDao
 		else
 		{
 			l1.setDuration(l.getDuration());
-			l1.setCoast(l.getCoast());
+			l1.setCoast(l.getCost());
 			tran.begin();
 				manager.merge(l1);
 			tran.commit();

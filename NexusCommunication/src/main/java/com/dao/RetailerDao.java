@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bean.Order;
+import com.bean.OrderRequest;
 import com.bean.OrderStock;
 import com.bean.Retailer;
 import com.bean.Technical;
@@ -79,6 +80,14 @@ public class RetailerDao
 			else {
 				return 0;
 			}
+			
+			
+//			Retailer robj = (Retailer) qry.getSingleResult();
+//			o.setStatus("true");
+//			tran.begin();
+//				manager.merge(o);
+//			tran.commit();
+//			return 1;
 		}
 	}
 
@@ -115,25 +124,24 @@ public class RetailerDao
 			else {
 				return 0;
 			}
-				
 		}
 		
 	}
 
-//	public int replaceRetailer(OrderRequest o) 
-//	{
-//		EntityManager manager = emf.createEntityManager();
-//		EntityTransaction tran = manager.getTransaction();
-//		Query qry = manager.createQuery("select o from Order o where o.rid=?1");
-//		qry.setParameter(1, o.getCid());
-//		
-//		List<Order> listOfOrder = qry.getResultList();
-//		for(Order o1 :listOfOrder)
-//			System.out.println(o1);
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-	
+	public int replaceRetailer(OrderRequest o) 
+	{
+		EntityManager manager = emf.createEntityManager();
+		EntityTransaction tran = manager.getTransaction();
+		Query qry = manager.createQuery("select o from Order o where o.rid=?1");
+		qry.setParameter(1, o.getCid());
+		
+		List<Order> listOfOrder = qry.getResultList();
+		for(Order o1 :listOfOrder)
+			System.out.println(o1);
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	public String placeOrderStock(OrderStock o)
 	{
 		EntityManager manager = emf.createEntityManager();

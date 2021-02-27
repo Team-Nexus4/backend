@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.web.bind.annotation.PathVariable;
-
 @Entity
 @Table(name = "order_table")
 public class Order
@@ -19,13 +17,12 @@ public class Order
 	public long getOid() {
 		return oid;
 	}
-	public void setRequested_plan(long requested_plan) {
-		this.requested_plan = requested_plan;
-	}
 	public long getRequested_plan() {
 		return requested_plan;
 	}
-	
+	public void setRequested_plan(long requested_plan) {
+		this.requested_plan = requested_plan;
+	}
 	public void setOid(long oid) {
 		this.oid = oid;
 	}
