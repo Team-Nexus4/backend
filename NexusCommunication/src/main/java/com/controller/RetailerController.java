@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Order;
+import com.bean.OrderRequest;
 import com.bean.OrderStock;
 import com.bean.Retailer;
 import com.service.RetailerService;
@@ -39,10 +40,6 @@ public class RetailerController
 		return listOfOrder;
 	}
 	
-	// http://localhost:9070/retailer/placeOrder
-//	{
-//		"oid": 4444000003
-//		}
 	@PostMapping(value="placeOrder",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String placeOrder(@RequestBody Order o)
 	{
@@ -56,7 +53,15 @@ public class RetailerController
 		String res = os.placeOrderStockService(o);
 		return null;
 	}
-//	}
+	
+	
+	//http://localhost:9070/retailer/deleteRetailer
+	@DeleteMapping(value="deleteRetailer",consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String deleteRetailer(@RequestBody OrderRequest o)
+	{
+		//String res = os.replaceRetailerService(o);
+		return null;
+	}
 
 	
 	

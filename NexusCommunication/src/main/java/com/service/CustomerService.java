@@ -5,11 +5,10 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.bean.Customer;
 import com.bean.Order;
-
+import com.bean.OrderRequest;
 import com.dao.CustomerDao;
 import com.dao.CustomerRepository;
 import com.dao.OrderRepository;
@@ -82,15 +81,15 @@ public class CustomerService {
 			order.setCid(o.getCid());
 			order.setRequested_plan(reqPlan);
 			order.setStatus("false");
-			return cd.placeOrder(order);
-		
+			String res = cd.placeOrder(order);
+			return res;
 		}
 		else
 		{
 			return "Not Reacheable";
 		}	
 	}
-
+	
 	public Customer loginCustomer(Customer c) {
 		List<Customer> listOfCust = cr.findAll();
 		Customer cust1=null;
@@ -104,6 +103,9 @@ public class CustomerService {
 		
 	}
 
-
+	public List<Object> getCustomersPlan(long cid) {
+		// TODO Auto-generated method stub
+		return cd.getAllPlan(cid);
+	}
 
 }

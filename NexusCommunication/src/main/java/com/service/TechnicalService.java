@@ -43,7 +43,7 @@ public class TechnicalService {
 				LandlinePlan llp = lr.getOne(lid);
 				Connection con = new Connection();
 				con.setCid(o.getCid());
-				con.setBill(llp.getCoast());
+				con.setBill(llp.getCost());
 				con.setReqPlan(lid);
 				con.setStatus("active");
 				con.setStartdate(LocalDate.now());
