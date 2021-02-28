@@ -1,6 +1,8 @@
 package com.service;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.bean.*;
 import com.dao.ConnectionRepository;
+import com.dao.EmployeeRepository;
 import com.dao.LandLineRepository;
 import com.dao.NetRepository;
 import com.dao.OrderRepository;
@@ -28,6 +31,8 @@ public class TechnicalService {
 	NetRepository nr;
 	@Autowired
 	ConnectionRepository cr;
+	@Autowired
+	EmployeeRepository er;
 	
 	public List<Technical> getTechnical() {
 		// TODO Auto-generated method stub
@@ -43,7 +48,7 @@ public class TechnicalService {
 				LandlinePlan llp = lr.getOne(lid);
 				Connection con = new Connection();
 				con.setCid(o.getCid());
-				con.setBill(llp.getCoast());
+				con.setBill(llp.getCost());
 				con.setReqPlan(lid);
 				con.setStatus("active");
 				con.setStartdate(LocalDate.now());
@@ -69,6 +74,20 @@ public class TechnicalService {
 			return "Any Exception Occured at Order Placed by Technical Person Time";
 		}
 		
+	}
+	public String addTechnical(Employee e) {
+		// TODO Auto-generated method stub
+		String pattern = "WMMddHHmmss";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		String date = simpleDateFormat.format(new Date());
+		long empid = Long.parseLong(date);
+		e.setEid(empid);
+		Employee emp = er.save(e);
+		if(emp!=null) {
+			return "Store success";
+		}else {
+			return "Any Exception is occured";
+		}
 	}
 	
 }

@@ -1,6 +1,5 @@
 package com.controller;
 
-import java.net.http.HttpRequest;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Customer;
-import com.bean.Order;
+
 import com.service.CustomerService;
 
 @RestController
@@ -60,8 +58,11 @@ public class CustomerController {
 		return cs.updateCustomer(c);	
 	}
 	
-	
-	
+	//http://localhost:9070/customer/orderCustomer
+//	{
+//		a
+//
+//		}
 	@GetMapping(value="orderCustomer/{cid}/{pincode}/{reqPlan}" ,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String order(@PathVariable("cid") long cid,@PathVariable("pincode") int pincode,@PathVariable("reqPlan") long reqPlan,HttpServletRequest req)
 	{
@@ -71,9 +72,11 @@ public class CustomerController {
 		return cs.orderCustomerService(o,reqPlan);
 	}
 	
-
+	@GetMapping(value="payBill/{cnid}" ,produces = MediaType.TEXT_PLAIN_VALUE)
+	public String billPayment(@PathVariable("cnid") long cnid){
+		return cs.billPayment(cnid);
+}
 	
-
 	@PostMapping(value="loginCustomer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String loginCustomer(@RequestBody Customer c,HttpServletRequest request) {
 		Customer cust= cs.loginCustomer(c);
@@ -82,12 +85,24 @@ public class CustomerController {
 			return "Username or password is wrong";		
 		}
 		else {
-			
+			cs.checkBillStatusCustomer(cust.getCid());
 			HttpSession session=request.getSession();  
 			session.setAttribute("pincode", cust.getPincode());
 			session.setAttribute("username", cust.getUsername());
 			return "Login Successfull";
 			
 		}
+	}
+	
+	@GetMapping(value="displayCustomersPlan/{cid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Object> getCustomersPlan(@PathVariable("cid") long cid)
+	{
+		return cs.getCustomersPlan(cid);
+	}
+	
+	@GetMapping(value="displayCustomersPlanBill/{cid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Object> getCustomersPlanBill(@PathVariable("cid") long cid)
+	{
+		return cs.getCustomersPlanBill(cid);
 	}
 }

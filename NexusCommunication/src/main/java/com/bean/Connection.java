@@ -16,6 +16,16 @@ public class Connection {
 	private LocalDate enddate;
 	private String status;
 	private double bill;
+	private String billstatus;
+	public String getBillstatus() {
+		return billstatus;
+	}
+	public void setBillstatus(String billstatus) {
+		this.billstatus = billstatus;
+	}
+	public void setReqplan(long reqplan) {
+		this.reqplan = reqplan;
+	}
 	public long getCnid() {
 		return cnid;
 	}

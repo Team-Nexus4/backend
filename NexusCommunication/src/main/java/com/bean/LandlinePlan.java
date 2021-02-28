@@ -11,7 +11,7 @@ public class LandlinePlan
 	@Id
 	private long lid;
 	private int duration;
-	private float coast;
+	private float cost;
 	public long getLid() {
 		return lid;
 	}
@@ -24,15 +24,15 @@ public class LandlinePlan
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
-	public float getCoast() {
-		return coast;
+	public float getCost() {
+		return cost;
 	}
-	public void setCoast(float coast) {
-		this.coast = coast;
+	public void setCoast(float cost) {
+		this.cost = cost;
 	}
 	@Override
 	public String toString() {
-		return "LandlinePlan [lid=" + lid + ", duration=" + duration + ", coast=" + coast + "]";
+		return "LandlinePlan [lid=" + lid + ", duration=" + duration + ", coast=" + cost + "]";
 	}
 	
 }

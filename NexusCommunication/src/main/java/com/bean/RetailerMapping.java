@@ -10,6 +10,7 @@ public class RetailerMapping
 {
 	@Id
 	private long rid;
+	
 	private int pincode;
 	public long getRid() {
 		return rid;
