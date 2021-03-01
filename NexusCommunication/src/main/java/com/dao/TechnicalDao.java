@@ -39,6 +39,7 @@ public String placedOrderByTechnical(long oid) {
 	else
 	{
 		o.setStatus("true");
+		System.out.println("check 1");
 		tran.begin();
 			manager.merge(o);
 		tran.commit();

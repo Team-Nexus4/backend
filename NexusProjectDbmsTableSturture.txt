@@ -85,8 +85,8 @@ alter table order_stock auto_increment=5555000001;
 ========================================================
 connection
 ------------------------------------------------------------------
-create table connection(cnid bigint primary key , cid bigint , reqplan bigint , startdate date ,enddate date,status varchar(20), bill int);
-
+create table connection(cnid bigint primary key auto_increment , cid bigint , reqplan bigint , startdate date ,enddate date,status varchar(20), bill int);
+alter table connection add column billstatus enum('paid','unpaid');
 alter table connection auto_increment=7777000001;
 ========================================================
 technical

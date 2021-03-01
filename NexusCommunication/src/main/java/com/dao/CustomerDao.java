@@ -159,8 +159,7 @@ public class CustomerDao
 			if(cn.getEnddate().isBefore(LocalDate.now())) {
 				Connection cnn=cnr.getOne(cn.getCnid());
 				cnn.setStatus("expire");
-				cnr.saveAndFlush(cnn);
-				
+				cnr.saveAndFlush(cnn);	
 			}
 		}
 		
