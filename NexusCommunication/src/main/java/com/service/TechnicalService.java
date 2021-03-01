@@ -53,6 +53,7 @@ public class TechnicalService {
 				con.setStatus("active");
 				con.setStartdate(LocalDate.now());
 				con.setEnddate(LocalDate.now().plusDays(llp.getDuration()*30));
+				con.setBillstatus("unpaid");
 				Connection c1 = cr.save(con);
 			return c1==null?"Entry In connection table UnSuccesfull":"Entry In connection table Succesfull";
 			
@@ -66,6 +67,7 @@ public class TechnicalService {
 				con.setStatus("active");
 				con.setStartdate(LocalDate.now());
 				con.setEnddate(LocalDate.now().plusDays(Integer.parseInt(iip.getDuration())*30));
+				con.setBillstatus("unpaid");
 				Connection c1 = cr.save(con);
 			return c1==null?"Entry In connection table UnSuccesfull":"Entry In connection table Succesfull";
 			}
