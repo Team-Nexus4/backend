@@ -1,0 +1,27 @@
+
+<div>
+    <div *ngIf ="flag">
+
+        <table>
+            <tr>
+                <th>iid</th>
+                <th>Speed</th>
+                <th>Cost</th>
+                <th>Duration</th>
+                
+            </tr>
+            <tr *ngFor = "let obj of internetArray"  >
+                <td >{{obj.iid}}</td>
+                <input type="hidden" value={{obj.iid}} #ref>
+                <td>{{obj.speed}}</td>
+                <td>{{obj.cost}}</td>
+                <td>{{obj.duration}}</td>
+                <td><input type="button" value="Buy" (click) = "orderInternet(ref.value)"/></td>
+            </tr>
+        </table>
+        {{msg}}
+
+
+
+    </div>
+</div>

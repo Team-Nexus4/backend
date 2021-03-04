@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'NexusComunicationUI'`, () => {
+  it(`should have as title 'NexusCommunicationUI'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('NexusComunicationUI');
+    expect(app.title).toEqual('NexusCommunicationUI');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('NexusComunicationUI app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('NexusCommunicationUI app is running!');
   });
 });

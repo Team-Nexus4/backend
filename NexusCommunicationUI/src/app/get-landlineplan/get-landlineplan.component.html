@@ -1,0 +1,21 @@
+
+<div>
+    <div *ngIf ="flag">
+
+        <table>
+            <tr>
+                <th>Lid</th>
+                <th>Deuration</th>
+                <th>Cost</th>
+            </tr>
+            <tr *ngFor = "let landline of landlineInfo">
+                <td>{{landline.lid}}</td>
+                <td>{{landline.duration}}</td>
+                <td>{{landline.cost}}</td>
+            </tr>
+        </table>
+
+
+
+    </div>
+</div>

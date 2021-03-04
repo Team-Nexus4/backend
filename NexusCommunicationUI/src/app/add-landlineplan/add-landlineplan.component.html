@@ -1,0 +1,15 @@
+<div>
+    <h2>Store LandLine Details</h2>
+    <form [formGroup]="landlineInfo" (ngSubmit)=" addLandLinePlan()">
+        
+        <label>Duration</label>
+        <input type =  number formControlName="duration"/><br>
+        <label>cost</label>
+        <input type = "number"formControlName="cost"/><br>
+       
+        <input type="submit" value="Store Product Info">
+        <input type="reset">
+
+    </form>
+    {{msg}}
+</div>

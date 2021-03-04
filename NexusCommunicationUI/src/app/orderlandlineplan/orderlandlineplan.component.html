@@ -1,0 +1,25 @@
+
+<div>
+    <div *ngIf ="flag">
+
+        <table>
+            <tr>
+                <th>lid</th>
+                <th>Duration</th>
+                <th>Cost</th>
+                
+            </tr>
+            <tr *ngFor = "let obj of landlineArray"  >
+                <td >{{obj.lid}}</td>
+                <input type="hidden" value={{obj.lid}} #ref>
+                <td>{{obj.duration}}</td>
+                <td>{{obj.cost}}</td>
+                <td><input type="button" value="Buy" (click) = "orderLandline(ref.value)"/></td>
+            </tr>
+        </table>
+        {{msg}}
+
+
+
+    </div>
+</div>

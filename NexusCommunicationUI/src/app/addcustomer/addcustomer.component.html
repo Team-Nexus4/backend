@@ -1,0 +1,23 @@
+<div>
+    <h2>Login Customer Page</h2>
+    <form #userRef="ngForm" (ngSubmit)="addCustomerComponent(userRef.value)">
+        <label>First Name</label>
+        
+        <input type="text" name="fname" ngModel /><br>
+        <label>Last Name</label>
+        <input type="text" name="lname" ngModel /><br>
+        <label>Addres</label>
+        <input type="text" name="addres" ngModel /><br>
+        <label>Pincode</label>
+        <input type="number" name="pincode" ngModel /><br>
+        <label>Phone Number</label>
+        <input type="number" name="phone" ngModel /><br>
+        <label>User Name</label>
+        <input type="text" name="username" ngModel /><br>
+        <label>Passsword</label>
+        <input type="password" name="password" ngModel /><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    {{msg}}
+</div>

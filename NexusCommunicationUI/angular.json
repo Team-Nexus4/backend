@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "NexusComunicationUI": {
+    "NexusCommunicationUI": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/NexusComunicationUI",
+            "outputPath": "dist/NexusCommunicationUI",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "NexusComunicationUI:build"
+            "browserTarget": "NexusCommunicationUI:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "NexusComunicationUI:build:production"
+              "browserTarget": "NexusCommunicationUI:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "NexusComunicationUI:build"
+            "browserTarget": "NexusCommunicationUI:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "NexusComunicationUI:serve"
+            "devServerTarget": "NexusCommunicationUI:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "NexusComunicationUI:serve:production"
+              "devServerTarget": "NexusCommunicationUI:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "NexusComunicationUI"
+  "defaultProject": "NexusCommunicationUI"
 }
