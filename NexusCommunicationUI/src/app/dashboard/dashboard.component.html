@@ -1,0 +1,13 @@
+<div>
+    <h2>Welcome to Customer DashBoeard Page</h2>
+    {{customer.fname}}
+    <div align="right">
+    <input type="button" value="Logout" (click)="logout()" />
+    </div>
+
+    <a routerLink="internet">Internet Component</a><br>
+    <a routerLink="landline">LandLine Component</a><br>
+    <a routerLink="viewstatus">Order Status Component</a><br>
+    <hr>
+    <router-outlet></router-outlet>
+</div>

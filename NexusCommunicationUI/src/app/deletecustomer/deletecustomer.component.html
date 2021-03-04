@@ -1,0 +1,32 @@
+
+<div>
+    <div *ngIf ="flag">
+
+        <table>
+            <tr>
+                <th>Cid</th>
+                <th>Fname</th>
+                <th>Lname</th>
+                <th>Addres</th>
+                <th>Pincode</th>
+                <th>Phone Number</th>
+                <th>userName</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor = "let cust of customerArray"  >
+                <td >{{cust.cid}}</td>
+                <input type="hidden" value={{cust.cid}} #ref>
+                <td>{{cust.fname}}</td>
+                <td>{{cust.lname}}</td>
+                <td>{{cust.addres}}</td>
+                <td>{{cust.pincode}}</td>
+                <td>{{cust.phone}}</td>
+                <td>{{cust.username}}</td>
+                <td><input type="button" value="Delete" (click) = "deleteCustomer(ref.value)"/></td>
+            </tr>
+        </table>
+
+
+
+    </div>
+</div>

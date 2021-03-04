@@ -1,0 +1,17 @@
+<div>
+    <h2>Update Plan</h2>
+    <form #landlineRef = "ngForm" (ngSubmit) = "updateProductInfo(landlineRef.value)">
+        <label>Plan Id</label>
+        <input type = "number" name = "lid" ngModel><br>
+        
+        <label>Plan Duration</label>
+        <input type = "number" name="duration" ngModel/><br>
+
+        <label>Plan Price</label>
+        <input type = "number" name="cost" ngModel/><br>
+        
+        <input type="submit" value="Update Plan Info">
+        <input type="reset">
+    </form>
+    {{msg}}
+</div>
