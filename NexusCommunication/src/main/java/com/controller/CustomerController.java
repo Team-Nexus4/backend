@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.service.CustomerService;
 
 @RestController
 @RequestMapping(value="customer")
+@CrossOrigin
 public class CustomerController {
 
 	@Autowired
@@ -36,6 +38,7 @@ public class CustomerController {
 	//http://localhost:9070/customer/storeCustomer
 	@PostMapping(value="storeCustomer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String storeCustomer(@RequestBody Customer c) {
+		System.out.println("Ok123");
 		return cs.storeCustomer(c);
 	}
 	
@@ -77,25 +80,25 @@ public class CustomerController {
 		return cs.billPayment(cnid);
 }
 	
-	@PostMapping(value="loginCustomer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
-	public String loginCustomer(@RequestBody Customer c,HttpServletRequest request) {
+	@PostMapping(value="loginCustomer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+	public Customer loginCustomer(@RequestBody Customer c,HttpServletRequest request) {
 		Customer cust= cs.loginCustomer(c);
 		;
 		if(cust==null) {
-			return "Username or password is wrong";		
+			return null;		
 		}
 		else {
 			cs.checkBillStatusCustomer(cust.getCid());
 			HttpSession session=request.getSession();  
 			session.setAttribute("pincode", cust.getPincode());
 			session.setAttribute("username", cust.getUsername());
-			return "Login Successfull";
+			return cust;
 			
 		}
 	}
 	
 	@GetMapping(value="displayCustomersPlan/{cid}",produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Object> getCustomersPlan(@PathVariable("cid") long cid)
+	public List<Object[]> getCustomersPlan(@PathVariable("cid") long cid)
 	{
 		return cs.getCustomersPlan(cid);
 	}

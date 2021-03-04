@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ import com.service.RetailerService;
 
 @RestController
 @RequestMapping(value = "retailer")
+@CrossOrigin
 public class RetailerController
 {
 	@Autowired
@@ -63,7 +65,7 @@ public class RetailerController
 	@PostMapping(value="addRetailer",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String addRetailer(@RequestBody RetailerRegistration rr)
 	{
-		return os.addRetailer(rr.getRet(),rr.getEmp());
+		return os.addRetailer(rr);
 	}
 	
 	@PostMapping(value="replaceRetailer",consumes = MediaType.APPLICATION_JSON_VALUE)
