@@ -73,9 +73,9 @@ public class CustomerDao
 		
 	}
 
-	public List<Object> getAllPlan(long cid) 
+	public List<Object[]> getAllPlan(long cid) 
 	{
-		List<Object> listOfObject = new ArrayList<Object>();
+		List<Object[]> listOfObject = new ArrayList<Object[]>();
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select o from Order o where o.cid=?1");
 		qry.setParameter(1,cid);
@@ -96,15 +96,15 @@ public class CustomerDao
 				System.out.println(i);
 				qry = manager.createNativeQuery("select l.duration,l.cost,o.status from landline_plan l , order_table o where l.lid=o.requested_plan and o.oid=:cid");
 				qry.setParameter("cid", oo.getOid());
-				listOfObject.add(qry.getResultList());
+				listOfObject.addAll(qry.getResultList());
 
 			}
 			else if(request>divider)
 			{
-				System.out.println(i);
+				System.out.println(i );
 				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,o.status from internet_plan i , order_table o where i.iid=o.requested_plan and o.oid=:cid");
 				qry.setParameter("cid", oo.getOid());
-				listOfObject.add(qry.getResultList());
+				listOfObject.addAll(qry.getResultList());
 			}	
 			i++;
 		}

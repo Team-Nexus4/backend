@@ -11,6 +11,7 @@ import com.bean.Order;
 
 import com.bean.OrderStock;
 import com.bean.Retailer;
+import com.bean.RetailerRegistration;
 import com.dao.EmployeeRepository;
 import com.dao.RetailerDao;
 import com.dao.RetailerRepository;
@@ -68,13 +69,33 @@ public class RetailerService
 		return res;
 	}
 
-	public String addRetailer(Retailer r, Employee e) {
+	public String addRetailer(RetailerRegistration r) {
+		boolean flag=true;
+		Retailer r1 = new Retailer();
+		r1.setInternetKit(r.getInternetKit());
+		r1.setLandlineKit(r.getLandlineKit());
+		r1.setPincode(r.getPincode());
+		r1.setVid(r.getVid());
 		
-		Retailer rt = rr.save(r);
-		if(rt!=null) {
-			long empid=dao.getEmpId(r.getPincode());
-			e.setEid(empid);
-			Employee emp = er.save(e);
+		Employee e1 = new Employee();
+		e1.setDesg(r.getDesg());
+		e1.setPassword(r.getPassword());
+		e1.setUsername(r.getUsername());
+		List<Employee> ee = er.findAll();
+		for(Employee eee: ee)
+		{
+			if(eee.getUsername().equals(r.getUsername()))
+			{
+				flag=false;
+			}
+		}
+		if(flag)
+		{
+			Retailer rt = rr.save(r1);
+			if(rt!=null) {
+				long empid=dao.getEmpId(r.getPincode());
+			e1.setEid(empid);
+			Employee emp = er.save(e1);
 			if(emp!=null) {
 				return "Retailer Registered Success";
 			}else {
@@ -83,6 +104,11 @@ public class RetailerService
 			
 		}else {
 			return "Any Exception is occured";
+		}
+	}
+		else
+		{
+			return "User Already Present try with Difreent Isername";
 		}
 	}
 

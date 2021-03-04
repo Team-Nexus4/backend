@@ -35,7 +35,7 @@ public class RetailerDao
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 		Order o = manager.find(Order.class, oid);
-		
+		//OrderStock oo = manager.find((OrderStock.class, oid);
 		if(o==null)
 		{
 			return 2;
@@ -49,6 +49,7 @@ public class RetailerDao
 			Query qry = manager.createQuery("select r from Retailer r where r.rid=?1");
 			qry.setParameter(1, o.getRid());
 			Retailer robj = (Retailer) qry.getSingleResult();
+			
 			Technical t = new Technical();
 			if(request<divider)
 			{

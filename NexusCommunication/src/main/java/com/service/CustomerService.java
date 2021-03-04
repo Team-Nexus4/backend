@@ -100,7 +100,7 @@ public class CustomerService {
 		Customer cust1=null;
 		int flag=0;
 		for(Customer cust:listOfCust) {
-			if(cust.getUsername().equals(c.getUsername())) {
+			if((cust.getUsername().equals(c.getUsername()))&& (cust.getPassword().equals(c.getPassword()))) {
 				cust1=cust;
 			}
 		}
@@ -108,7 +108,7 @@ public class CustomerService {
 		
 	}
 
-	public List<Object> getCustomersPlan(long cid) {
+	public List<Object[]> getCustomersPlan(long cid) {
 		// TODO Auto-generated method stub
 		return cd.getAllPlan(cid);
 	}
