@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bean.Employee;
 import com.bean.Retailer;
 import com.bean.Vendor;
 import com.bean.VendorRegistration;
@@ -67,6 +68,14 @@ public class VendorController
 	{
 		String res = vendorService.replaceVendorWithAnotherE(r);
 		return res;
+	}
+	
+	@PostMapping(value="chekLoginEmployee" , produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Employee checkLogin(@RequestBody Employee e)
+	{
+		Employee ee = vendorService.checkEmployeeLogin(e);
+		System.out.println(ee);
+		return ee;
 	}
 	
 }
