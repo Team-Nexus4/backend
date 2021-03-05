@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bean.Customer;
 import com.bean.Employee;
 import com.bean.Retailer;
 import com.bean.Vendor;
@@ -71,5 +72,19 @@ public class VendorService {
 		}else {
 			return "Replacd Failed";
 		}
+	}
+
+	public Employee checkEmployeeLogin(Employee e) 
+	{
+		List<Employee> listOfEmp = er.findAll();
+		Employee emp1=null;
+		int flag=0;
+		for(Employee emp:listOfEmp) {
+			if((emp.getUsername().equals(e.getUsername()))&& (emp.getPassword().equals(emp.getPassword()))) {
+				emp1=emp;
+				System.out.println("check 1");
+			}
+		}
+		return emp1;
 	}
 }

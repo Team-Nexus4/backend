@@ -13,6 +13,7 @@ import javax.persistence.EntityTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bean.Employee;
 import com.bean.Retailer;
 import com.bean.Vendor;
 
@@ -149,5 +150,7 @@ public class VendorDao {
 		
 		
 	}
+
+	
 
 }
