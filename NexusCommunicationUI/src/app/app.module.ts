@@ -19,6 +19,12 @@ import { OrderinternetplanComponent } from './orderinternetplan/orderinternetpla
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { UpdatecustomerComponent } from './updatecustomer/updatecustomer.component';
 import { MyGaurds } from './app.gaurd';
+import { EmployeeloginComponent } from './employeelogin/employeelogin.component';
+import { VendordashboardComponent } from './vendordashboard/vendordashboard.component';
+import { TechnicaldashboardComponent } from './technicaldashboard/technicaldashboard.component';
+import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { FrontloginComponent } from './frontlogin/frontlogin.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,13 @@ import { MyGaurds } from './app.gaurd';
     OrderlandlineplanComponent,
     OrderinternetplanComponent,
     AddcustomerComponent,
-    UpdatecustomerComponent
+    UpdatecustomerComponent,
+    EmployeeloginComponent,
+    VendordashboardComponent,
+    TechnicaldashboardComponent,
+    RetailerdashboardComponent,
+    AdmindashboardComponent,
+    FrontloginComponent
   ],
   imports: [
     BrowserModule,
