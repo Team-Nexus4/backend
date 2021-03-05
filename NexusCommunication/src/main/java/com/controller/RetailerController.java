@@ -28,7 +28,7 @@ import com.service.RetailerService;
 public class RetailerController
 {
 	@Autowired
-	RetailerService os;
+	RetailerService rs;
 	
 	public RetailerController()
 	{
@@ -39,7 +39,7 @@ public class RetailerController
 	@GetMapping(value = "display/{rid}"  ,produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Order> displayOrder(@PathVariable("rid") long rid)
 	{
-		List<Order> listOfOrder = os.getAllOrderService(rid);
+		List<Order> listOfOrder = rs.getAllOrderService(rid);
 		for(Order o :listOfOrder)
 			System.out.println(o);
 		return listOfOrder;
@@ -48,14 +48,14 @@ public class RetailerController
 	@PostMapping(value="placeOrder",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String placeOrder(@RequestBody Order o)
 	{
-		String res = os.placeOrderService(o.getOid());
+		String res = rs.placeOrderService(o.getOid());
 		return res;
 	}
 	
 	@PostMapping(value = "placeOrderStock",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String placeOrderStock(@RequestBody OrderStock o)
 	{
-		String res = os.placeOrderStockService(o);
+		String res = rs.placeOrderStockService(o);
 		return null;
 	}
 	
@@ -65,13 +65,13 @@ public class RetailerController
 	@PostMapping(value="addRetailer",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String addRetailer(@RequestBody RetailerRegistration rr)
 	{
-		return os.addRetailer(rr);
+		return rs.addRetailer(rr);
 	}
 	
 	@PostMapping(value="replaceRetailer",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String replaceRetailer(@RequestBody Employee e)
 	{
-		return os.replaceRetailer(e);
+		return rs.replaceRetailer(e);
 	}
 
 	

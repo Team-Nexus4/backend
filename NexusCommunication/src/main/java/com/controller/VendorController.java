@@ -45,7 +45,7 @@ public class VendorController
 	@PostMapping(value = "addVendor",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String addVendor(@RequestBody VendorRegistration vr)
 	{
-		return vendorService.addVendor(vr.getV() ,vr.getE());
+		return vendorService.addVendor(vr);
 	}
 	
 	// http://localhost:9070/vendor/updateInternetKit
