@@ -1,0 +1,14 @@
+<div>
+    <h2>Replace Retailer</h2>
+    <form #retailerRef="ngForm" (ngSubmit)="replaceRetailer(retailerRef.value)">
+        <label>Employee id:</label>
+        <input type="number" name="eid" ngModel/><br/>
+        <label>New Username</label>
+        <input type="text" name="username" ngModel/><br/>
+        <label>New Password</label>
+        <input type="password" name="password" ngModel/><br/>
+        <input type="submit" value="Replace Retailer"/>
+        <input type="reset" value="reset"/>
+    </form>
+    {{msg}}
+</div>

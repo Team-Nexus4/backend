@@ -27,7 +27,6 @@ public class RetailerService
 	EmployeeRepository er;
 	private void Retailer() {
 		// TODO Auto-generated method stub
-
 	}
 	
 	public List<Order> getAllOrderService(long rid)
@@ -96,6 +95,5 @@ public class RetailerService
 		}else {
 			 return "Replace failed";
 		}
-		
 	}
 }

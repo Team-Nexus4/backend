@@ -88,7 +88,7 @@ public class TechnicalService {
 		if(emp!=null) {
 			return "Store success";
 		}else {
-			return "Any Exception is occured";
+			return "An Exception is occured";
 		}
 	}
 	
