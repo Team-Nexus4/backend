@@ -30,7 +30,8 @@ export class LogincustomerComponent implements OnInit {
         this.loginService.checkLogin(this.customer).subscribe(obj=>{
           if(obj==null)
           {
-            console.log("wrong");
+            console.log("wrong customer");
+            
           }
           else{
             console.log(obj);
