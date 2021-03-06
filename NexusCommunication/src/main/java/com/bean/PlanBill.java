@@ -10,7 +10,18 @@ public class PlanBill
 	private int bill;
 	private LocalDate startdate;
 	private LocalDate enddate;
-	private String speed;
+	private String billstatus;
+	public String getBillstatus() {
+		return billstatus;
+	}
+	public void setBillstatus(String billstatus) {
+		this.billstatus = billstatus;
+	}
+	@Override
+	public String toString() {
+		return "PlanBill [duration=" + duration + ", cost=" + cost + ", status=" + status + ", bill=" + bill
+				+ ", startdate=" + startdate + ", enddate=" + enddate + ", speed=" + speed + ", cnid=" + cnid + "]";
+	}
 	public int getDuration() {
 		return duration;
 	}
@@ -38,11 +49,6 @@ public class PlanBill
 	public LocalDate getStartdate() {
 		return startdate;
 	}
-	@Override
-	public String toString() {
-		return "PlanBill [duration=" + duration + ", cost=" + cost + ", status=" + status + ", bill=" + bill
-				+ ", startdate=" + startdate + ", enddate=" + enddate + ", speed=" + speed + "]";
-	}
 	public void setStartdate(LocalDate startdate) {
 		this.startdate = startdate;
 	}
@@ -58,5 +64,14 @@ public class PlanBill
 	public void setSpeed(String speed) {
 		this.speed = speed;
 	}
+	public long getCnid() {
+		return cnid;
+	}
+	public void setCnid(long cnid) {
+		this.cnid = cnid;
+	}
+	private String speed;
+	private long cnid;
+	
 	
 }

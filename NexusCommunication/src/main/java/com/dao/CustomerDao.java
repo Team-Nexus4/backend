@@ -1,9 +1,11 @@
 package com.dao;
 
 
+import java.math.BigInteger;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Iterator;
 
@@ -133,7 +135,7 @@ public class CustomerDao
 			if(request<divider)
 			{
 				System.out.println(i);
-				qry = manager.createNativeQuery("select l.duration,l.cost,cn.status,cn.bill,cn.startdate,cn.enddate from landline_plan l , connection cn where l.lid=cn.reqplan and cn.cnid=:cid");
+				qry = manager.createNativeQuery("select l.duration,l.cost,cn.status,cn.bill,cn.startdate,cn.enddate,cn.cnid,cn.billstatus from landline_plan l , connection cn where l.lid=cn.reqplan and cn.cnid=:cid");
 				qry.setParameter("cid", oo.getCnid());
 				//listOfObject.add(qry.getResultList());
 				List<?> lit = qry.getResultList();
@@ -149,6 +151,9 @@ public class CustomerDao
 					p.setStartdate(d.toLocalDate() );
 					Date d1 = (Date) obj[5];
 					p.setEnddate(d1.toLocalDate() );
+					BigInteger b = (BigInteger) obj[6];
+					p.setCnid( b.longValue());
+					p.setBillstatus((String) obj[7]);
 					listOfObject.add(p);
 				}
 				
@@ -157,7 +162,7 @@ public class CustomerDao
 			else if(request>divider)
 			{
 				System.out.println(i);
-				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,cn.status,cn.bill,cn.startdate,cn.enddate from internet_plan i , connection cn where i.iid=cn.reqplan and cn.cnid=:cid");
+				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,cn.status,cn.bill,cn.startdate,cn.enddate,cn.cnid,cn.billstatus from internet_plan i , connection cn where i.iid=cn.reqplan and cn.cnid=:cid");
 				qry.setParameter("cid", oo.getCnid());
 				List<?> lit = qry.getResultList();
 				Iterator<?> li1 =  lit.iterator();
@@ -173,6 +178,10 @@ public class CustomerDao
 					p.setStartdate(d.toLocalDate() );
 					Date d1 = (Date) obj[6];
 					p.setEnddate(d1.toLocalDate() );
+					BigInteger b = (BigInteger) obj[7];
+					p.setBillstatus((String) obj[8]);
+					p.setCnid( b.longValue());
+					 
 					listOfObject.add(p);
 				}
 			}	

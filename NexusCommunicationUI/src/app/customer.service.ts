@@ -5,6 +5,7 @@ import { Customer } from './customer.module';
 import { Internet } from './internet.module';
 import { LandLine } from './landline.module';
 import { Order } from './order.model';
+import { PlanBill } from './planbill.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,11 @@ export class CustomerService {
   {
     
     return this.httpclient.get<Order[]>("http://localhost:9070/customer/displayCustomersPlan/"+cid);
+  }
+
+  getPlanBill(cid:any):Observable<PlanBill[]>
+  {
+    return this.httpclient.get<PlanBill[]>("http://localhost:9070/customer/displayCustomersPlanBill/"+cid);
   }
 
   getAllLandLinePlan():Observable<LandLine[]>
@@ -61,5 +67,10 @@ export class CustomerService {
   updateCustomer(customer:Customer):Observable<string>
   {
     return this.httpclient.put("http://localhost:9070/customer/updateCustomer",customer,{responseType:'text'})
+  }
+
+  payBill(cnid:any):Observable<string>
+  {
+      return this.httpclient.get("http://localhost:9070/customer/payBill/"+cnid,{responseType:'text'});
   }
 }
