@@ -18,7 +18,7 @@ import { TechnicaldashboardComponent } from './technicaldashboard/technicaldashb
 import { VendordashboardComponent } from './vendordashboard/vendordashboard.component';
 import { DisplayVendorComponent } from './display-vendor/display-vendor.component';
 import { UpdateInternetstockVendorComponent } from './update-internetstock-vendor/update-internetstock-vendor.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+
 import { AddVendorComponent } from './add-vendor/add-vendor.component';
 import { AddInternetComponent } from './add-internet/add-internet.component';
 import { DeleteInternetComponent } from './delete-internet/delete-internet.component';
@@ -30,6 +30,7 @@ import { UpdateLandlineplanComponent } from './update-landlineplan/update-landli
 import { DeleteLandlineplanComponent } from './delete-landlineplan/delete-landlineplan.component';
 import { AddLandlineplanComponent } from './add-landlineplan/add-landlineplan.component';
 import { AdminGaurads } from './app.admingaurd';
+import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
 
 const routes: Routes = [
   {path:"\loginCustomer",component:LogincustomerComponent},
@@ -91,7 +92,8 @@ const routes: Routes = [
       children:[
         {path:"internet",component:OrderinternetplanComponent},
         {path:"landline",component:OrderlandlineplanComponent},
-        {path:"viewstatus",component:DisplaycustomerplanComponent}
+        {path:"viewstatus",component:DisplaycustomerplanComponent},
+        {path:"viewBill",component:PlanbillcomponentComponent}
       ]},
   
 ];

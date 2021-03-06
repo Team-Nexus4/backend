@@ -1,0 +1,32 @@
+<div>
+    <h2>All technicians details are..</h2>
+    <div *ngIf="flag">
+    <table border="1">
+        <tr>
+            
+            <th>Duration</th>
+            <th>Speed</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Cost</th>
+            <th>Status</th>
+            <th>Bill Status</th>
+            <th>Pay</th>
+        </tr>
+        <tr *ngFor="let tech of planbill">
+            <td>{{tech.duration}}</td>
+            <input type="hidden" value={{tech.cnid}} #ref>
+            <td>{{tech.speed}}</td>
+            <td>{{tech.startdate}}</td>
+            <td>{{tech.enddate}}</td>
+            <td>{{tech.cost}}</td>
+            <td>{{tech.status}}</td>
+            <td>{{tech.billstatus}}</td>
+            <td><input type="button" value="Buy" (click) = "payBill(ref.value)"/></td>
+            
+        </tr>
+    </table>
+    {{msg}}
+
+</div>
+</div>
