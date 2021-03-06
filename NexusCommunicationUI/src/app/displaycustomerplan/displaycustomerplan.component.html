@@ -1,2 +1,84 @@
-<p>displaycustomerplan works!</p>
-<input type="submit" value="Submit" (click)="getAllCustomerPlan()">
+
+<div>
+    <div *ngIf ="flagl">
+        <div>
+        <table border=1px>
+            <tr>
+                <th>lid</th>
+                <th>Deuration</th>
+                <th>Cost</th>
+                <th>status</th>
+            </tr>
+            <tr *ngFor = "let landline of landlineArray1">
+                <td>{{landline.lid}}</td>
+                <td>{{landline.duration}}</td>
+                <td>{{landline.cost}}</td>
+                <td>{{landline.status}}</td>
+            </tr>
+        </table>
+    </div>
+
+        <br>
+
+        
+<div>
+    <div *ngIf ="flagi">
+
+        <table border=1px>
+            <tr>
+                <th>iid</th>
+                <th>Speed</th>
+                <th>Cost</th>
+                <th>Duration</th>
+                <th>Status</th>
+
+                
+            </tr>
+            <tr *ngFor = "let obj of internetArray1"  >
+                <td >{{obj.iid}}</td>
+                <td>{{obj.speed}}</td>
+                <td>{{obj.cost}}</td>
+                <td>{{obj.duration}}</td>
+                <td>{{obj.status}}</td>
+            </tr>
+        </table>
+        {{msg}}
+        <!--constructor(public oid?:number,
+                public rid?:number,
+                public cid?:number,
+                public request?:number,
+                public status?:string){}
+
+                <div>
+    <div>
+        <div>
+        <table>
+            <tr>
+                <th>oid</th>
+                <th>rid</th>
+                <th>cid</th>
+                <th>request</th>
+                <th>status</th>
+            </tr>
+            <tr *ngFor = "let o of order">
+                
+                <td>{{o.oid}}</td>
+                <td>{{o.rid}}</td>
+                <td>{{o.cid}}</td>
+                <td>{{o.requested_plan}}</td>
+                <td>{{o.status}}</td>
+            </tr>
+        </table>
+    </div>
+
+        <br>
+
+
+    </div>
+</div>
+}-->
+
+
+    </div>
+</div>
+
