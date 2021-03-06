@@ -42,28 +42,28 @@ export class EmployeeloginComponent implements OnInit {
             {
               console.log(obj);
               this.employee1=obj;
-              sessionStorage.setItem("employee1",JSON.stringify(obj));
+              sessionStorage.setItem("employee",JSON.stringify(obj));
               this.router.navigate(["technicalDashboard"]);
             }
             else if(obj.desg=="retailer")
             {
               console.log(obj);
               this.employee1=obj;
-              sessionStorage.setItem("employee1",JSON.stringify(obj));
+              sessionStorage.setItem("employee",JSON.stringify(obj));
               this.router.navigate(["retailerDashboard"]);
             }
             else if(obj.desg=="vendor")
             {
               console.log(obj);
               this.employee1=obj;
-              sessionStorage.setItem("employee1",JSON.stringify(obj));
+              sessionStorage.setItem("employee",JSON.stringify(obj));
               this.router.navigate(["vendorDashboard"]);
             }
             else if(obj.desg=="admin")
             {
               console.log(obj);
               this.employee1=obj;
-              sessionStorage.setItem("employee1",JSON.stringify(obj));
+              sessionStorage.setItem("employee",JSON.stringify(obj));
               this.router.navigate(["adminDashboard"]);
             }
             // console.log(obj);

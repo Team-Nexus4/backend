@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Order } from '../order.model';
 import { RetailerService } from '../retailer.service';
 
 @Component({
@@ -9,23 +10,20 @@ import { RetailerService } from '../retailer.service';
 })
 export class RetailerPlaceOrderComponent implements OnInit {
 
-  ret_orderInfo=new FormGroup({
-    cid:new FormControl(),
-    oid:new FormControl(),
-    requested_plan:new FormControl(),
-    rid:new FormControl(),
-    status:new FormControl() 
-  })
-
-  msg:string=""
+  rid:number=0;
+  msg:string="";
+  order:Array<Order>=[];
+  flag:boolean=false;
   constructor(public retailerService:RetailerService) { }
 
   ngOnInit(): void {
+    this.flag=true;
+    this.retailerService.findRetailerById().subscribe(data=>this.order=data)
+    
   }
 
-  retailerPlaceOrderDetails()
+  retailerPlaceOrderDetails(oid:any)
   {
-    let ret_orderRef = this.ret_orderInfo.value;
-    this.retailerService.retailerPlaceOrder(ret_orderRef).subscribe(result=>this.msg=result);
+    this.retailerService.retailerPlaceOrder(oid).subscribe(result=>this.msg=result);
   }
 }

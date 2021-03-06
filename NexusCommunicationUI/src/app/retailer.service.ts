@@ -10,15 +10,21 @@ import { Retailer } from './retailer.model';
   })
   export class RetailerService
   {
-    retailerPlaceOrder(ret_orderRef: any):Observable<string>
+    employee = new Employee;
+    retailerPlaceOrder(ret_orderRef: Order):Observable<string>
     {
       return this.httpClient.post("http://localhost:9070/retailer/placeOrder",ret_orderRef,{responseType:'text'})
     }
   
     constructor(public httpClient:HttpClient) { }
 
-    findRetailerById(rId:any):Observable<Order[]>{
-      return this.httpClient.get<Order[]>("http://localhost:9070/retailer/display/"+rId,{responseType:'json'});
+    findRetailerById():Observable<Order[]>{
+      let emp = sessionStorage.getItem("employee")
+      if(emp!=null)
+      {
+          this.employee = JSON.parse(emp);
+      }
+      return this.httpClient.get<Order[]>("http://localhost:9070/retailer/display/"+this.employee.eid,{responseType:'json'});
     }
     
     replaceRetailerInfo(employee:any):Observable<string>

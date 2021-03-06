@@ -18,7 +18,7 @@ import { OrderlandlineplanComponent } from './orderlandlineplan/orderlandlinepla
 import { OrderinternetplanComponent } from './orderinternetplan/orderinternetplan.component';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { UpdatecustomerComponent } from './updatecustomer/updatecustomer.component';
-import { MyGaurds } from './app.gaurd';
+import { MyGaurds, MyGaurdsCustomer } from './app.gaurd';
 import { EmployeeloginComponent } from './employeelogin/employeelogin.component';
 import { VendordashboardComponent } from './vendordashboard/vendordashboard.component';
 import { TechnicaldashboardComponent } from './technicaldashboard/technicaldashboard.component';
@@ -70,7 +70,7 @@ import { AddTechnicalComponent } from './add-technical/add-technical.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [MyGaurds],
+  providers: [MyGaurds,MyGaurdsCustomer],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

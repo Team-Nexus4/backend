@@ -108,7 +108,7 @@ public class CustomerService {
 		
 	}
 
-	public List<Object[]> getCustomersPlan(long cid) {
+	public List<Order> getCustomersPlan(long cid) {
 		// TODO Auto-generated method stub
 		return cd.getAllPlan(cid);
 	}

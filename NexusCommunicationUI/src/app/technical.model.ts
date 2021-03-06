@@ -1,5 +1,5 @@
 export interface Technical
 {
-    oid: number;
-    rid: number;
+    oid?: number;
+    rid?: number;
 }

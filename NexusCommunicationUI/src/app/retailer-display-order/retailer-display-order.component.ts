@@ -11,26 +11,28 @@ export class RetailerDisplayOrderComponent implements OnInit {
 
   rid:number=0;
   msg:string="";
-  retailerRef:Array<Order>=[];
-  flag:boolean=true;
+  order:Array<Order>=[];
+  flag:boolean=false;
+  orderObj = new Order
   constructor(public retailerService:RetailerService) { }
 
   ngOnInit(): void {
+    this.flag=true;
+    this.retailerService.findRetailerById().subscribe(data=>this.order=data)
+    
   }
-  
-  callService(rid1:any) {
-    console.log("Event fired "+rid1)
-    this.rid=rid1;
-    this.retailerService.findRetailerById(this.rid).subscribe(data=> {
-       if(data==null){
-         console.log("Record not found")
-         this.msg = "Record not found";
-       this.flag= true;
-       }else {
-         this.msg = "";
-         this.flag = true;
-         this.retailerRef=data;        
+
+  retailerPlaceOrderDetails(oid:any)
+  {
+    for(let i=0;i<this.order.length;++i)
+    {
+      if(this.order[i].oid===oid)
+      {
+        this.order.splice(i,1);
+      }
     }
-    })
+    this.orderObj.oid=oid 
+    this.retailerService.retailerPlaceOrder(this.orderObj).subscribe(res => {this.msg = res 
+      this.ngOnInit()});
   }
 }

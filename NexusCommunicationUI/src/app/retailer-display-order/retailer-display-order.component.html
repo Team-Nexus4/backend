@@ -1,23 +1,24 @@
 <div>
-    <input type="number" #rid><br/>
-    <input type="submit" (click)="callService(rid.value)"/>
-    {{msg}}
-    <div *ngIf="true">
-        <table border="1">
+    <div>
+        <table>
             <tr>
-                <th>Order Id is </th>
-                <th>Retailer id is</th>
-                <th>Customer Id is </th>
-                <th>Requested plan Id is </th>
-                <th>Order Status is </th>
+                <th>oid</th>
+                <th>rid</th>
+                <th>cid</th>
+                <th>request</th>
+                <th>Proced</th>
+                
             </tr>
-            <tr *ngFor="let ret of retailerRef">
-                <td>{{ret.oid}}</td>
-                <td>{{ret.rid}}</td>
-                <td>{{ret.cid}}</td>
-                <td>{{ret.requested_plan}}</td>
-                <td>{{ret.status}}</td>
+            <tr *ngFor = "let o of order">
+            
+                <td>{{o.oid}}</td>
+                <input type="hidden" value={{o.oid}} #ref>
+                <td>{{o.rid}}</td>
+                <td>{{o.cid}}</td>
+                <td>{{o.requested_plan}}</td>
+                <td><input type="button" value="Proced" (click) = "retailerPlaceOrderDetails(ref.value)"/></td>
             </tr>
         </table>
+        {{msg}}
     </div>
 </div>
