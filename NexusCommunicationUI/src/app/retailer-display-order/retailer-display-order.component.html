@@ -1,0 +1,23 @@
+<div>
+    <input type="number" #rid><br/>
+    <input type="submit" (click)="callService(rid.value)"/>
+    {{msg}}
+    <div *ngIf="true">
+        <table border="1">
+            <tr>
+                <th>Order Id is </th>
+                <th>Retailer id is</th>
+                <th>Customer Id is </th>
+                <th>Requested plan Id is </th>
+                <th>Order Status is </th>
+            </tr>
+            <tr *ngFor="let ret of retailerRef">
+                <td>{{ret.oid}}</td>
+                <td>{{ret.rid}}</td>
+                <td>{{ret.cid}}</td>
+                <td>{{ret.requested_plan}}</td>
+                <td>{{ret.status}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
