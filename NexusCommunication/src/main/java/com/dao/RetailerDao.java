@@ -139,7 +139,7 @@ public class RetailerDao
 		tran.begin();
 			manager.persist(o);
 		tran.commit();
-		String com = o.getReqestedItem();
+		String com = o.getRequestedItem();
 		if(com.equals("lk"))
 			com = "landline kit";
 		else
