@@ -12,4 +12,6 @@ export class RetailerPlaceOrderStockComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }
