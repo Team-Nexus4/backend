@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:"technicalDashboard",component:TechnicaldashboardComponent,canActivate:[MyGaurdsCustomer],
         children:[
           {path:"viewOrder",component:DisplayTechnicalComponent},
-          {path:"placeOrder",component:PlaceOrderByTechnicalComponent}
+          
         ]},
   {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[MyGaurdsCustomer],
       children:[

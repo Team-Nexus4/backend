@@ -31,4 +31,6 @@ import { Retailer } from './retailer.model';
     {
         return this.httpClient.post("http://localhost:9070/retailer/replaceRetailer",employee,{responseType:'text'})
     }
+
+    
   }
