@@ -25,6 +25,14 @@ import { TechnicaldashboardComponent } from './technicaldashboard/technicaldashb
 import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { FrontloginComponent } from './frontlogin/frontlogin.component';
+import { DisplayAllVendorComponent } from './display-all-vendor/display-all-vendor.component';
+import { ReplaceRetailerComponent } from './replace-retailer/replace-retailer.component';
+import { RetailerPlaceOrderStockComponent } from './retailer-place-order-stock/retailer-place-order-stock.component';
+import { RetailerPlaceOrderComponent } from './retailer-place-order/retailer-place-order.component';
+import { RetailerDisplayOrderComponent } from './retailer-display-order/retailer-display-order.component';
+import { PlaceOrderByTechnicalComponent } from './place-order-by-technical/place-order-by-technical.component';
+import { DisplayTechnicalComponent } from './display-technical/display-technical.component';
+import { AddTechnicalComponent } from './add-technical/add-technical.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +54,14 @@ import { FrontloginComponent } from './frontlogin/frontlogin.component';
     TechnicaldashboardComponent,
     RetailerdashboardComponent,
     AdmindashboardComponent,
-    FrontloginComponent
+    FrontloginComponent,AddTechnicalComponent,
+    DisplayTechnicalComponent,
+    PlaceOrderByTechnicalComponent,
+    RetailerDisplayOrderComponent,
+    RetailerPlaceOrderComponent,
+    RetailerPlaceOrderStockComponent,
+    ReplaceRetailerComponent,
+    DisplayAllVendorComponent
   ],
   imports: [
     BrowserModule,

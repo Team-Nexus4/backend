@@ -1,0 +1,16 @@
+<div>
+    <h2>All technicians details are..</h2>
+    <input type="button" value="Load Technician Details" (click)="loaddata()"/>
+    <div *ngIf="flag">
+    <table border="1">
+        <tr>
+            <th>Order id</th>
+            <th>Retailer id</th>
+        </tr>
+        <tr *ngFor="let tech of technicalInfo">
+            <td>{{tech.oid}}</td>
+            <td>{{tech.rid}}</td>
+        </tr>
+    </table>
+</div>
+</div>
