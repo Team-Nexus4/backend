@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Employee;
+import com.bean.OrderStock;
 import com.bean.Retailer;
 import com.bean.Vendor;
 import com.bean.VendorRegistration;
@@ -76,6 +77,13 @@ public class VendorController
 		Employee ee = vendorService.checkEmployeeLogin(e);
 		System.out.println(ee);
 		return ee;
+	}
+	
+	@PostMapping(value="fulfillOrder",consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String fulfillOrder(@RequestBody OrderStock os)
+	{
+		String fo=vendorService.fulfillOrderKit(os.getOid());
+		return fo;
 	}
 	
 }

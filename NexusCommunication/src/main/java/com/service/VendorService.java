@@ -7,11 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.bean.Customer;
 import com.bean.Employee;
+import com.bean.OrderStock;
 import com.bean.Retailer;
 import com.bean.Vendor;
 import com.bean.VendorRegistration;
 import com.dao.EmployeeRepository;
 import com.dao.VendorDao;
+import com.dao.VendorRepository;
 //import com.dao.VendorRepository;
 
 @Service
@@ -20,6 +22,8 @@ public class VendorService {
 	VendorDao vendorDao;
 	@Autowired
 	EmployeeRepository er;
+	@Autowired
+	VendorRepository vr;
 
 	public List<Vendor> getAllVendor() {
 		return vendorDao.getAllVendorDetails();
@@ -105,5 +109,62 @@ public class VendorService {
 			}
 		}
 		return emp1;
+	}
+	
+	public String fulfillOrderKit(long oid)
+	{
+		OrderStock os=vendorDao.getAllOrderStockDetails(oid);
+		Retailer ro=vendorDao.getRetailer(os.getRid());
+		Vendor v=vendorDao.getVendor(os.getVid());
+		if(os.getRequestedItem()=="ik")
+		{
+			if((v.getInternetKit()-os.getRequestedStock())>0)
+			{
+				v.setInternetKit(-os.getRequestedStock());
+				int result=vendorDao.updateInternetKit(v);
+				if(result>0)
+				{
+					ro.setInternetKit(ro.getInternetKit()+os.getRequestedStock());
+					int res=vendorDao.updateRetailer(ro);
+					if(res>0)
+					{return "Stock Updated succesfull";
+					}
+					else
+						return "Stock Update failed....!";
+				}
+				else
+					return "Stock Update in Vendor failed";
+			}
+			else
+			{
+				return "Out ofStock";
+			}
+			
+			
+		}
+		else
+		{
+			if((v.getLandlineKit()-os.getRequestedStock())>0)
+			{
+				v.setLandlineKit(-os.getRequestedStock());
+				int result=vendorDao.updateLandLineKit(v);
+				if(result>0)
+				{
+					ro.setLandlineKit(ro.getLandlineKit()+os.getRequestedStock());
+					int res=vendorDao.updateRetailer(ro);
+					if(res>0)
+					{return "Stock Updated succesfull";
+					}
+					else
+						return "Stock Update failed....!";
+				}
+				else
+					return "Stock Update in Vendor failed";
+			}
+			else
+			{
+				return "Out ofStock";
+			}		}
+		//return "not performed";
 	}
 }
