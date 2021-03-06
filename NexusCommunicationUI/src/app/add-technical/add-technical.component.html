@@ -1,0 +1,15 @@
+<div>
+    <h2>Add Technician</h2>
+    <form [formGroup]="technicalInfo" (ngSubmit)="addTechnicalDetails()">
+        <label>Username</label>
+        <input type="text" formControlName="username" placeholder="required"><br/>
+        <label>Password</label>
+        <input type="password" formControlName="password" ngModel required/><br/>
+        <label>Designation</label>
+        <!--<input type="text"/><br/>-->
+        <select formControlName="desg" required><option value="technical">technical</option></select><br/>
+        <input type="submit" value="Add Technician"/>
+        <input type="reset" value="reset"/>
+        {{msg}}
+    </form>
+</div>

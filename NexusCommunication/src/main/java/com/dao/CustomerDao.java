@@ -73,42 +73,43 @@ public class CustomerDao
 		
 	}
 
-	public List<Object[]> getAllPlan(long cid) 
+	public List<Order> getAllPlan(long cid) 
 	{
-		List<Object[]> listOfObject = new ArrayList<Object[]>();
+		List<Order> listOfOrder = new ArrayList<Order>();
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select o from Order o where o.cid=?1");
 		qry.setParameter(1,cid);
-		List<Order> listOfOrder = qry.getResultList();
+		listOfOrder = qry.getResultList();
 		System.out.println(listOfOrder.size());
-		Iterator<Order> li =  listOfOrder.iterator();
-		int i=0;
-		while(li.hasNext())
-		{
-			
-			
-			Order oo = li.next();
-			long request = oo.getRequested_plan();
-			long divider = Long.parseLong("9000000000");
-
-			if(request<divider)
-			{
-				System.out.println(i);
-				qry = manager.createNativeQuery("select l.duration,l.cost,o.status from landline_plan l , order_table o where l.lid=o.requested_plan and o.oid=:cid");
-				qry.setParameter("cid", oo.getOid());
-				listOfObject.addAll(qry.getResultList());
-
-			}
-			else if(request>divider)
-			{
-				System.out.println(i );
-				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,o.status from internet_plan i , order_table o where i.iid=o.requested_plan and o.oid=:cid");
-				qry.setParameter("cid", oo.getOid());
-				listOfObject.addAll(qry.getResultList());
-			}	
-			i++;
-		}
-		return listOfObject;
+		return listOfOrder;
+//		Iterator<Order> li =  listOfOrder.iterator();
+//		int i=0;
+//		while(li.hasNext())
+//		{
+//			
+//			
+//			Order oo = li.next();
+//			long request = oo.getRequested_plan();
+//			long divider = Long.parseLong("9000000000");
+//
+//			if(request<divider)
+//			{
+//				System.out.println(i);
+//				qry = manager.createNativeQuery("select l.duration,l.cost,o.status from landline_plan l , order_table o where l.lid=o.requested_plan and o.oid=:cid");
+//				qry.setParameter("cid", oo.getOid());
+//				listOfObject.addAll(qry.getResultList());
+//
+//			}
+//			else if(request>divider)
+//			{
+//				System.out.println(i );
+//				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,o.status from internet_plan i , order_table o where i.iid=o.requested_plan and o.oid=:cid");
+//				qry.setParameter("cid", oo.getOid());
+//				listOfObject.addAll(qry.getResultList());
+//			}	
+//			i++;
+//		}
+//		return listOfObject;
 	}
 
 	public List<Object> getAllPlanBill(long cid) {

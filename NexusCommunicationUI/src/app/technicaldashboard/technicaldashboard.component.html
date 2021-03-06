@@ -1,1 +1,13 @@
-<p>technicaldashboard works!</p>
+<div>
+    <h2>Welcome to Technical DashBoeard Page</h2>
+    {{employee.username}}
+    <div align="right">
+    <input type="button" value="Logout" (click)="logout()" />
+    </div>
+
+    <a routerLink="viewOrder">View Order</a><br>
+    <a routerLink="placeOrder">Place Order</a><br>
+    
+    <hr>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,24 @@
+<div>
+    <div>
+        <table>
+            <tr>
+                <th>oid</th>
+                <th>rid</th>
+                <th>cid</th>
+                <th>request</th>
+                <th>Proced</th>
+                
+            </tr>
+            <tr *ngFor = "let o of order">
+            
+                <td>{{o.oid}}</td>
+                <input type="hidden" value={{o.oid}} #ref>
+                <td>{{o.rid}}</td>
+                <td>{{o.cid}}</td>
+                <td>{{o.requested_plan}}</td>
+                <td><input type="button" value="Proced" (click) = "retailerPlaceOrderDetails(ref.value)"/></td>
+            </tr>
+        </table>
+        {{msg}}
+    </div>
+</div>

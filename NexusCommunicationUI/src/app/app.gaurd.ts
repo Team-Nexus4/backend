@@ -20,3 +20,23 @@ export class MyGaurds implements CanActivate
         } 
     }
 }
+
+@Injectable()
+export class MyGaurdsCustomer implements CanActivate
+{
+    constructor(public router:Router){}
+    
+    canActivate()
+    {
+        let employee = sessionStorage.getItem("employee");
+        if(employee!=null)
+        {
+            return true;
+        }
+        else
+        {
+            this.router.navigate(["login"]);
+            return false;
+        } 
+    }
+}

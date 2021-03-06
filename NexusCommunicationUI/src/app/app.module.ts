@@ -18,13 +18,14 @@ import { OrderlandlineplanComponent } from './orderlandlineplan/orderlandlinepla
 import { OrderinternetplanComponent } from './orderinternetplan/orderinternetplan.component';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { UpdatecustomerComponent } from './updatecustomer/updatecustomer.component';
-import { MyGaurds } from './app.gaurd';
+import { MyGaurds, MyGaurdsCustomer } from './app.gaurd';
 import { EmployeeloginComponent } from './employeelogin/employeelogin.component';
 import { VendordashboardComponent } from './vendordashboard/vendordashboard.component';
 import { TechnicaldashboardComponent } from './technicaldashboard/technicaldashboard.component';
 import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { FrontloginComponent } from './frontlogin/frontlogin.component';
+
 import { AddVendorComponent } from './add-vendor/add-vendor.component';
 import { UpdateInternetstockVendorComponent } from './update-internetstock-vendor/update-internetstock-vendor.component';
 import { UpdateLandlinestockVendorComponent } from './update-landlinestock-vendor/update-landlinestock-vendor.component';
@@ -34,6 +35,16 @@ import { DeleteInternetComponent } from './delete-internet/delete-internet.compo
 import { UpdateInternetComponent } from './update-internet/update-internet.component';
 import { GetInternetComponent } from './get-internet/get-internet.component';
 import { AdminGaurads } from './app.admingaurd';
+
+import { DisplayAllVendorComponent } from './display-all-vendor/display-all-vendor.component';
+import { ReplaceRetailerComponent } from './replace-retailer/replace-retailer.component';
+import { RetailerPlaceOrderStockComponent } from './retailer-place-order-stock/retailer-place-order-stock.component';
+import { RetailerPlaceOrderComponent } from './retailer-place-order/retailer-place-order.component';
+import { RetailerDisplayOrderComponent } from './retailer-display-order/retailer-display-order.component';
+import { PlaceOrderByTechnicalComponent } from './place-order-by-technical/place-order-by-technical.component';
+import { DisplayTechnicalComponent } from './display-technical/display-technical.component';
+import { AddTechnicalComponent } from './add-technical/add-technical.component';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +66,7 @@ import { AdminGaurads } from './app.admingaurd';
     TechnicaldashboardComponent,
     RetailerdashboardComponent,
     AdmindashboardComponent,
+
     FrontloginComponent,
     AddVendorComponent,
     UpdateInternetstockVendorComponent,
@@ -64,6 +76,16 @@ import { AdminGaurads } from './app.admingaurd';
     DeleteInternetComponent,
     UpdateInternetComponent,
     GetInternetComponent
+
+    FrontloginComponent,AddTechnicalComponent,
+    DisplayTechnicalComponent,
+    PlaceOrderByTechnicalComponent,
+    RetailerDisplayOrderComponent,
+    RetailerPlaceOrderComponent,
+    RetailerPlaceOrderStockComponent,
+    ReplaceRetailerComponent,
+    DisplayAllVendorComponent
+
   ],
   imports: [
     BrowserModule,
@@ -72,7 +94,11 @@ import { AdminGaurads } from './app.admingaurd';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [MyGaurds,AdminGaurads],
+
+  
+
+  providers: [MyGaurds,MyGaurdsCustomer,AdminGaurads],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

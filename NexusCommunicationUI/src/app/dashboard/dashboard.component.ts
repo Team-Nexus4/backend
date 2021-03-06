@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customer } from '../customer.module';
+import { CustomerService } from '../customer.service';
+import { Internet } from '../internet.module';
+import { LandLine } from '../landline.module';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +12,10 @@ import { Customer } from '../customer.module';
 })
 export class DashboardComponent implements OnInit {
   customer = new Customer;
-  constructor(public router:Router) { }
+  
+  constructor(public router:Router,public customerService:CustomerService) {
+    
+   }
 
   ngOnInit(): void {
     let customer1  = sessionStorage.getItem("customer");
@@ -17,6 +23,8 @@ export class DashboardComponent implements OnInit {
     {
       this.customer = JSON.parse(customer1);
     }
+    
+
   }
 
   logout()

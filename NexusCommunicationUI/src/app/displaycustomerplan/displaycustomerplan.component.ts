@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { CustomerInternetPlanStatus } from '../customerinternetplanstatus.model';
 import { CustomerLandLinePlanStatus } from '../customerlandlineplanstatus';
+import { Internet } from '../internet.module';
+import { LandLine } from '../landline.module';
+import { Order } from '../order.model';
+import { LandlineplanService } from '../landlineplan.service';
+import { Customer } from '../customer.module';
 
 @Component({
   selector: 'app-displaycustomerplan',
@@ -9,80 +14,80 @@ import { CustomerLandLinePlanStatus } from '../customerlandlineplanstatus';
   styleUrls: ['./displaycustomerplan.component.css']
 })
 export class DisplaycustomerplanComponent implements OnInit {
-  obj:Array<Object>=[]
-  obj12:any=[]
-  customerInternetPlanStatuc:Array<CustomerInternetPlanStatus>=[]
-  customerLandLinePlanStatuc:Array<CustomerLandLinePlanStatus>=[]
+  msg:string=""
+  internetArray:Array<Internet>=[];
+  landlineArray:Array<LandLine>=[];
+
+  internetArray1:Array<Internet>=[];
+  landlineArray1:Array<LandLine>=[];
+
+  order:Array<Order>=[];
+  flagi:boolean=false;
+  flagl:boolean=false;
+  customer = new Customer;
   constructor(public customerService:CustomerService) { }
 
   ngOnInit(): void {
-    this.customerService.getAllCustomerPlan(3333000001).subscribe(data=>{
-      this.obj = data
-      console.log(data)
-      this.obj.push(data);
-    //   for( var obj1 of data)
-    //   {
-    //     this.obj.push(obj1);
-    //   }
-    //   for( var obj2 of this.obj)
-    //   {
-    //     console.log( obj2.toString().length);
-    //     if(obj2.toString().length>11)
-    //     {
-    //       console.log("Check 1")
-    //     this.customerInternetPlanStatuc.push(obj2);
-    //   }
-    //     else
-    //     {
-    //       this.customerLandLinePlanStatuc.push(obj2);
-    //       console.log("check 2")
-    //     }
-        
-    //   }
-    //   console.log(this.customerLandLinePlanStatuc[0]);
-    //   console.log(this.customerInternetPlanStatuc[0]);
-    // })
-    // console.log(this.customerLandLinePlanStatuc[0]);
-    // console.log(this.obj);
-    //this.fun()
-  })
-  console.log(this.obj);
+    let obj = sessionStorage.getItem("customer");
+    if(obj!=null)
+    {
+    this.customer = JSON.parse(obj);
+    }
+    this.customerService.getAllCustomerPlan(this.customer.cid).subscribe(data=>this.order=data)
+    this.customerService.getInternetPlan().subscribe(data=>{this.internetArray=data
+      for(let i=0;i<this.order.length;++i)
+      {
+        for(let j=0;j<this.internetArray.length;++j)
+        if(this.internetArray[j].iid===this.order[i].requested_plan)
+        {
+          if(this.order[i].status=="false")
+          {
+            this.internetArray[j].status="Pending"
+          }
+          else if(this.order[i].status=="pass")
+          {
+            this.internetArray[j].status="Goes To Technical Department"
+          }
+          else{
+            this.internetArray[j].status="Placed"
+          }
+          this.internetArray1.push(this.internetArray[j])
+        }
+      }});
+    if(this.internetArray!=null)
+    {
+      this.flagi=true;
+    }
+    
+    this.customerService.getAllLandLinePlan().subscribe(data=>{this.landlineArray=data
+      for(let j=0;j<this.landlineArray.length;++j )
+      {
+        for(let i=0;i<this.order.length;++i)
+        if(this.landlineArray[j].lid===this.order[i].requested_plan)
+        {
+          if(this.order[i].status=="false")
+          {
+            this.landlineArray[j].status="Pending"
+          }
+          else if(this.order[i].status=="pass")
+          {
+            this.landlineArray[j].status="Goes To Technical Department"
+          }
+          else{
+            this.landlineArray[j].status="Placed"
+          }
+          this.landlineArray1.push(this.landlineArray[j])
+          
+        }
+      }
+    });
+    if(this.landlineArray!=null)
+    {
+      this.flagl=true;
+    }
+    console.log("ckeck")
 
-}
-
-  getAllCustomerPlan()
-  {
-    
-    // let cido = sessionStorage.getItem("customer");
-    // if(cido!=null)
-    // {
-    //   let customer = JSON.parse(cido);
-    //   this.customerService.getAllCustomerPlan(3333000001).subscribe(data=>this.obj=data);
-    // }
-    
-    
-    
   }
-  fun()
-  {
-    // for(var obj1 of this.obj )
-    // {
-    //     //console.log(obj1.valueOf);
-    //     this.obj12=obj1;
-    //     //console.log(this.obj12.length);
-    //     if(this.obj12.length==4)
-    //     {
-    //       //console.log("check pas")
-    //         this.customerInternetPlanStatuc.push(this.obj12);
-    //     }
-    //     else{
-    //         this.customerLandLinePlanStatuc.push(this.obj12);
-    //     }
-        
-    // }
-    console.log(this.customerInternetPlanStatuc[0]);
-    console.log(this.customerLandLinePlanStatuc[0]);
-  }
-  
+}  
 
-}
+
