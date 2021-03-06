@@ -1,0 +1,23 @@
+<p>display-retailer works!</p>
+<div>
+  
+    <div *ngIf="flag">
+    <table border="1">
+        <tr>
+            <th>Rid</th>
+            <th>Internet kit</th>
+            <th>Landline kit</th>
+            <th>Vendor Id</th>
+            <th>Pincode</th>
+           
+        </tr>
+        <tr *ngFor="let retailer of retailerinfo">
+            <td>{{retailer.rid}}</td>
+            <td>{{retailer.internetKit}}</td>
+            <td>{{retailer.landlineKit}}</td>
+            <td>{{retailer.vid}}</td>
+            <td>{{retailer.pincode}}</td>
+        </tr>
+    </table>
+</div>
+</div>

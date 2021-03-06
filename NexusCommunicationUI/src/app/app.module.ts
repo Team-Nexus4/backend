@@ -44,6 +44,8 @@ import { RetailerDisplayOrderComponent } from './retailer-display-order/retailer
 import { PlaceOrderByTechnicalComponent } from './place-order-by-technical/place-order-by-technical.component';
 import { DisplayTechnicalComponent } from './display-technical/display-technical.component';
 import { AddTechnicalComponent } from './add-technical/add-technical.component';
+import { AddRetailerComponent } from './add-retailer/add-retailer.component';
+import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
 
 
 @NgModule({
@@ -75,8 +77,7 @@ import { AddTechnicalComponent } from './add-technical/add-technical.component';
     AddInternetComponent,
     DeleteInternetComponent,
     UpdateInternetComponent,
-    GetInternetComponent
-
+    GetInternetComponent,
     FrontloginComponent,AddTechnicalComponent,
     DisplayTechnicalComponent,
     PlaceOrderByTechnicalComponent,
@@ -84,7 +85,9 @@ import { AddTechnicalComponent } from './add-technical/add-technical.component';
     RetailerPlaceOrderComponent,
     RetailerPlaceOrderStockComponent,
     ReplaceRetailerComponent,
-    DisplayAllVendorComponent
+    DisplayAllVendorComponent,
+    AddRetailerComponent,
+    DisplayRetailerComponent
 
   ],
   imports: [
