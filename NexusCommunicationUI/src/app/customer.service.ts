@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Customer } from './customer.module';
 import { Internet } from './internet.module';
 import { LandLine } from './landline.module';
+import { Order } from './order.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,10 @@ export class CustomerService {
     return this.httpclient.get<Customer[]>("http://localhost:9070/customer/displayCustomer");
   }
 
-  getAllCustomerPlan(cid:any):Observable<Object[]>
+  getAllCustomerPlan(cid:any):Observable<Order[]>
   {
     
-    return this.httpclient.get<Object[]>("http://localhost:9070/customer/displayCustomersPlan/"+cid);
+    return this.httpclient.get<Order[]>("http://localhost:9070/customer/displayCustomersPlan/"+cid);
   }
 
   getAllLandLinePlan():Observable<LandLine[]>
