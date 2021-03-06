@@ -34,8 +34,10 @@ export class LogincustomerComponent implements OnInit {
             
           }
           else{
+            
             console.log(obj);
             this.customer1=obj;
+            
             sessionStorage.setItem("customer",JSON.stringify(obj));
             this.router.navigate(["customerDashboard"]);
           }
