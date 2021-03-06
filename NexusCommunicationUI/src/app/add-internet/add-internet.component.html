@@ -1,0 +1,16 @@
+<p>add-internet works!</p>
+<div>
+
+    <form [formGroup]="netinfo" (ngSubmit)="storeNetDetail()">
+        Id:
+        <input type="text" formControlName="iid"> <br><br>
+        Speed:
+        <input type="text" formControlName="speed"> <br><br>
+        Duration:
+        <input type="text" formControlName="duration"> <br><br>
+        cost:
+        <input type="text" formControlName="cost"> <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {{msg}}
+</div>

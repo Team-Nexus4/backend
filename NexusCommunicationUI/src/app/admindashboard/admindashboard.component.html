@@ -1,1 +1,35 @@
-<p>admindashboard works!</p>
+<div>
+    <h2>Welcome to Admin DashBoeard Page</h2>
+    <div align="right">
+    <!-- <input type="button" value="Logout" (click)="logout()" /> -->
+    </div>
+
+    <a routerLink="addinternetplan">Add Internet plan</a><br>
+    <a routerLink="deleteinternetplan">delete Internet plan</a><br>
+    <a routerLink="updateinternetplan">update internet plan</a><br>
+    <a routerLink="seeinternetplan">see internet plans</a><br>
+    <a routerLink="addlandlineplan">Add landlinep plan</a><br>
+    <a routerLink="deletelandlineplan">delete landlinep plan</a><br>
+    <a routerLink="updatelandlineplan">update landlinep plan</a><br>
+    <a routerLink="seelandlineplan">see landlinep plans</a><br>
+    <a routerLink="addvendor">Add Vendor</a><br>
+    <a routerLink="updatevendorinternetkit">Update internet kit</a><br>
+    <a routerLink="updatevendorlandlinekit">Update landline kit</a><br>
+    <a routerLink="seeallvendor">see all vendor</a><br>
+    
+    <hr>
+ 
+    <router-outlet></router-outlet>
+</div>
+
+
+<!-- <p>admindashboard works!</p>
+add inteernet
+<app-add-internet></app-add-internet>
+<hr>
+delete internet
+<app-delete-internet></app-delete-internet>
+<hr>
+<app-update-internet></app-update-internet>
+<hr>
+<app-get-internet></app-get-internet> -->
