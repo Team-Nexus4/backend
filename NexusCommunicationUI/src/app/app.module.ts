@@ -25,6 +25,15 @@ import { TechnicaldashboardComponent } from './technicaldashboard/technicaldashb
 import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { FrontloginComponent } from './frontlogin/frontlogin.component';
+import { AddVendorComponent } from './add-vendor/add-vendor.component';
+import { UpdateInternetstockVendorComponent } from './update-internetstock-vendor/update-internetstock-vendor.component';
+import { UpdateLandlinestockVendorComponent } from './update-landlinestock-vendor/update-landlinestock-vendor.component';
+import { DisplayVendorComponent } from './display-vendor/display-vendor.component';
+import { AddInternetComponent } from './add-internet/add-internet.component';
+import { DeleteInternetComponent } from './delete-internet/delete-internet.component';
+import { UpdateInternetComponent } from './update-internet/update-internet.component';
+import { GetInternetComponent } from './get-internet/get-internet.component';
+import { AdminGaurads } from './app.admingaurd';
 
 @NgModule({
   declarations: [
@@ -46,7 +55,15 @@ import { FrontloginComponent } from './frontlogin/frontlogin.component';
     TechnicaldashboardComponent,
     RetailerdashboardComponent,
     AdmindashboardComponent,
-    FrontloginComponent
+    FrontloginComponent,
+    AddVendorComponent,
+    UpdateInternetstockVendorComponent,
+    UpdateLandlinestockVendorComponent,
+    DisplayVendorComponent,
+    AddInternetComponent,
+    DeleteInternetComponent,
+    UpdateInternetComponent,
+    GetInternetComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +72,7 @@ import { FrontloginComponent } from './frontlogin/frontlogin.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [MyGaurds],
+  providers: [MyGaurds,AdminGaurads],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

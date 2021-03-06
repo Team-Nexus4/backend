@@ -1,0 +1,15 @@
+<p>update-internet works!</p>
+<div>
+    <form #NetRef="ngForm" (ngSubmit)="updateNet(NetRef.value)">
+        Internet ID:
+        <input type="text" name="iid" ngModel>
+        speed:
+        <input type="text" name="speed" ngModel>
+        cost:
+        <input type="text" name="cost" ngModel>
+        Duration:
+        <input type="text" name="duration" ngModel>
+        <input type="submit" value="Submit">
+    </form>
+    {{msg}}
+</div>

@@ -63,7 +63,7 @@ export class EmployeeloginComponent implements OnInit {
             {
               console.log(obj);
               this.employee1=obj;
-              sessionStorage.setItem("employee1",JSON.stringify(obj));
+              sessionStorage.setItem("admin",JSON.stringify(obj));
               this.router.navigate(["adminDashboard"]);
             }
             // console.log(obj);

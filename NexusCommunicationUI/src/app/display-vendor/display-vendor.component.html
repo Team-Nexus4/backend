@@ -1,0 +1,25 @@
+<div>
+    <div *ngIf ="flag">
+
+        <table>
+            <tr>
+                <th>Vid</th>
+                <th>Internet Kit</th>
+                <th>Landline Kit</th>
+                <th>Update Intermet</th>
+                <th>Landline Kit</th>
+            </tr>
+            <tr *ngFor = "let vendor of vendorinfo">
+                <td>{{vendor.vid}}</td>
+                <td>{{vendor.internetKit}}</td>
+                <td>{{vendor.landlineKit}}</td>
+                <input type="hidden" value="{{vendor.vid}}" #Id>
+                <td><button class="btn" (click)="updateInternetKit(Id.value)" >update Internet Kit</button></td>
+                <td><button class="btn" (click)="updateLandlineKit(Id.value)" >update landline Kit</button></td>
+            </tr>
+        </table>
+
+
+
+    </div>
+</div>

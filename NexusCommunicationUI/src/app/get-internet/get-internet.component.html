@@ -1,0 +1,21 @@
+<p>get-internet works!</p>
+<div>
+    <h1>retrive</h1>
+   
+    <div *ngIf="flag">
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Speed</th>
+                <th>Cost</th>
+                <th>Duration in month</th>
+            </tr>
+            <tr *ngFor="let net of netInfo">
+                <th>{{net.iid}}</th>
+                <th>{{net.speed}}</th>
+                <th>{{net.cost}}</th>
+                <th>{{net.duration}}</th>
+            </tr>
+        </table>
+    </div>
+</div>

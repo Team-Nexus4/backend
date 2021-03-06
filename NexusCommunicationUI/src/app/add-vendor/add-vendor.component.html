@@ -1,0 +1,10 @@
+<div>
+    <form #vendorRef="ngForm" (ngSubmit)="addVendorComponent(vendorRef.value)">
+        username: <input type="text" name="username" ngModel> <br>
+        password: <input type="password" name="password" ngModel> <br>
+        Internet Kit: <input type="number" name="internetKit" ngModel> <br>
+        Landline Kit: <input type="number" name="landlineKit" ngModel> <br>
+        <input type="submit" value="Submit">
+    </form>
+    {{msg}}
+</div>
