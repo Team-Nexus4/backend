@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bean.Connection;
 import com.bean.Order;
+import com.bean.PlanBill;
 import com.bean.Retailer;
 import com.bean.Technical;
 
@@ -112,13 +113,13 @@ public class CustomerDao
 //		return listOfObject;
 	}
 
-	public List<Object> getAllPlanBill(long cid) {
-		List<Object> listOfObject = new ArrayList<Object>();
+	public List<PlanBill> getAllPlanBill(long cid) {
+		List<PlanBill> listOfObject = new ArrayList<PlanBill>();
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select cn from Connection cn where cn.cid=?1");
 		qry.setParameter(1,cid);
 		List<Connection> listOfOrder = qry.getResultList();
-		System.out.println(listOfOrder.size());
+		//System.out.println(listOfOrder.size());
 		Iterator<Connection> li =  listOfOrder.iterator();
 		int i=0;
 		while(li.hasNext())
@@ -134,7 +135,23 @@ public class CustomerDao
 				System.out.println(i);
 				qry = manager.createNativeQuery("select l.duration,l.cost,cn.status,cn.bill,cn.startdate,cn.enddate from landline_plan l , connection cn where l.lid=cn.reqplan and cn.cnid=:cid");
 				qry.setParameter("cid", oo.getCnid());
-				listOfObject.add(qry.getResultList());
+				//listOfObject.add(qry.getResultList());
+				List<?> lit = qry.getResultList();
+				Iterator<?> li1 =  lit.iterator();
+				while(li1.hasNext()) {
+					Object obj[] = (Object[]) li1.next();
+					PlanBill p = new PlanBill();
+					p.setDuration((int) obj[0]);
+					p.setCost((float) obj[1]);
+					p.setStatus((String) obj[2]);
+					p.setBill((int) obj[3]);
+					Date d  = (Date) obj[4];
+					p.setStartdate(d.toLocalDate() );
+					Date d1 = (Date) obj[5];
+					p.setEnddate(d1.toLocalDate() );
+					listOfObject.add(p);
+				}
+				
 
 			}
 			else if(request>divider)
@@ -142,7 +159,22 @@ public class CustomerDao
 				System.out.println(i);
 				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,cn.status,cn.bill,cn.startdate,cn.enddate from internet_plan i , connection cn where i.iid=cn.reqplan and cn.cnid=:cid");
 				qry.setParameter("cid", oo.getCnid());
-				listOfObject.add(qry.getResultList());
+				List<?> lit = qry.getResultList();
+				Iterator<?> li1 =  lit.iterator();
+				while(li1.hasNext()) {
+					Object obj[] = (Object[]) li1.next();
+					PlanBill p = new PlanBill();
+					p.setSpeed((String) obj[0]);
+					p.setDuration((int) obj[1]);
+					p.setCost((float) obj[2]);
+					p.setStatus((String) obj[3]);
+					p.setBill((int) obj[4]);
+					Date d  = (Date) obj[5];
+					p.setStartdate(d.toLocalDate() );
+					Date d1 = (Date) obj[6];
+					p.setEnddate(d1.toLocalDate() );
+					listOfObject.add(p);
+				}
 			}	
 			i++;
 		}

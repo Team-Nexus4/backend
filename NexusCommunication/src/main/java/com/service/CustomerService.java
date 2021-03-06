@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.bean.Connection;
 import com.bean.Customer;
 import com.bean.Order;
-
+import com.bean.PlanBill;
 import com.dao.ConnectionRepository;
 import com.dao.CustomerDao;
 import com.dao.CustomerRepository;
@@ -125,7 +125,7 @@ public class CustomerService {
 		 }
 	}
 
-	public List<Object> getCustomersPlanBill(long cid) {
+	public List<PlanBill> getCustomersPlanBill(long cid) {
 		// TODO Auto-generated method stub
 		return cd.getAllPlanBill(cid);
 	}

@@ -52,17 +52,17 @@ public class RetailerController
 		return res;
 	}
 	
-	@PostMapping(value = "placeOrderStock",consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "placeOrderStock",consumes = MediaType.APPLICATION_JSON_VALUE,produces =  MediaType.TEXT_PLAIN_VALUE)
 	public String placeOrderStock(@RequestBody OrderStock o)
 	{
 		String res = rs.placeOrderStockService(o);
-		return null;
+		return res;
 	}
 	
 	
 	
 	
-	@PostMapping(value="addRetailer",consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="addRetailer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String addRetailer(@RequestBody RetailerRegistration rr)
 	{
 		return rs.addRetailer(rr);

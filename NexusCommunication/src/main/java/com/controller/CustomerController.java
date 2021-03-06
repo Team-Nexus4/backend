@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.Customer;
 import com.bean.Order;
+import com.bean.PlanBill;
 import com.service.CustomerService;
 
 @RestController
@@ -107,8 +108,11 @@ public class CustomerController {
 	}
 	
 	@GetMapping(value="displayCustomersPlanBill/{cid}",produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Object> getCustomersPlanBill(@PathVariable("cid") long cid)
+	public List<PlanBill> getCustomersPlanBill(@PathVariable("cid") long cid)
 	{
-		return cs.getCustomersPlanBill(cid);
+		List<PlanBill> li = cs.getCustomersPlanBill(cid);
+		for(PlanBill b:li)
+			System.out.println(b);
+		return li;
 	}
 }
