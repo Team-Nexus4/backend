@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bean.Employee;
+import com.bean.OrderStock;
 import com.bean.Retailer;
 import com.bean.Vendor;
 
@@ -149,6 +150,64 @@ public class VendorDao {
 		
 		
 		
+	}
+
+	public OrderStock getAllOrderStockDetails(long oid) {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select o from OrderStock o where o.oid=?1");
+		qry.setParameter(1,oid);
+		List<OrderStock> o= qry.getResultList();
+		OrderStock on= new OrderStock();
+		for(OrderStock os:o)
+		{
+			on=os;
+		}
+		
+		return on;
+	}
+
+	public Vendor getVendor(long vid) {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select v from Vendor v where v.vid=?1");
+		qry.setParameter(1,vid);
+		List<Vendor> o= qry.getResultList();
+		Vendor vn= new Vendor();
+		for(Vendor vnd:o)
+		{
+			vn=vnd;
+		}
+		
+		return vn;
+	}
+
+	public Retailer getRetailer(long rid) {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select r from Retailer r where r.rid=?1");
+		qry.setParameter(1,rid);
+		List<Retailer> r= qry.getResultList();
+		Retailer vn= new Retailer();
+		for(Retailer vnd:r)
+		{
+			vn=vnd;
+		}
+		
+		return vn;
+	}
+
+	public int updateRetailer(Retailer ro) {
+		EntityManager manager=emf.createEntityManager();
+		EntityTransaction tran=manager.getTransaction();
+		tran.begin();
+		manager.merge(ro);
+		tran.commit();
+		Retailer r=manager.find(Retailer.class,ro.getRid());
+		if(r==null)
+		{
+			return 0;
+		}else
+		{
+			return 1;
+		}
 	}
 
 	

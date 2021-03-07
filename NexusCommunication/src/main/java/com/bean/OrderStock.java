@@ -13,10 +13,10 @@ public class OrderStock
 	private long oid;
 	private long rid;
 	private long vid;
-	@Column(name = "reqested_item")
-	private String reqestedItem;
+	@Column(name = "requested_item")
+	private String requestedItem;
 	@Column(name = "requested_stock")
-	private String reqestedStock;
+	private int requestedStock;
 	private String status;
 	public String getStatus() {
 		return status;
@@ -42,22 +42,22 @@ public class OrderStock
 	public void setVid(long vid) {
 		this.vid = vid;
 	}
-	public String getReqestedItem() {
-		return reqestedItem;
+	public String getRequestedItem() {
+		return requestedItem;
 	}
-	public void setReqestedItem(String reqestedItem) {
-		this.reqestedItem = reqestedItem;
+	public void setRequestedItem(String reqestedItem) {
+		this.requestedItem = reqestedItem;
 	}
-	public String getReqestedStock() {
-		return reqestedStock;
+	public int getRequestedStock() {
+		return requestedStock;
 	}
-	public void setReqestedStock(String reqestedStock) {
-		this.reqestedStock = reqestedStock;
+	public void setRequestedStock(int reqestedStock) {
+		this.requestedStock = reqestedStock;
 	}
 	@Override
 	public String toString() {
-		return "OrderStock [oid=" + oid + ", rid=" + rid + ", vid=" + vid + ", reqestedItem=" + reqestedItem
-				+ ", reqestedStock=" + reqestedStock + ", status=" + status + "]";
+		return "OrderStock [oid=" + oid + ", rid=" + rid + ", vid=" + vid + ", reqestedItem=" + requestedItem
+				+ ", reqestedStock=" + requestedStock + ", status=" + status + "]";
 	}
 	
 	

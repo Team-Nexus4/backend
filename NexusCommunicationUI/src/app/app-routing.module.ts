@@ -30,9 +30,11 @@ import { UpdateLandlineplanComponent } from './update-landlineplan/update-landli
 import { DeleteLandlineplanComponent } from './delete-landlineplan/delete-landlineplan.component';
 import { AddLandlineplanComponent } from './add-landlineplan/add-landlineplan.component';
 import { AdminGaurads } from './app.admingaurd';
+
 import { AddTechnicalComponent } from './add-technical/add-technical.component';
 import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
+import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
 
 const routes: Routes = [
   {path:"\loginCustomer",component:LogincustomerComponent},
@@ -97,7 +99,8 @@ const routes: Routes = [
       children:[
         {path:"internet",component:OrderinternetplanComponent},
         {path:"landline",component:OrderlandlineplanComponent},
-        {path:"viewstatus",component:DisplaycustomerplanComponent}
+        {path:"viewstatus",component:DisplaycustomerplanComponent},
+        {path:"viewBill",component:PlanbillcomponentComponent}
       ]},
   
 ];
