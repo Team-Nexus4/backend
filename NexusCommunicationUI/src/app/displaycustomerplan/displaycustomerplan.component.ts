@@ -38,7 +38,7 @@ export class DisplaycustomerplanComponent implements OnInit {
       for(let i=0;i<this.order.length;++i)
       {
         for(let j=0;j<this.internetArray.length;++j)
-        if(this.internetArray[j].iid===this.order[i].requested_plan)
+        if(this.internetArray[j].iid==this.order[i].requested_plan)
         {
           if(this.order[i].status=="false")
           {
@@ -52,6 +52,7 @@ export class DisplaycustomerplanComponent implements OnInit {
             this.internetArray[j].status="Placed"
           }
           this.internetArray1.push(this.internetArray[j])
+          this.flagi=true;
         }
       }});
     if(this.internetArray!=null)
@@ -77,9 +78,11 @@ export class DisplaycustomerplanComponent implements OnInit {
             this.landlineArray[j].status="Placed"
           }
           this.landlineArray1.push(this.landlineArray[j])
-          
+          this.flagl=true;
         }
+       
       }
+     
     });
     if(this.landlineArray!=null)
     {
