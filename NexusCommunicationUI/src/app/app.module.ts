@@ -44,7 +44,11 @@ import { RetailerDisplayOrderComponent } from './retailer-display-order/retailer
 import { PlaceOrderByTechnicalComponent } from './place-order-by-technical/place-order-by-technical.component';
 import { DisplayTechnicalComponent } from './display-technical/display-technical.component';
 import { AddTechnicalComponent } from './add-technical/add-technical.component';
+import { AddRetailerComponent } from './add-retailer/add-retailer.component';
+import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
+
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
+
 
 
 @NgModule({
@@ -78,6 +82,8 @@ import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponen
     UpdateInternetComponent,
     GetInternetComponent,
 
+
+
     FrontloginComponent,AddTechnicalComponent,
     DisplayTechnicalComponent,
     PlaceOrderByTechnicalComponent,
@@ -86,6 +92,9 @@ import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponen
     RetailerPlaceOrderStockComponent,
     ReplaceRetailerComponent,
     DisplayAllVendorComponent,
+
+    AddRetailerComponent,
+    DisplayRetailerComponent,
     PlanbillcomponentComponent
 
   ],

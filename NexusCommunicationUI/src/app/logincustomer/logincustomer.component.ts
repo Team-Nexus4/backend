@@ -26,6 +26,8 @@ export class LogincustomerComponent implements OnInit {
       
       this.customer.username=user;
       this.customer.password=pass;
+      console.log(user)
+      console.log(pass)
 
         this.loginService.checkLogin(this.customer).subscribe(obj=>{
           if(obj==null)

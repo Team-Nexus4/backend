@@ -81,6 +81,7 @@ public class RetailerService
 		e1.setDesg(r.getDesg());
 		e1.setPassword(r.getPassword());
 		e1.setUsername(r.getUsername());
+		e1.setDesg("retailer");
 		List<Employee> ee = er.findAll();
 		for(Employee eee: ee)
 		{
@@ -123,5 +124,10 @@ public class RetailerService
 			 return "Replace failed";
 		}
 		
+	}
+
+	public List<Retailer> displayallretailer() {
+		
+		return rr.findAll();
 	}
 }
