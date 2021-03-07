@@ -45,6 +45,8 @@ import { PlaceOrderByTechnicalComponent } from './place-order-by-technical/place
 import { DisplayTechnicalComponent } from './display-technical/display-technical.component';
 import { AddTechnicalComponent } from './add-technical/add-technical.component';
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
+import { CommonModule } from '@angular/common';
+import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orders.component';
 
 
 @NgModule({
@@ -86,7 +88,8 @@ import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponen
     RetailerPlaceOrderStockComponent,
     ReplaceRetailerComponent,
     DisplayAllVendorComponent,
-    PlanbillcomponentComponent
+    PlanbillcomponentComponent,
+    VendorViewOrdersComponent
 
   ],
   imports: [
@@ -94,7 +97,7 @@ import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponen
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,CommonModule
   ],
 
   

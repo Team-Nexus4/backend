@@ -36,6 +36,12 @@ public class RetailerService
 		return dao.getAllOrder(rid);
 	}
 	
+	public List<Retailer> getRetailerDetails(long rid) {
+		System.out.println(dao.getRetDetails(rid));
+		
+		return dao.getRetDetails(rid);
+	}
+	
 	public String placeOrderService(long oid)
 	{
 		int check = dao.checkStock(oid);
@@ -124,4 +130,6 @@ public class RetailerService
 		}
 		
 	}
+
+	
 }

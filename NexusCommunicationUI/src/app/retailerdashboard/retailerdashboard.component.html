@@ -1,12 +1,13 @@
 <div>
-    <h2>Welcome to Retailer DashBoeard Page</h2>
-    {{employee.username}}
+    <h2>Hello <i>{{employee.username|titlecase}}</i> Welcome to Retailer DashBoard Page</h2>
+    <!-- {{employee.username|titlecase}} -->
     <div align="right">
     <input type="button" value="Logout" (click)="logout()" />
     </div>
 
     <a routerLink="viewOrder">View Order</a><br>
-    <a routerLink="placeOrder">Place Order</a><br>
+    <!-- <a routerLink="placeOrder">Place Order</a><br> -->
+    <a routerLink="placeOrderStock">Place Order Stock</a><br>
     
     <hr>
     <router-outlet></router-outlet>

@@ -45,6 +45,13 @@ public class RetailerController
 		return listOfOrder;
 	}
 	
+	@GetMapping(value="displayRetailer/{rid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Retailer> displayRetailer(@PathVariable("rid") long rid)
+	{
+		List<Retailer> listOfRet=rs.getRetailerDetails(rid);
+		return listOfRet;
+	}
+	
 	@PostMapping(value="placeOrder",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String placeOrder(@RequestBody Order o)
 	{
@@ -55,6 +62,7 @@ public class RetailerController
 	@PostMapping(value = "placeOrderStock",consumes = MediaType.APPLICATION_JSON_VALUE,produces =  MediaType.TEXT_PLAIN_VALUE)
 	public String placeOrderStock(@RequestBody OrderStock o)
 	{
+		System.out.println(o);
 		String res = rs.placeOrderStockService(o);
 		return res;
 	}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorServiceService } from '../vendor-service.service';
-import { Vendor } from '../vendor.module';
+import { Vendor } from '../vendor.model';
 import { Router } from '@angular/router';
 
 @Component({

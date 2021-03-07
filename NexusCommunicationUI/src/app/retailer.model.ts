@@ -2,7 +2,7 @@ export class Retailer {
     constructor(
         public rid?:number,
         public pincode?:number,
-        public internet_kit?:number,
-        public landline_kit?:number,
+        public internetKit?:number,
+        public landlineKit?:number,
         public vid?:number){}
 }
