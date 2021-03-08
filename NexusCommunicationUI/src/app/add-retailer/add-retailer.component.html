@@ -1,0 +1,13 @@
+<p>add-retailer works!</p>
+<div>
+    <form #retrailerRef="ngForm" (ngSubmit)="addretailer(retrailerRef.value)">
+        username: <input type="text" name="username" ngModel> <br>
+        password: <input type="password" name="password" ngModel> <br>
+        Internet Kit: <input type="number" name="internetKit" ngModel> <br>
+        Landline Kit: <input type="number" name="landlineKit" ngModel> <br>
+        pincode: <input type="number" name="pincode" ngModel> <br>
+        Vendor Id: <input type="number" name="vid" ngModel> <br>
+        <input type="submit" value="Submit">
+    </form>
+    {{msg}}
+</div>

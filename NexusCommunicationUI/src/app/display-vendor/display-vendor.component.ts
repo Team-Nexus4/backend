@@ -19,12 +19,12 @@ export class DisplayVendorComponent implements OnInit {
   }
 
   updateInternetKit(id:any){
-    this.router.navigate(["updatevendorinternetkit"])
+    this.router.navigate(["vendorDashboard/updatevendorinternetkit"])
     console.log(id)
   }
 
   updateLandlineKit(id:any){
-    this.router.navigate(["updatevendorlandlinekit"])
+    this.router.navigate(["vendorDashboard/updatevendorlandlinekit"])
     console.log(id)
   }
 }

@@ -44,9 +44,13 @@ import { RetailerDisplayOrderComponent } from './retailer-display-order/retailer
 import { PlaceOrderByTechnicalComponent } from './place-order-by-technical/place-order-by-technical.component';
 import { DisplayTechnicalComponent } from './display-technical/display-technical.component';
 import { AddTechnicalComponent } from './add-technical/add-technical.component';
+import { AddRetailerComponent } from './add-retailer/add-retailer.component';
+import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
+
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
 import { CommonModule } from '@angular/common';
 import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orders.component';
+
 
 
 @NgModule({
@@ -80,6 +84,8 @@ import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orde
     UpdateInternetComponent,
     GetInternetComponent,
 
+
+
     FrontloginComponent,AddTechnicalComponent,
     DisplayTechnicalComponent,
     PlaceOrderByTechnicalComponent,
@@ -88,8 +94,15 @@ import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orde
     RetailerPlaceOrderStockComponent,
     ReplaceRetailerComponent,
     DisplayAllVendorComponent,
+
     PlanbillcomponentComponent,
     VendorViewOrdersComponent
+
+
+    AddRetailerComponent,
+    DisplayRetailerComponent,
+    PlanbillcomponentComponent
+
 
   ],
   imports: [

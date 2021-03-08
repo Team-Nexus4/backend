@@ -49,4 +49,18 @@ import { Retailer } from './retailer.model';
     }
 
     
+
+    getRetailer():Observable<Retailer[]>{
+     return this.httpClient.get<Retailer[]>("http://localhost:9070/retailer/display")
+    }
+  
+    addRetailer(RetailerRef:any):Observable<string>{
+      return this.httpClient.post("http://localhost:9070/retailer/addRetailer",RetailerRef,{responseType:"text"})
+     }
+  
+     
+  
+
+
+    
   }

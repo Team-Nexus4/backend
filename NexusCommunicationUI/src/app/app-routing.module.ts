@@ -30,6 +30,10 @@ import { UpdateLandlineplanComponent } from './update-landlineplan/update-landli
 import { DeleteLandlineplanComponent } from './delete-landlineplan/delete-landlineplan.component';
 import { AddLandlineplanComponent } from './add-landlineplan/add-landlineplan.component';
 import { AdminGaurads } from './app.admingaurd';
+
+import { AddTechnicalComponent } from './add-technical/add-technical.component';
+import { AddRetailerComponent } from './add-retailer/add-retailer.component';
+import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
 import { RetailerPlaceOrderStockComponent } from './retailer-place-order-stock/retailer-place-order-stock.component';
 import { CommonModule } from '@angular/common';
@@ -55,14 +59,16 @@ const routes: Routes = [
       {path:"addvendor",component:AddVendorComponent},
       {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
       {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
-      {path:"seeallvendor",component:DisplayVendorComponent,
-      children:[
-        {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
-      ]
-    },
+      {path:"seeallvendor",component:DisplayVendorComponent, },
+      {path:"addtechnical",component:AddTechnicalComponent},
+      {path:"displaytechnical",component:DisplayTechnicalComponent},
+      {path:"addretailer",component:AddRetailerComponent},
+      {path:"displayretailer",component:DisplayRetailerComponent},
+
     ]
   },
   
+
   //  {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[AdminGaurads],
   //  children:[
   //    {path:"vendorstock",component:DisplayVendorComponent , children:[
@@ -71,6 +77,17 @@ const routes: Routes = [
   //      {path:"updateinternetstock",component:UpdateInternetstockVendorComponent}
   //    ]
   //  },
+
+  {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[AdminGaurads],
+    children:[
+      {path:"vendorstock",component:DisplayVendorComponent , children:[
+       
+      ]},
+      
+    ]
+  },
+  {path:"vendorDashboard/updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
+ 
   {path:"retailerDashboard",component:RetailerdashboardComponent},
 
   {path:"technicalDashboard",component:TechnicaldashboardComponent,canActivate:[MyGaurdsCustomer],
