@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Vendor } from '../vendor.module';
+import { Vendor } from '../vendor.model';
 import { VendorServiceService } from '../vendor-service.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class UpdateLandlinestockVendorComponent implements OnInit {
   updateLandlineStock(InternetKit:any,vid:any){
     let v =new Vendor();
     v.vid=vid;
-    v.landlineKit=InternetKit
+    v.landlinekit=InternetKit
     this.vendorservice.updateLandlineStock(v).subscribe(result=>this.msg=result)
   }
 

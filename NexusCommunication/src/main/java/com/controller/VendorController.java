@@ -49,6 +49,13 @@ public class VendorController
 		return vendorService.addVendor(vr);
 	}
 	
+	@GetMapping(value="displayVendor/{vid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Vendor> displayRetailer(@PathVariable("vid") long vid)
+	{
+		List<Vendor> listOfVend=vendorService.getVendorDetails(vid);
+		return listOfVend;
+	}
+	
 	// http://localhost:9070/vendor/updateInternetKit
 	@PutMapping(value = "updateInternetKit",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String updateInternetKit(@RequestBody Vendor vv)
@@ -84,6 +91,14 @@ public class VendorController
 	{
 		String fo=vendorService.fulfillOrderKit(os.getOid());
 		return fo;
+	}
+	
+	@GetMapping(value="displayOrdersbyVid/{vid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<OrderStock> displayOrdersbyVid(@PathVariable("vid") long vid)
+	{
+		List<OrderStock> listOfOrd=vendorService.displayOrdersbyvid(vid);
+		//System.out.println(listOfOrd);
+		return listOfOrd;
 	}
 	
 }

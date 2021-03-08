@@ -17,6 +17,7 @@ public class OrderStock
 	private String requestedItem;
 	@Column(name = "requested_stock")
 	private int requestedStock;
+	@Column(name="status")
 	private String status;
 	public String getStatus() {
 		return status;

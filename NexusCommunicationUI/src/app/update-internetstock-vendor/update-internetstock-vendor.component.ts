@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorServiceService } from '../vendor-service.service';
-import { Vendor } from '../vendor.module';
+import { Vendor } from '../vendor.model';
 
 @Component({
   selector: 'app-update-internetstock-vendor',
@@ -18,7 +18,7 @@ msg:string=""
   updateInternetStock(InternetKit:any,vid:any){
     let v =new Vendor();
     v.vid=vid;
-    v.internetKit=InternetKit
+    v.internetkit=InternetKit
     this.vendorservice.updateInternetStock(v).subscribe(result=>this.msg=result)
   }
 

@@ -11,10 +11,10 @@
             </tr>
             <tr *ngFor = "let vendor of vendorinfo">
                 <td>{{vendor.vid}}</td>
-                <td>{{vendor.internetKit}}</td>
-                <td>{{vendor.landlineKit}}</td>
+                <td>{{vendor.internetkit}}</td>
+                <td>{{vendor.landlinekit}}</td>
                 <input type="hidden" value="{{vendor.vid}}" #Id>
-                <td><button class="btn" (click)="updateInternetKit(Id.value)" >update Internet Kit</button></td>
+                <td><button class="button" (click)="updateInternetKit(Id.value)" >update Internet Kit</button></td>
                 <td><button class="btn" (click)="updateLandlineKit(Id.value)" >update landline Kit</button></td>
             </tr>
         </table>
