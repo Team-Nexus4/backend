@@ -19,5 +19,7 @@ public class NexusCommunicationApplication {
 		System.out.println("Ok");
 	}
 
+	
+
 }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorServiceService } from '../vendor-service.service';
 import { Vendor } from '../vendor.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-internetstock-vendor',
@@ -9,13 +10,16 @@ import { Vendor } from '../vendor.module';
 })
 export class UpdateInternetstockVendorComponent implements OnInit {
 msg:string=""
-
-  constructor(public vendorservice:VendorServiceService) { }
-
+id:any;
+value:any
+  constructor(public vendorservice:VendorServiceService,public route:Router) { }
+  
   ngOnInit(): void {
+    this.id=sessionStorage.getItem("id");
+    this.value=sessionStorage.getItem("value");
   }
 
-  updateInternetStock(InternetKit:any,vid:any){
+  updateInternetStock(vid:any,InternetKit:any){
     let v =new Vendor();
     v.vid=vid;
     v.internetKit=InternetKit

@@ -14,12 +14,14 @@
                 <td>{{vendor.internetKit}}</td>
                 <td>{{vendor.landlineKit}}</td>
                 <input type="hidden" value="{{vendor.vid}}" #Id>
-                <td><button class="btn" (click)="updateInternetKit(Id.value)" >update Internet Kit</button></td>
+                <input type="hidden" value="{{vendor.internetKit}}" #InternetKit>
+                <td><button class="btn" (click)="updateInternetKit(Id.value,InternetKit.value)" >update Internet Kit</button></td>
                 <td><button class="btn" (click)="updateLandlineKit(Id.value)" >update landline Kit</button></td>
             </tr>
         </table>
-
+        <router-outlet></router-outlet>
 
 
     </div>
+  
 </div>

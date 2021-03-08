@@ -41,7 +41,7 @@ const routes: Routes = [
   {path:"\login" , component:FrontloginComponent},
   {path:"\loginEmployee",component:EmployeeloginComponent},
   {path:"",redirectTo:"\login",pathMatch:"full"},
-
+  {path:"\abc",component:UpdateInternetstockVendorComponent},
   {path:"\technicalDashboard",component:TechnicaldashboardComponent},
   {path:"\adminDashboard",component:AdmindashboardComponent,canActivate:[AdminGaurads],
     children:[
@@ -54,9 +54,11 @@ const routes: Routes = [
       {path:"updatelandlineplan",component:UpdateLandlineplanComponent},
       {path:"seelandlineplan",component:GetLandlineplanComponent},
       {path:"addvendor",component:AddVendorComponent},
-      {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
-      {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
-      {path:"seeallvendor",component:DisplayVendorComponent, },
+     
+      {path:"\seeallvendor",component:DisplayVendorComponent, children:[
+       
+       
+      ]},
       {path:"addtechnical",component:AddTechnicalComponent},
       {path:"displaytechnical",component:DisplayTechnicalComponent},
       {path:"addretailer",component:AddRetailerComponent},
@@ -73,8 +75,7 @@ const routes: Routes = [
       
     ]
   },
-  {path:"vendorDashboard/updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
-  {path:"vendorDashboard/updatevendorlandlinekit",component:UpdateInternetstockVendorComponent},
+ 
   {path:"retailerDashboard",component:RetailerdashboardComponent},
 
   {path:"technicalDashboard",component:TechnicaldashboardComponent,canActivate:[MyGaurdsCustomer],

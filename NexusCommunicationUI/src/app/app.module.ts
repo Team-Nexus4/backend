@@ -48,6 +48,7 @@ import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
 
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
+import { ReplaceRetailerVendorComponent } from './replace-retailer-vendor/replace-retailer-vendor.component';
 
 
 
@@ -95,7 +96,8 @@ import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponen
 
     AddRetailerComponent,
     DisplayRetailerComponent,
-    PlanbillcomponentComponent
+    PlanbillcomponentComponent,
+    ReplaceRetailerVendorComponent
 
   ],
   imports: [
