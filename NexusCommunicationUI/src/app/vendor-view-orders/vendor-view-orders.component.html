@@ -1,0 +1,20 @@
+<div >
+    <div>
+    <table border="1">
+        <tr>
+            <th>Order Id</th>
+            <th>Requested Item</th>
+            <th>Requested Stock</th>
+            <th>Proceed</th>
+        </tr>
+        <tr *ngFor="let exm of ost">
+            <td>{{exm.oid}}</td>
+            <input type="hidden" value={{exm.oid}} #ref>
+            <td>{{exm.requestedItem}}</td>
+            <td>{{exm.requestedStock}}</td>
+            <td><input type="button" value="Proceed" (click) = "fulfillOrderStock(ref.value)"/></td>
+        </tr>
+    </table>
+    <!-- {{msg}} -->
+</div>
+</div>

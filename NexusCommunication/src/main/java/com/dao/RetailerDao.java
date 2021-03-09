@@ -30,6 +30,13 @@ public class RetailerDao
 		return qry.getResultList();
 	}
 	
+	public List<Retailer> getRetDetails(long rid) {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select r from Retailer r where r.rid=?1");
+		qry.setParameter(1, rid);
+		return qry.getResultList();
+	}
+	
 	public int placeOrder(long oid)
 	{
 		EntityManager manager = emf.createEntityManager();
@@ -144,7 +151,7 @@ public class RetailerDao
 			com = "landline kit";
 		else
 			com = "internet kit ";
-		return "Oder For " + com + "to Vendor " + o.getVid() + " is placed";
+		return "Order For " + com + "to Vendor " + o.getVid() + " is placed";
 	}
 
 	public long getEmpId(int pincode) {
@@ -154,4 +161,6 @@ public class RetailerDao
 		Retailer r= (Retailer) qry.getSingleResult();
 		return r.getRid();
 	}
+
+	
 }

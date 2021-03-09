@@ -1,4 +1,4 @@
-export class Vendor{
+export class VendorRegistration{
     vid:number=0;
     internetKit:number=0
     landlineKit:number=0

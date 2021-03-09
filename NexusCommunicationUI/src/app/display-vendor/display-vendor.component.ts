@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorServiceService } from '../vendor-service.service';
-import { Vendor } from '../vendor.module';
+import { Vendor } from '../vendor.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,14 +18,18 @@ export class DisplayVendorComponent implements OnInit {
       this.vendorservice.getVendor().subscribe(data=>this.vendorinfo=data)
   }
 
-  updateInternetKit(id:any,value:any){
-    this.router.navigate(["abc"])
-    sessionStorage.setItem("id",id)
-    sessionStorage.setItem("value",value);
+
+
+ 
+  updateInternetKit(id:any){
+    sessionStorage.setItem("vid",JSON.stringify(id));
+    this.router.navigate(["updatevendorinternet"])
+    console.log(id)
   }
 
   updateLandlineKit(id:any){
-    this.router.navigate(["updatevendorlandlinekit"])
+    this.router.navigate(["updatevendorlandline"])
+
     console.log(id)
   }
 }

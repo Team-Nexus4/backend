@@ -79,6 +79,24 @@ public class VendorDao {
 			return 1;
 		}
 	}
+	
+	public int updateOrderStockStatus(long oid)
+	{
+		EntityManager manager=emf.createEntityManager();
+		EntityTransaction tran=manager.getTransaction();
+		OrderStock os=manager.find(OrderStock.class,oid);
+		if(os==null)
+		{
+			return 0;
+		}else
+		{
+			tran.begin();
+			os.setStatus("true");
+			manager.merge(os);
+			tran.commit();
+			return 1;
+		}
+	}
 
 	public int updateLandLineKit(Vendor vv) {
 		EntityManager manager=emf.createEntityManager();
@@ -208,6 +226,20 @@ public class VendorDao {
 		{
 			return 1;
 		}
+	}
+
+	public List<Vendor> getVendDetails(long vid) {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select v from Vendor v where v.vid=?1");
+		qry.setParameter(1, vid);
+		return qry.getResultList();
+	}
+
+	public List<OrderStock> getOrdDetails(long vid) {
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select os from OrderStock os where os.vid=?1 and os.status='false'");
+		qry.setParameter(1, vid);
+		return qry.getResultList();
 	}
 
 	

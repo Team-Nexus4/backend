@@ -1,7 +1,8 @@
-<p>update-landlinestock-vendor works!</p>
-vid
-<input type="number" name="vid" #Vid> <br>
-Landline Stock
+
+<div *ngIf="flag1">
+    {{vid}}   Landline Stock
 <input type="number" name="landlineKit" #LandlineKit>
-<input type="button" value="Submit" (click)="updateLandlineStock(LandlineKit.value,Vid.value)">
+<input type="button" value="Submit" (click)="updateLandlineStock(LandlineKit.value)"><br>
+<input type="button" value="Back" (click)="back()">
 {{msg}}
+</div>

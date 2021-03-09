@@ -48,7 +48,12 @@ import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
 
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
+
 import { ReplaceRetailerVendorComponent } from './replace-retailer-vendor/replace-retailer-vendor.component';
+
+import { CommonModule } from '@angular/common';
+import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orders.component';
+
 
 
 
@@ -94,10 +99,15 @@ import { ReplaceRetailerVendorComponent } from './replace-retailer-vendor/replac
     ReplaceRetailerComponent,
     DisplayAllVendorComponent,
 
+    PlanbillcomponentComponent,
+    VendorViewOrdersComponent,
+
+
     AddRetailerComponent,
     DisplayRetailerComponent,
     PlanbillcomponentComponent,
     ReplaceRetailerVendorComponent
+
 
   ],
   imports: [
@@ -105,7 +115,7 @@ import { ReplaceRetailerVendorComponent } from './replace-retailer-vendor/replac
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,CommonModule
   ],
 
   
