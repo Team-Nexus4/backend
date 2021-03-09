@@ -1,7 +1,8 @@
 
 <div *ngIf="flag1">
-    Landline Stock
+    {{vid}}   Landline Stock
 <input type="number" name="landlineKit" #LandlineKit>
-<input type="button" value="Submit" (click)="updateLandlineStock(LandlineKit.value)">
+<input type="button" value="Submit" (click)="updateLandlineStock(LandlineKit.value)"><br>
+<input type="button" value="Back" (click)="back()">
 {{msg}}
 </div>
