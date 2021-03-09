@@ -14,6 +14,7 @@
 
                 <td>{{vendor.internetKit}}</td>
                 <td>{{vendor.landlineKit}}</td>
+
                 <input type="hidden" value="{{vendor.vid}}" #id>
                 <a [routerLink] ="['updatevendorinternetKit',id.value]">update Internet Kit</a>
                 <a [routerLink] ="['updatevendorlandlineKit',id.value]">update Landline Kit</a>
@@ -27,4 +28,5 @@
 
     </div>
     <router-outlet></router-outlet>
+
 </div>

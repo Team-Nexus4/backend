@@ -44,24 +44,29 @@ const routes: Routes = [
   {path:"\login" , component:FrontloginComponent},
   {path:"\loginEmployee",component:EmployeeloginComponent},
   {path:"",redirectTo:"\login",pathMatch:"full"},
-
+  {path:"\abc",component:UpdateInternetstockVendorComponent},
   {path:"\technicalDashboard",component:TechnicaldashboardComponent},
   {path:"\adminDashboard",component:AdmindashboardComponent,canActivate:[AdminGaurads],
     children:[
-      {path:"addinternetplan",component:AddInternetComponent},
-      {path:"deleteinternetplan",component:DeleteInternetComponent},
-      {path:"updateinternetplan",component:UpdateInternetComponent},
-      {path:"seeinternetplan",component:GetInternetComponent},
+     
+      {path:"\seeinternetplan",component:GetInternetComponent,children:[
+        {path:"addinternetplan",component:AddInternetComponent},
+        {path:"deleteinternetplan",component:DeleteInternetComponent},
+        {path:"updateinternetplan",component:UpdateInternetComponent},
+      ]},
+     
       {path:"addlandlineplan",component:AddLandlineplanComponent},
       {path:"deletelandlineplan",component:DeleteLandlineplanComponent},
       {path:"updatelandlineplan",component:UpdateLandlineplanComponent},
       {path:"seelandlineplan",component:GetLandlineplanComponent},
       {path:"addvendor",component:AddVendorComponent},
+
       {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
       {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
       {path:"seeallvendor",component:DisplayVendorComponent,children:[
         {path:"updatevendorinternetKit/:id.value",component:UpdateInternetstockVendorComponent},
         {path:"updatevendorlandlineKit/:id.value",component:UpdateLandlinestockVendorComponent},
+
       ]},
       {path:"addtechnical",component:AddTechnicalComponent},
       {path:"displaytechnical",component:DisplayTechnicalComponent},
@@ -89,8 +94,6 @@ const routes: Routes = [
       
     ]
   },
-
-  {path:"vendorDashboard/updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
 
   {path:"retailerDashboard",component:RetailerdashboardComponent},
 

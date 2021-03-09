@@ -2,13 +2,13 @@
 <div>
     <form #NetRef="ngForm" (ngSubmit)="updateNet(NetRef.value)">
         Internet ID:
-        <input type="text" name="iid" ngModel>
+        <input type="text" name="iid" ngModel value="iid">
         speed:
-        <input type="text" name="speed" ngModel>
+        <input type="text" name="speed" ngModel value="speed">
         cost:
-        <input type="text" name="cost" ngModel>
+        <input type="text" name="cost" ngModel value="cost">
         Duration:
-        <input type="text" name="duration" ngModel>
+        <input type="text" name="duration" ngModel value="duration">
         <input type="submit" value="Submit">
     </form>
     {{msg}}

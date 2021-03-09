@@ -1,7 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VendorServiceService } from '../vendor-service.service';
+
+import { Router } from '@angular/router';
+
 import { Vendor } from '../vendor.model';
+
 
 @Component({
   selector: 'app-update-internetstock-vendor',
@@ -11,6 +15,7 @@ import { Vendor } from '../vendor.model';
 export class UpdateInternetstockVendorComponent implements OnInit, OnDestroy {
 msg:string=""
 id:any;
+
 vid:any;
 flag1:boolean=false;
   constructor(public vendorservice:VendorServiceService,private route:ActivatedRoute,public router:Router) { }
@@ -24,12 +29,15 @@ flag1:boolean=false;
   }
   ngOnDestroy() {
     this.flag1=false;
+
   }
   
+
 
   updateInternetStock(InternetKit:any){
     
       
+
     let v =new Vendor();
 
     v.vid=this.vid;

@@ -18,6 +18,9 @@ export class DisplayVendorComponent implements OnInit {
       this.vendorservice.getVendor().subscribe(data=>this.vendorinfo=data)
   }
 
+
+
+ 
   updateInternetKit(id:any){
     sessionStorage.setItem("vid",JSON.stringify(id));
     this.router.navigate(["updatevendorinternet"])
@@ -26,6 +29,7 @@ export class DisplayVendorComponent implements OnInit {
 
   updateLandlineKit(id:any){
     this.router.navigate(["updatevendorlandline"])
+
     console.log(id)
   }
 }

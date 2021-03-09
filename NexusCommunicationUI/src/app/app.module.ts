@@ -48,8 +48,12 @@ import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
 
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
+
+import { ReplaceRetailerVendorComponent } from './replace-retailer-vendor/replace-retailer-vendor.component';
+
 import { CommonModule } from '@angular/common';
 import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orders.component';
+
 
 
 
@@ -101,7 +105,8 @@ import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orde
 
     AddRetailerComponent,
     DisplayRetailerComponent,
-    PlanbillcomponentComponent
+    PlanbillcomponentComponent,
+    ReplaceRetailerVendorComponent
 
 
   ],
