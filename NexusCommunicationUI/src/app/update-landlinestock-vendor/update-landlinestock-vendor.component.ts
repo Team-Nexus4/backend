@@ -6,7 +6,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Vendor } from '../vendor.model';
 
 import { VendorServiceService } from '../vendor-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-landlinestock-vendor',
@@ -19,7 +19,7 @@ export class UpdateLandlinestockVendorComponent implements OnInit, OnDestroy {
 id:any;
 vid:any;
 flag1:boolean=false;
-  constructor(public vendorservice:VendorServiceService,private route:ActivatedRoute) { }
+  constructor(public vendorservice:VendorServiceService,private route:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params=>{​​
@@ -38,6 +38,12 @@ flag1:boolean=false;
     v.landlineKit=InternetKit
 
     this.vendorservice.updateLandlineStock(v).subscribe(result=>this.msg=result)
+    //this.flag1=false;
+    //this.router.navigate(["seeallvendor"])
+  }
+  back()
+  {
+    this.flag1=false;
   }
 
 }

@@ -1,7 +1,8 @@
 
 <div *ngIf="flag1">
-Internet Stock
+    {{vid}} Internet Stock
 <input type="number" name="internetKit" #InternetKit>
-<input type="button" value="Submit" (click)="updateInternetStock(InternetKit.value)">
+<input type="button" value="Submit" (click)="updateInternetStock(InternetKit.value)"><br>
+<input type="button" value="Back" (click)="back()">
 {{msg}}
 </div>

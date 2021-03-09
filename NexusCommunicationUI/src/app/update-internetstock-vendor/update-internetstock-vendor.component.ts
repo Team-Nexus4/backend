@@ -13,7 +13,7 @@ msg:string=""
 id:any;
 vid:any;
 flag1:boolean=false;
-  constructor(public vendorservice:VendorServiceService,private route:ActivatedRoute) { }
+  constructor(public vendorservice:VendorServiceService,private route:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
    
@@ -37,6 +37,12 @@ flag1:boolean=false;
     console.log(v)
 
     this.vendorservice.updateInternetStock(v).subscribe(result=>this.msg=result)
+    //this.flag1=false;
+    //this.router.navigate([".seeallvendor"])
   }
+   back()
+   {
+     this.flag1=false;
+   }
 
 }
