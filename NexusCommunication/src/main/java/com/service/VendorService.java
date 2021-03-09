@@ -24,6 +24,7 @@ public class VendorService {
 	EmployeeRepository er;
 	@Autowired
 	VendorRepository vr;
+	String flag="true";
 
 	public List<Vendor> getAllVendor() {
 		return vendorDao.getAllVendorDetails();
@@ -116,7 +117,8 @@ public class VendorService {
 		OrderStock os=vendorDao.getAllOrderStockDetails(oid);
 		Retailer ro=vendorDao.getRetailer(os.getRid());
 		Vendor v=vendorDao.getVendor(os.getVid());
-		if(os.getRequestedItem()=="ik")
+		String req=os.getRequestedItem();
+		if(req.equals("ik"))
 		{
 			if((v.getInternetKit()-os.getRequestedStock())>0)
 			{
@@ -127,7 +129,9 @@ public class VendorService {
 					ro.setInternetKit(ro.getInternetKit()+os.getRequestedStock());
 					int res=vendorDao.updateRetailer(ro);
 					if(res>0)
-					{return "Stock Updated succesfull";
+					{
+						int res1=vendorDao.updateOrderStockStatus(os.getOid());
+						return "Internet Stock Updated succesfull";
 					}
 					else
 						return "Stock Update failed....!";
@@ -137,7 +141,7 @@ public class VendorService {
 			}
 			else
 			{
-				return "Out ofStock";
+				return "Internet Out ofStock";
 			}
 			
 			
@@ -153,7 +157,9 @@ public class VendorService {
 					ro.setLandlineKit(ro.getLandlineKit()+os.getRequestedStock());
 					int res=vendorDao.updateRetailer(ro);
 					if(res>0)
-					{return "Stock Updated succesfull";
+					{
+						int res1=vendorDao.updateOrderStockStatus(os.getOid());
+						return "Land line Stock Updated succesfull";
 					}
 					else
 						return "Stock Update failed....!";
@@ -163,8 +169,19 @@ public class VendorService {
 			}
 			else
 			{
-				return "Out ofStock";
+				return "Land Line Out ofStock";
 			}		}
 		//return "not performed";
+	}
+
+	public List<Vendor> getVendorDetails(long vid) {
+		
+		return vendorDao.getVendDetails(vid);
+	}
+
+	public List<OrderStock> displayOrdersbyvid(long vid) {
+		System.out.println(vendorDao.getOrdDetails(vid));
+		
+		return vendorDao.getOrdDetails(vid);
 	}
 }

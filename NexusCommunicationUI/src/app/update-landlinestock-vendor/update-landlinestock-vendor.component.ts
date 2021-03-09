@@ -1,5 +1,10 @@
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Vendor } from '../vendor.module';
+
+import { Component, OnInit } from '@angular/core';
+import { Vendor } from '../vendor.model';
+
 import { VendorServiceService } from '../vendor-service.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -28,8 +33,10 @@ flag1:boolean=false;
 
   updateLandlineStock(InternetKit:any){
     let v =new Vendor();
+
     v.vid=this.vid;
     v.landlineKit=InternetKit
+
     this.vendorservice.updateLandlineStock(v).subscribe(result=>this.msg=result)
   }
 

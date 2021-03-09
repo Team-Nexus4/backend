@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VendorServiceService } from '../vendor-service.service';
-import { Vendor } from '../vendor.module';
+import { Vendor } from '../vendor.model';
 
 @Component({
   selector: 'app-update-internetstock-vendor',
@@ -31,9 +31,11 @@ flag1:boolean=false;
     
       
     let v =new Vendor();
+
     v.vid=this.vid;
     v.internetKit=InternetKit
     console.log(v)
+
     this.vendorservice.updateInternetStock(v).subscribe(result=>this.msg=result)
   }
 

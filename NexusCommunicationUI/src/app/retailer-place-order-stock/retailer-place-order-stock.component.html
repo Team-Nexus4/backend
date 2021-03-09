@@ -1,0 +1,29 @@
+<div>
+    <table border="1">
+        <tr>
+            <th>Type of kit</th>
+            <th>Available Stock</th>
+            <th>Stock Required</th>
+            <th>Buy</th>
+        </tr>   
+        <tr>
+            <td>Internet Kit</td>
+            <td>{{retailer[0].internetKit}}</td>
+            <td><input type="number" #reqstocki></td>
+            <td><input type="button" value="Buy" (click)="placeOrderStocki(reqstocki.value)"></td>
+        </tr>
+        <tr>
+            <td>Landline Kit</td>
+            <td>{{retailer[0].landlineKit}}</td>
+            <td><input type="number" #reqstockl></td>
+            <td><input type="button" value="Buy" (click)="placeOrderStockl(reqstockl.value)"></td>
+        </tr>
+    </table>
+    {{msg}}
+</div> 
+<!--<div>
+    <form [formGroup]=fulfill (ngSubmit="fulfillOrder()")>
+        <input type="hidden" formControlName="">
+    </form>
+</div>-->
+

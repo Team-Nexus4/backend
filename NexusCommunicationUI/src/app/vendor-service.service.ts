@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Vendor } from './vendor.module';
+import { Vendor } from './vendor.model';
+import { OrderStock } from './orderstock.model';
+import { Employee } from './employee.model';
+import { Retailer } from './retailer.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class VendorServiceService {
+
+  employee = new Employee;
 
   constructor(public httpClient:HttpClient) { }
 
@@ -27,6 +33,8 @@ export class VendorServiceService {
    updateLandlineStock(LandlineKit:any){
     
     return this.httpClient.put("http://localhost:9070/vendor/updateLandineKit",LandlineKit,{responseType:'text'})
+  }
 
- }
+  
+
 }

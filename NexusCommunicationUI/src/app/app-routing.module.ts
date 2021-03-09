@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MyGaurds, MyGaurdsCustomer } from './app.gaurd';
@@ -35,6 +35,9 @@ import { AddTechnicalComponent } from './add-technical/add-technical.component';
 import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { DisplayRetailerComponent } from './display-retailer/display-retailer.component';
 import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponent.component';
+import { RetailerPlaceOrderStockComponent } from './retailer-place-order-stock/retailer-place-order-stock.component';
+import { CommonModule } from '@angular/common';
+import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orders.component';
 
 const routes: Routes = [
   {path:"\loginCustomer",component:LogincustomerComponent},
@@ -68,6 +71,16 @@ const routes: Routes = [
     ]
   },
   
+
+  //  {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[AdminGaurads],
+  //  children:[
+  //    {path:"vendorstock",component:DisplayVendorComponent , children:[
+        
+  //      ]},
+  //      {path:"updateinternetstock",component:UpdateInternetstockVendorComponent}
+  //    ]
+  //  },
+
   {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[AdminGaurads],
     children:[
       {path:"vendorstock",component:DisplayVendorComponent , children:[
@@ -76,7 +89,9 @@ const routes: Routes = [
       
     ]
   },
-  
+
+  {path:"vendorDashboard/updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
+
   {path:"retailerDashboard",component:RetailerdashboardComponent},
 
   {path:"technicalDashboard",component:TechnicaldashboardComponent,canActivate:[MyGaurdsCustomer],
@@ -84,15 +99,15 @@ const routes: Routes = [
           {path:"viewOrder",component:DisplayTechnicalComponent},
           
         ]},
-  {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[MyGaurdsCustomer],
-      children:[
-        {path:"viewOrder",component:DisplayTechnicalComponent},
-        {path:"placeOrder",component:PlaceOrderByTechnicalComponent},
-  ]},
+   {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[MyGaurdsCustomer],
+       children:[
+         {path:"viewOrders",component:VendorViewOrdersComponent},
+         {path:"placeOrder",component:VendordashboardComponent},
+   ]},
   {path:"retailerDashboard",component:RetailerdashboardComponent,canActivate:[MyGaurdsCustomer],
         children:[
         {path:"viewOrder",component:RetailerDisplayOrderComponent},
-        {path:"placeOrder",component:RetailerPlaceOrderComponent},
+        {path:"placeOrderStock",component:RetailerPlaceOrderStockComponent},
         //{path:"placeOrderStock",component:PlaceOrderByTechnicalComponent}
   ]},
   {path:"adminDashboard",component:AdmindashboardComponent,canActivate:[MyGaurdsCustomer]},
@@ -108,7 +123,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),CommonModule  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
