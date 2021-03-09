@@ -1,8 +1,8 @@
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Vendor } from '../vendor.module';
 
-import { Component, OnInit } from '@angular/core';
+
+
 import { Vendor } from '../vendor.model';
 
 import { VendorServiceService } from '../vendor-service.service';

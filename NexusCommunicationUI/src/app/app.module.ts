@@ -96,7 +96,7 @@ import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orde
     DisplayAllVendorComponent,
 
     PlanbillcomponentComponent,
-    VendorViewOrdersComponent
+    VendorViewOrdersComponent,
 
 
     AddRetailerComponent,

@@ -60,8 +60,8 @@ const routes: Routes = [
       {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
       {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
       {path:"seeallvendor",component:DisplayVendorComponent,children:[
-        {path:"updatevendorinternetkit/:id.value",component:UpdateInternetstockVendorComponent},
-        {path:"updatevendorlandlinekit/:id.value",component:UpdateLandlinestockVendorComponent},
+        {path:"updatevendorinternetKit/:id.value",component:UpdateInternetstockVendorComponent},
+        {path:"updatevendorlandlineKit/:id.value",component:UpdateLandlinestockVendorComponent},
       ]},
       {path:"addtechnical",component:AddTechnicalComponent},
       {path:"displaytechnical",component:DisplayTechnicalComponent},
