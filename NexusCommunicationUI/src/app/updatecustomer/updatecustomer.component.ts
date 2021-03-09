@@ -11,14 +11,18 @@ export class UpdatecustomerComponent implements OnInit {
   msg:string=""
   constructor(public customerService:CustomerService) { }
   //updateCustomerComponent
-
+  customer = new Customer
   ngOnInit(): void {
   }
 
   updateCustomerComponent(customer:Customer)
   {
-    customer.cid=3333000034
-      this.customerService.updateCustomer(customer).subscribe(res=>this.msg=res);
+      let cust = sessionStorage.getItem("customer")
+      if(cust!=null)
+      {
+        this.customer = JSON.parse(cust);
+      }
+      this.customerService.updateCustomer(this.customer).subscribe(res=>this.msg=res);
   }
 
 }
