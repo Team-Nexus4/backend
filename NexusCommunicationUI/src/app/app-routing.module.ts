@@ -45,10 +45,13 @@ const routes: Routes = [
   {path:"\technicalDashboard",component:TechnicaldashboardComponent},
   {path:"\adminDashboard",component:AdmindashboardComponent,canActivate:[AdminGaurads],
     children:[
-      {path:"addinternetplan",component:AddInternetComponent},
-      {path:"deleteinternetplan",component:DeleteInternetComponent},
-      {path:"updateinternetplan",component:UpdateInternetComponent},
-      {path:"seeinternetplan",component:GetInternetComponent},
+     
+      {path:"\seeinternetplan",component:GetInternetComponent,children:[
+        {path:"addinternetplan",component:AddInternetComponent},
+        {path:"deleteinternetplan",component:DeleteInternetComponent},
+        {path:"updateinternetplan",component:UpdateInternetComponent},
+      ]},
+     
       {path:"addlandlineplan",component:AddLandlineplanComponent},
       {path:"deletelandlineplan",component:DeleteLandlineplanComponent},
       {path:"updatelandlineplan",component:UpdateLandlineplanComponent},

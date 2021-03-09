@@ -22,17 +22,26 @@
     <a routerLink="displayretailer">Display Retailer</a><br>
     <hr>
  
-    <router-outlet></router-outlet>
+  
 </div>
 
-
-<!-- <p>admindashboard works!</p>
-add inteernet
-<app-add-internet></app-add-internet>
-<hr>
-delete internet
-<app-delete-internet></app-delete-internet>
-<hr>
-<app-update-internet></app-update-internet>
-<hr>
-<app-get-internet></app-get-internet> -->
+<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+<nav class="navbar  navbar-light bg-dark">
+    <a class="navbar-brand text-white text-bold" >Welcome Admin</a>
+    <button class="navbar-toggler text-white border-0 mb-4" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-white border-0"><i class="fa fa-align-justify" style="font-size:24px"></i></span>
+    </button>
+  
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ">
+       
+        <li class="nav-item link">
+          <a class="nav-link text-white"  routerLink="seeinternetplan">INTERNET PLANS</a>
+        </li>
+     </ul>
+    </div>
+  </nav>
+  <hr>
+  <router-outlet></router-outlet>

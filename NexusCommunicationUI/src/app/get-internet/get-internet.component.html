@@ -1,21 +1,26 @@
-<p>get-internet works!</p>
-<div>
-    <h1>retrive</h1>
+
    
     <div *ngIf="flag">
-        <table border="1">
-            <tr>
+        <table border="1" class="text-white text-center bg-dark text-center w-100">
+            <tr class="text-bold" style="height: 50px;">
                 <th>Id</th>
                 <th>Speed</th>
-                <th>Cost</th>
+                <th>Cost in Ruppes</th>
                 <th>Duration in month</th>
+                <th>Update plan</th>
+                <th>Delete plan</th>
             </tr>
             <tr *ngFor="let net of netInfo">
                 <th>{{net.iid}}</th>
                 <th>{{net.speed}}</th>
                 <th>{{net.cost}}</th>
                 <th>{{net.duration}}</th>
+                <input type="hidden" value="{{net.iid}}" #id>
+                <input type="hidden" value="{{net.speed}}" #speed>
+                <input type="hidden" value="{{net.cost}}" #cost>
+                <input type="hidden" value="{{net.duration}}" #duration>
+                <td><a [routerLink] ="['updateinternetplan',id.value,speed.value,cost.value,duration.value]">update</a></td>
+                <th><a [routerLink] ="['deleteinternetplan',id.value]">Delete</a></th>
             </tr>
         </table>
     </div>
-</div>
