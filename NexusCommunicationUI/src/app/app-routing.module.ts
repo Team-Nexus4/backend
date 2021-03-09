@@ -56,7 +56,10 @@ const routes: Routes = [
       {path:"addvendor",component:AddVendorComponent},
       {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
       {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
-      {path:"seeallvendor",component:DisplayVendorComponent, },
+      {path:"seeallvendor",component:DisplayVendorComponent,children:[
+        {path:"updatevendorinternetkit/:id.value",component:UpdateInternetstockVendorComponent},
+        {path:"updatevendorlandlinekit/:id.value",component:UpdateLandlinestockVendorComponent},
+      ]},
       {path:"addtechnical",component:AddTechnicalComponent},
       {path:"displaytechnical",component:DisplayTechnicalComponent},
       {path:"addretailer",component:AddRetailerComponent},
@@ -73,8 +76,7 @@ const routes: Routes = [
       
     ]
   },
-  {path:"vendorDashboard/updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
-  {path:"vendorDashboard/updatevendorlandlinekit",component:UpdateInternetstockVendorComponent},
+  
   {path:"retailerDashboard",component:RetailerdashboardComponent},
 
   {path:"technicalDashboard",component:TechnicaldashboardComponent,canActivate:[MyGaurdsCustomer],

@@ -1,7 +1,7 @@
-<p>update-internetstock-vendor works!</p>
-vid
-<input type="number" name="vid" #Vid> <br>
+
+<div *ngIf="flag1">
 Internet Stock
 <input type="number" name="internetKit" #InternetKit>
-<input type="button" value="Submit" (click)="updateInternetStock(InternetKit.value,Vid.value)">
+<input type="button" value="Submit" (click)="updateInternetStock(InternetKit.value)">
 {{msg}}
+</div>
