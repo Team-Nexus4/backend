@@ -16,4 +16,6 @@ msg:string=""
   addVendorComponent(vendorRef:any){
     this.vendorservice.addVendor(vendorRef).subscribe(result=>this.msg=result)
   }
+
+  goback(){window.history.back()}
 }

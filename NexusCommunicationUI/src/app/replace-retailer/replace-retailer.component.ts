@@ -29,4 +29,6 @@ export class ReplaceRetailerComponent implements OnInit {
     console.log(this.retailerRef);
     this.retailerService.replaceRetailerInfo(employee).subscribe(data=>this.msg=data);
   }
+
+  goback(){window.history.back()}
 }

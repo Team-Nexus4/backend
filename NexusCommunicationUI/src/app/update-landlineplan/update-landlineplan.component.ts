@@ -27,4 +27,5 @@ export class UpdateLandlineplanComponent implements OnInit {
     this.landlineSer.updateLandLinePlna(landlineInfo).subscribe(data=>this.msg=data);  
   }
 
+  goback() { window.history.back(); }
 }

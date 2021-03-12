@@ -12,5 +12,5 @@ export class ReplaceRetailerVendorComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
+
 }

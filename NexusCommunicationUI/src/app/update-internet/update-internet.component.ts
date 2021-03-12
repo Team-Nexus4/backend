@@ -30,4 +30,5 @@ export class UpdateInternetComponent implements OnInit {
     this.netserv.updateNet(NetRef).subscribe(r=>this.msg=r)
   }
 
+  goback() { window.history.back(); }
 }
