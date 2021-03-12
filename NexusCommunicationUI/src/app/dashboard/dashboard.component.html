@@ -1,16 +1,5 @@
 <div>
-    <h2>Welcome to Customer DashBoeard Page</h2>
-    {{customer.fname}}
-    <div align="right">
-    <input type="button" value="Logout" (click)="logout()" />
-    </div>
-
-    <a routerLink="internet">Internet Component</a><br>
-    <a routerLink="landline">LandLine Component</a><br>
-    <a routerLink="viewstatus">Order Status Component</a><br>
-    <a routerLink="viewBill">View Plan Bill</a>
-    <hr>
-    
+ 
     <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white">
         <a class="navbar-brand text-white text-bold" href="#">Welcome {{customer.fname}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,14 +18,16 @@
             <li class="nav-item mx-3">
               <a class="nav-link" routerLink="viewstatus"  class="text-white">Your Orders</a>
               </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="viewBill"  class="text-white">Your Bills</a>
+                </li>
           </ul>
-          <input type="button" class="btn btn text-bold btn-danger text-white" value="Logout" (click)="logout()" />
-    
-         
+          <input type="button" class="btn btn text-bold btn-danger text-white" value="Logout" (click)="logout()" /> 
         </div>
       </nav>
    
-    <hr>
+   
     <router-outlet></router-outlet>
+    <app-frontpage></app-frontpage>
     </div>
     

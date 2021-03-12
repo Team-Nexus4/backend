@@ -35,11 +35,13 @@ export class DisplaycustomerplanComponent implements OnInit {
     }
     this.customerService.getAllCustomerPlan(this.customer.cid).subscribe(data=>this.order=data)
     this.customerService.getInternetPlan().subscribe(data=>{this.internetArray=data
-      for(let i=0;i<this.order.length;++i)
+      for(let j=0;j<this.internetArray.length;++j)
       {
-        for(let j=0;j<this.internetArray.length;++j)
+      
+        for(let i=0;i<this.order.length;++i)
         if(this.internetArray[j].iid==this.order[i].requested_plan)
         {
+         
           if(this.order[i].status=="false")
           {
             this.internetArray[j].status="Pending"
@@ -53,7 +55,10 @@ export class DisplaycustomerplanComponent implements OnInit {
           }
           this.internetArray1.push(this.internetArray[j])
           this.flagi=true;
+          console.log(this.flagi)
+        
         }
+        console.log("rohit")
       }});
     if(this.internetArray!=null)
     {
@@ -64,7 +69,7 @@ export class DisplaycustomerplanComponent implements OnInit {
       for(let j=0;j<this.landlineArray.length;++j )
       {
         for(let i=0;i<this.order.length;++i)
-        if(this.landlineArray[j].lid===this.order[i].requested_plan)
+        if(this.landlineArray[j].lid==this.order[i].requested_plan)
         {
           if(this.order[i].status=="false")
           {

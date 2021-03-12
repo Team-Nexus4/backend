@@ -1,14 +1,14 @@
-<p>display-retailer works!</p>
-<div>
-  
-    <div *ngIf="flag">
-    <table border="1">
-        <tr>
+<div> <button class="btn btn-lg bg-dark text-white float-right mb-2" (click)="addRetailer()" >Add New Retailer</button> </div>
+    <div *ngIf="flag"> 
+        <table border="1" class="text-white text-center bg-dark text-center w-100">
+            <tr class="text-bold" style="height: 50px;">
+       
             <th>Rid</th>
             <th>Internet kit</th>
             <th>Landline kit</th>
             <th>Vendor Id</th>
             <th>Pincode</th>
+            <th>Delete/Update</th>
            
         </tr>
         <tr *ngFor="let retailer of retailerinfo">
@@ -17,8 +17,9 @@
             <td>{{retailer.landlineKit}}</td>
             <td>{{retailer.vid}}</td>
             <td>{{retailer.pincode}}</td>
+            <input type="hidden" name="rid" value="{{retailer.rid}}" #id>
+            <th> <button (click)="replaceretailer(id.value)">delete or update</button></th>
         </tr>
     </table>
     <router-outlet></router-outlet>
-</div>
 </div>

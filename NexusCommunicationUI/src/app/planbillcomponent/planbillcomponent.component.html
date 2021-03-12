@@ -1,8 +1,8 @@
 <div>
-    <h2>All technicians details are..</h2>
+    <div class="text-center text-white bg-dark my-1">{{msg}}</div>
     <div *ngIf="flag">
-    <table border="1">
-        <tr>
+        <table border="1" class="text-white text-center bg-dark text-center w-100">
+            <tr class="text-bold" style="height: 50px;">
             
             <th>Duration</th>
             <th>Speed</th>
@@ -22,7 +22,7 @@
             <td>{{tech.cost}}</td>
             <td>{{tech.status}}</td>
             <td>{{tech.billstatus}}</td>
-            <td><input type="button" value="Buy" (click) = "payBill(ref.value)"/></td>
+            <td><input type="button" value="Pay Bill" (click) = "payBill(ref.value)"/></td>
             
         </tr>
     </table>

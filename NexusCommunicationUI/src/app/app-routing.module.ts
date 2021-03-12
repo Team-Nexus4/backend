@@ -38,55 +38,44 @@ import { PlanbillcomponentComponent } from './planbillcomponent/planbillcomponen
 import { RetailerPlaceOrderStockComponent } from './retailer-place-order-stock/retailer-place-order-stock.component';
 import { CommonModule } from '@angular/common';
 import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orders.component';
+import { ReplaceRetailerComponent } from './replace-retailer/replace-retailer.component';
+import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 
 const routes: Routes = [
-  {path:"\loginCustomer",component:LogincustomerComponent},
+  {path:"\loginCustomer",component:LogincustomerComponent,children:[{path:"addcustomer",component:AddcustomerComponent}]},
   {path:"\login" , component:FrontloginComponent},
   {path:"\loginEmployee",component:EmployeeloginComponent},
   {path:"",redirectTo:"\login",pathMatch:"full"},
   {path:"\abc",component:UpdateInternetstockVendorComponent},
   {path:"\technicalDashboard",component:TechnicaldashboardComponent},
+  {path:"updateinternetplan",component:UpdateInternetComponent},
+  {path:"addinternetplan",component:AddInternetComponent},
+  {path:"addlandlineplan",component:AddLandlineplanComponent},
+  {path:"updatelandlineplan",component:UpdateLandlineplanComponent},
+  {path:"addretailer",component:AddRetailerComponent},
+  {path:"replaceretailer",component:ReplaceRetailerComponent},
+  {path:"addvendor",component:AddVendorComponent},
+  {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
+  {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
+  {path:"addcustomer",component:AddcustomerComponent},
   {path:"\adminDashboard",component:AdmindashboardComponent,canActivate:[AdminGaurads],
     children:[
-     
-      {path:"\seeinternetplan",component:GetInternetComponent,children:[
-        {path:"addinternetplan",component:AddInternetComponent},
-        {path:"deleteinternetplan",component:DeleteInternetComponent},
-        {path:"updateinternetplan",component:UpdateInternetComponent},
-      ]},
-     
-      {path:"addlandlineplan",component:AddLandlineplanComponent},
-      {path:"deletelandlineplan",component:DeleteLandlineplanComponent},
-      {path:"updatelandlineplan",component:UpdateLandlineplanComponent},
-      {path:"seelandlineplan",component:GetLandlineplanComponent},
-      {path:"addvendor",component:AddVendorComponent},
-
-      {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
-      {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
-      {path:"seeallvendor",component:DisplayVendorComponent,children:[
-        {path:"updatevendorinternetKit/:id.value",component:UpdateInternetstockVendorComponent},
-        {path:"updatevendorlandlineKit/:id.value",component:UpdateLandlinestockVendorComponent},
-
+      {path:"\seeinternetplan",component:GetInternetComponent,}, 
+      {path:"seelandlineplan",component:GetLandlineplanComponent},  
+      {path:"seeallvendor",component:DisplayVendorComponent,children:[  
       ]},
       {path:"addtechnical",component:AddTechnicalComponent},
       {path:"displaytechnical",component:DisplayTechnicalComponent},
-      {path:"addretailer",component:AddRetailerComponent},
+     
       {path:"displayretailer",component:DisplayRetailerComponent},
 
     ]
   },
   
 
-  //  {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[AdminGaurads],
-  //  children:[
-  //    {path:"vendorstock",component:DisplayVendorComponent , children:[
-        
-  //      ]},
-  //      {path:"updateinternetstock",component:UpdateInternetstockVendorComponent}
-  //    ]
-  //  },
+ 
 
-  {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[AdminGaurads],
+  {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[],
     children:[
       {path:"vendorstock",component:DisplayVendorComponent , children:[
        

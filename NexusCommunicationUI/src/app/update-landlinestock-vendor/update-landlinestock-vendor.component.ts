@@ -13,37 +13,26 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './update-landlinestock-vendor.component.html',
   styleUrls: ['./update-landlinestock-vendor.component.css']
 })
-export class UpdateLandlinestockVendorComponent implements OnInit, OnDestroy {
+export class UpdateLandlinestockVendorComponent {
 
   msg:string=""
 id:any;
 vid:any;
+landlineKit:any
 flag1:boolean=false;
   constructor(public vendorservice:VendorServiceService,private route:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params=>{​​
-
-      this.vid=params.get('id.value')})
-      this.flag1=true;
+    this.vid=sessionStorage.getItem("vid")
+    this.landlineKit=sessionStorage.getItem("landlineKit")
   }
-  ngOnDestroy() {
-    this.flag1=false;
+ 
+  
+  updateLandlineStock(landlinetRef:any){
+    this.vendorservice.updateLandlineStock(landlinetRef).subscribe(result=>this.msg=result)
+    console.log(landlinetRef)
+ 
   }
-
-  updateLandlineStock(InternetKit:any){
-    let v =new Vendor();
-
-    v.vid=this.vid;
-    v.landlineKit=InternetKit
-
-    this.vendorservice.updateLandlineStock(v).subscribe(result=>this.msg=result)
-    //this.flag1=false;
-    //this.router.navigate(["seeallvendor"])
-  }
-  back()
-  {
-    this.flag1=false;
-  }
+  
 
 }

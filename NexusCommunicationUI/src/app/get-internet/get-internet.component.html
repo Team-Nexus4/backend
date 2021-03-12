@@ -1,7 +1,7 @@
 
-   
-    <div *ngIf="flag">
-        <table border="1" class="text-white text-center bg-dark text-center w-100">
+   <div> <button class="btn btn-lg bg-dark text-white float-right mb-2" (click)="addInternetKit()" >Add Internet Plan</button> </div>
+    <div *ngIf="flag"> 
+        <table border="1" class="text-white text-center bg-dark w-100">
             <tr class="text-bold" style="height: 50px;">
                 <th>Id</th>
                 <th>Speed</th>
@@ -19,8 +19,8 @@
                 <input type="hidden" value="{{net.speed}}" #speed>
                 <input type="hidden" value="{{net.cost}}" #cost>
                 <input type="hidden" value="{{net.duration}}" #duration>
-                <td><a [routerLink] ="['updateinternetplan',id.value,speed.value,cost.value,duration.value]">update</a></td>
-                <th><a [routerLink] ="['deleteinternetplan',id.value]">Delete</a></th>
+                <th> <button  (click)="updateInternetKit(id.value,speed.value,cost.value,duration.value)" >update</button> </th>
+                <th><button  (click)="deleteInternetKit(id.value)" >delete</button> </th>
             </tr>
         </table>
     </div>

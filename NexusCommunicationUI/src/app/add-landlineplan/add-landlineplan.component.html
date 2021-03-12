@@ -1,15 +1,33 @@
-<div>
-    <h2>Store LandLine Details</h2>
-    <form [formGroup]="landlineInfo" (ngSubmit)=" addLandLinePlan()">
-        
-        <label>Duration</label>
-        <input type =  number formControlName="duration"/><br>
-        <label>cost</label>
-        <input type = "number"formControlName="cost"/><br>
-       
-        <input type="submit" value="Store Product Info">
-        <input type="reset">
 
-    </form>
-    {{msg}}
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>ADD INTERNET PLAN</p>
+        </div>
+        <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
+        <div class="form-content">
+            <form [formGroup]="landlineInfo" (ngSubmit)="addLandLinePlan()">
+            <div class="row">
+                
+                <div class="col-md-6">
+                    
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Enter Price of Plan *</Label>
+                        <input type="text" class="form-control" formControlName="cost" placeholder="eg.1200" value=""/>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Enter Duration of Plan *</Label>
+                        <input type="text" class="form-control" formControlName="duration" placeholder="eg.12" value=""/>
+                    </div>
+                </div>
+                
+            </div>
+            <button type="submit" class="btnSubmit">Submit</button>
+        </form>
+        </div>
+    </div>
 </div>

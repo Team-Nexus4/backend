@@ -1,22 +1,22 @@
 <div>
-    <table border="1">
-        <tr>
+    <table border="1" class="text-white text-center bg-dark text-center w-100">
+        <tr class="text-bold" style="height: 50px;">
             <th>Type of kit</th>
             <th>Available Stock</th>
             <th>Stock Required</th>
-            <th>Buy</th>
+            <th>Request for Kit to Vendor</th>
         </tr>   
         <tr>
             <td>Internet Kit</td>
             <td>{{retailer[0].internetKit}}</td>
-            <td><input type="number" #reqstocki></td>
-            <td><input type="button" value="Buy" (click)="placeOrderStocki(reqstocki.value)"></td>
+            <td><input type="number" class="bg-dark text-white border" #reqstocki></td>
+            <td><input type="button"  value="click here" (click)="placeOrderStocki(reqstocki.value)"></td>
         </tr>
         <tr>
             <td>Landline Kit</td>
             <td>{{retailer[0].landlineKit}}</td>
-            <td><input type="number" #reqstockl></td>
-            <td><input type="button" value="Buy" (click)="placeOrderStockl(reqstockl.value)"></td>
+            <td><input type="number" class="bg-dark text-white border" #reqstockl></td>
+            <td><input type="button" value="click here" (click)="placeOrderStockl(reqstockl.value)"></td>
         </tr>
     </table>
     {{msg}}

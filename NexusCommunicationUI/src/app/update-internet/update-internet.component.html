@@ -1,15 +1,44 @@
-<p>update-internet works!</p>
-<div>
-    <form #NetRef="ngForm" (ngSubmit)="updateNet(NetRef.value)">
-        Internet ID:
-        <input type="text" name="iid" ngModel value="iid">
-        speed:
-        <input type="text" name="speed" ngModel value="speed">
-        cost:
-        <input type="text" name="cost" ngModel value="cost">
-        Duration:
-        <input type="text" name="duration" ngModel value="duration">
-        <input type="submit" value="Submit">
-    </form>
-    {{msg}}
+
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>UPDATE INTERNET PLAN</p>
+        </div>
+        <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
+        <div class="form-content">
+            <form #NetRef="ngForm" (ngSubmit)="updateNet(NetRef.value); NetRef.reset()" >
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Internet ID:</Label>
+                        <input type="text" class="form-control" name="iid" [(ngModel)]="id" />
+                    </div>
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Speed in Mbps(eg.10Mbps)</Label>
+                        <input type="text" class="form-control" name="speed" [(ngModel)]="speed"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Price of Plan(eg.1200)</Label>
+                        <input type="text" class="form-control" name="cost" [(ngModel)]="cost"/>
+                    </div>
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">DUration of Plan in months(eg.12)</Label>
+                        <input type="text" class="form-control" name="duration" [(ngModel)]="duration"/>
+                    </div>
+                
+                </div>
+              
+            </div>
+            <button type="submit" class="btnSubmit">Submit</button>
+        </form>
+        </div>
+        rohit
+    </div>
 </div>
+
+
+
+

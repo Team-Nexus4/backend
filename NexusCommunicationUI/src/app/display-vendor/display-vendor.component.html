@@ -1,8 +1,7 @@
-<div>
-    <div *ngIf ="flag">
-
-        <table>
-            <tr>
+<div> <button class="btn btn-lg bg-dark text-white float-right mb-2" (click)="addVendor()" >Add New Vendor</button> </div>
+    <div *ngIf="flag"> 
+        <table border="1" class="text-white text-center bg-dark text-center w-100">
+            <tr class="text-bold" style="height: 50px;">
                 <th>Vid</th>
                 <th>Internet Kit</th>
                 <th>Landline Kit</th>
@@ -11,15 +10,13 @@
             </tr>
             <tr *ngFor = "let vendor of vendorinfo">
                 <td>{{vendor.vid}}</td>
-
                 <td>{{vendor.internetKit}}</td>
                 <td>{{vendor.landlineKit}}</td>
-
-                <input type="hidden" value="{{vendor.vid}}" #id>
-                <a [routerLink] ="['updatevendorinternetKit',id.value]">update Internet Kit</a>
-                <a [routerLink] ="['updatevendorlandlineKit',id.value]">update Landline Kit</a>
-               <!-- <td><button class="btn" (click)="updateInternetKit(Id.value)" >update Internet Kit</button></td>
-                <td><button class="btn" (click)="updateLandlineKit(Id.value)" >update landline Kit</button></td>-->
+                <input type="hidden" name="vid" value="{{vendor.vid}}" #id>
+                <input type="hidden" name="ikit" value="{{vendor.internetKit}}" #internetkit>
+                <input type="hidden" name="lkit" value="{{vendor.landlineKit}}" #landlinekit>
+                <td><button  (click)="updateInternetKit(id.value,internetkit.value)" >update</button></td>
+                <td><button  (click)="updateLandlineKit(id.value,landlinekit.value)" >update</button></td>
 
             </tr>
         </table>
@@ -27,6 +24,6 @@
         
 
     </div>
-    <router-outlet></router-outlet>
+   
 
-</div>
+

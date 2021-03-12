@@ -1,21 +1,26 @@
 
-<div>
-    <div *ngIf ="flag">
-
-        <table class="w-100 text-center border">
-            <tr class="bg-dark text-while text-bold ">
-                <th>Lid</th>
-                <th>Deuration</th>
-                <th>Cost</th>
+<div> <button class="btn btn-lg bg-dark text-white float-right mb-2" (click)="addLandlineKit()" >Add Landline Plan</button> </div>
+<div *ngIf="flag"> 
+    <table border="1" class="text-white text-center bg-dark text-center w-100">
+        <tr class="text-bold" style="height: 50px;">
+            <th>Id</th>
+            <th>Duration in month</th>
+            <th>Cost in Ruppes</th>
+            <th>Update plan</th>
+            <th>Delete plan</th>
             </tr>
             <tr *ngFor = "let landline of landlineInfo">
                 <td>{{landline.lid}}</td>
                 <td>{{landline.duration}}</td>
                 <td>{{landline.cost}}</td>
+                <input type="hidden" value="{{landline.lid}}" #id>
+                <input type="hidden" value="{{landline.cost}}" #cost>
+                <input type="hidden" value="{{landline.duration}}" #duration>
+                <th> <button  (click)="updateLandlineKit(id.value,cost.value,duration.value)" >update</button> </th>
+                <th><button  (click)="deleteLandlineKit(id.value)" >delete</button> </th>
             </tr>
         </table>
 
 
 
-    </div>
 </div>

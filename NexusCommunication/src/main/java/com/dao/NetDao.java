@@ -78,6 +78,8 @@ public class NetDao {
 			} else {
 				tran.begin();
 				p.setCost(i.getCost());
+				p.setDuration(i.getDuration());
+				p.setSpeed(i.getSpeed());
 				manager.merge(p); // update price using pid column
 				tran.commit();
 				return 1;

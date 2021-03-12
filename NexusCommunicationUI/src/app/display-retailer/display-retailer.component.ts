@@ -18,4 +18,13 @@ export class DisplayRetailerComponent implements OnInit {
     this.flag=true
       this.retailerservice.getRetailer().subscribe(data=>this.retailerinfo=data)
   }
+
+  addRetailer(){
+    this.router.navigate(["addretailer"])
+  }
+
+  replaceretailer(id:any){
+    this.router.navigate(["replaceretailer"])
+    sessionStorage.setItem("rid",id);
+  }
 }

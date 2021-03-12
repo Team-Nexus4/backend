@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VendorServiceService } from '../vendor-service.service';
 
-import { Router } from '@angular/router';
+
 
 import { Vendor } from '../vendor.model';
 
@@ -12,45 +12,25 @@ import { Vendor } from '../vendor.model';
   templateUrl: './update-internetstock-vendor.component.html',
   styleUrls: ['./update-internetstock-vendor.component.css']
 })
-export class UpdateInternetstockVendorComponent implements OnInit, OnDestroy {
+export class UpdateInternetstockVendorComponent{
 msg:string=""
 id:any;
-
+internetKit:any
 vid:any;
 flag1:boolean=false;
   constructor(public vendorservice:VendorServiceService,private route:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
+   this.vid=sessionStorage.getItem("vid")
+   this.internetKit=sessionStorage.getItem("internetkit")
    
-    this.route.paramMap.subscribe(params=>{​​
-
-      this.vid=params.get('id.value')})
-      this.flag1=true;
-  }
-  ngOnDestroy() {
-    this.flag1=false;
-
   }
   
-
-
-  updateInternetStock(InternetKit:any){
-    
-      
-
-    let v =new Vendor();
-
-    v.vid=this.vid;
-    v.internetKit=InternetKit
-    console.log(v)
-
-    this.vendorservice.updateInternetStock(v).subscribe(result=>this.msg=result)
-    //this.flag1=false;
-    //this.router.navigate([".seeallvendor"])
+  updateInternetStock(internetRef:any){
+    this.vendorservice.updateInternetStock(internetRef).subscribe(result=>this.msg=result)
+    console.log(internetRef)
+ 
   }
-   back()
-   {
-     this.flag1=false;
-   }
+  
 
 }
