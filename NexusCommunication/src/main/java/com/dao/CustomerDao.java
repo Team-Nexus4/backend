@@ -118,7 +118,7 @@ public class CustomerDao
 	public List<PlanBill> getAllPlanBill(long cid) {
 		List<PlanBill> listOfObject = new ArrayList<PlanBill>();
 		EntityManager manager = emf.createEntityManager();
-		Query qry = manager.createQuery("select cn from Connection cn where cn.cid=?1");
+		Query qry = manager.createQuery("select cn from Connection cn where cn.cid=?1 and cn.billstatus='unpaid'");
 		qry.setParameter(1,cid);
 		List<Connection> listOfOrder = qry.getResultList();
 		//System.out.println(listOfOrder.size());

@@ -36,6 +36,7 @@ export class EmployeeloginComponent implements OnInit {
           {
             console.log("wrong");
             console.log("emp")
+            this.msg="Please Enter valid username or password"
           }
           else{
             if(obj.desg=="technical")

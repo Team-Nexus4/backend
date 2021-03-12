@@ -75,6 +75,7 @@ public class LandlineDao
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 		LandlinePlan l1 = manager.find(LandlinePlan.class, l.getLid());
+		System.out.println(l);
 		if(l1==null)
 		{
 			return 2;

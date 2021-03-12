@@ -237,6 +237,7 @@ public class VendorDao {
 
 	public List<OrderStock> getOrdDetails(long vid) {
 		EntityManager manager = emf.createEntityManager();
+		System.out.println(vid);
 		Query qry = manager.createQuery("select os from OrderStock os where os.vid=?1 and os.status='false'");
 		qry.setParameter(1, vid);
 		return qry.getResultList();

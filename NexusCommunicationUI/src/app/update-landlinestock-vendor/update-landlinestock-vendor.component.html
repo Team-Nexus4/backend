@@ -1,8 +1,30 @@
 
-<div *ngIf="flag1">
-    {{vid}}   Landline Stock
-<input type="number" name="landlineKit" #LandlineKit>
-<input type="button" value="Submit" (click)="updateLandlineStock(LandlineKit.value)"><br>
-<input type="button" value="Back" (click)="back()">
-{{msg}}
+<div class="container register-form">
+    <div class="form">
+        <form #landlineRef="ngForm" (ngSubmit)="updateLandlineStock(landlineRef.value); landlineRef.reset()" >
+        <div class="note">
+            <p>UPDATE VENDOR LANDLINE STOCK</p>
+ 
+        </div>
+        <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
+        <div class="form-content">
+           <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <Label class="text-primary text-bold" style="font-size: 20px;">Vendor Id *</Label>
+                    <input type="text" class="form-control" name="vid" [(ngModel)]="vid" placeholder="eg.1123654796" />
+                </div>
+            </div>
+               <div class="col-md-6">
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Landline Stock *</Label>
+                        <input type="text" class="form-control" name="landlineKit" [(ngModel)]="landlineKit" placeholder="eg.1200" />
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btnSubmit" value="Submit">
+       
+        </div>
+        </form>
+    </div>
 </div>

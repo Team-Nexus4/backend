@@ -53,6 +53,7 @@ import { ReplaceRetailerVendorComponent } from './replace-retailer-vendor/replac
 
 import { CommonModule } from '@angular/common';
 import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orders.component';
+import { FrontpageComponent } from './frontpage/frontpage.component';
 
 
 
@@ -106,7 +107,8 @@ import { VendorViewOrdersComponent } from './vendor-view-orders/vendor-view-orde
     AddRetailerComponent,
     DisplayRetailerComponent,
     PlanbillcomponentComponent,
-    ReplaceRetailerVendorComponent
+    ReplaceRetailerVendorComponent,
+    FrontpageComponent
 
 
   ],

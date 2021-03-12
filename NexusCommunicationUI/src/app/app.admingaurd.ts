@@ -9,11 +9,13 @@ export class AdminGaurads{
         let username = sessionStorage.getItem("admin");
         if(username!=null)
         {
+           
             return true;
+
         }
         else
         {
-            this.router.navigate(["adminDashboard"]);
+            this.router.navigate(["loginEmployee"]);
             return false;
         } 
     }

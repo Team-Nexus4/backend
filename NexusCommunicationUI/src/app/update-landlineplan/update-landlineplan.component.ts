@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LandlineplanService } from '../landlineplan.service';
+import { LandLine } from '../landline.module';
 
 @Component({
   selector: 'app-update-landlineplan',
@@ -8,12 +9,19 @@ import { LandlineplanService } from '../landlineplan.service';
 })
 export class UpdateLandlineplanComponent implements OnInit {
   msg:string=""
+  lid:any
+  cost:any
+  duration:any
+  speed:any
   constructor(public landlineSer:LandlineplanService) { }
 
   ngOnInit(): void {
+    this.lid=sessionStorage.getItem("lid");
+   this.cost=sessionStorage.getItem("cost");
+   this.duration=sessionStorage.getItem("duration");
   }
 
-  updateProductInfo(landlineInfo:any)
+  updateProductInfo(landlineInfo:LandLine)
   {
     console.log(landlineInfo)
     this.landlineSer.updateLandLinePlna(landlineInfo).subscribe(data=>this.msg=data);  

@@ -17,9 +17,11 @@ export class ReplaceRetailerComponent implements OnInit {
     password:new FormControl(),
     });
   msg:string="";
+  rid:any
   constructor(public retailerService:RetailerService) { }
 
   ngOnInit(): void {
+    this.rid=sessionStorage.getItem("rid")
   }
 
   replaceRetailer(employee:Employee)

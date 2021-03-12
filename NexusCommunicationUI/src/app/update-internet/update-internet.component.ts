@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateInternetComponent implements OnInit {
 
   msg:string=""
-  iid:any
+  id:any
   cost:any
   duration:any
   speed:any
@@ -19,14 +19,10 @@ export class UpdateInternetComponent implements OnInit {
   constructor(public netserv:InternetServiceService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params=>{
- 
-      this.iid=params.get('id.value')
-      this.cost=params.get('cost.value')
-      this.duration=params.get('duration.value')
-      this.speed=params.get('speed.value')
-    
-    })
+   this.id=sessionStorage.getItem("iid");
+   this.cost=sessionStorage.getItem("cost");
+   this.duration=sessionStorage.getItem("duration");
+   this.speed=sessionStorage.getItem("speed");
     
   }
 

@@ -1,17 +1,36 @@
-<div>
-    <h2>Update Plan</h2>
-    <form #landlineRef = "ngForm" (ngSubmit) = "updateProductInfo(landlineRef.value)">
-        <label>Plan Id</label>
-        <input type = "number" name = "lid" ngModel><br>
-        
-        <label>Plan Duration</label>
-        <input type = "number" name="duration" ngModel/><br>
 
-        <label>Plan Price</label>
-        <input type = "number" name="cost" ngModel/><br>
-        
-        <input type="submit" value="Update Plan Info">
-        <input type="reset">
-    </form>
-    {{msg}}
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>UPDATE LANDLINE PLAN</p>
+        </div>
+        <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
+        <div class="form-content">
+            <form #landlineRef="ngForm" (ngSubmit)="updateProductInfo(landlineRef.value); landlineRef.reset()" >
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Landline ID:</Label>
+                        <input type="text" class="form-control" name="lid" [(ngModel)]="lid" />
+                    </div>
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Price of Plan(eg.1200)</Label>
+                        <input type="text" class="form-control" name="cost" [(ngModel)]="cost"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    
+                    
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Duration of Plan in months(eg.12)</Label>
+                        <input type="text" class="form-control" name="duration" [(ngModel)]="duration"/>
+                    </div>
+
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Submit</button>
+        </form>
+        </div>
+    </div>
 </div>

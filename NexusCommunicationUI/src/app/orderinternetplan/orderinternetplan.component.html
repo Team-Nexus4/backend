@@ -1,5 +1,6 @@
 
 <div>
+    <div class="text-center text-white bg-dark my-1">{{msg}}</div>
     <div *ngIf ="flag">
 
         <table class="w-100 text-white text-center bg-dark border" border="1"> 
@@ -17,7 +18,7 @@
                 <td>{{obj.speed}}</td>
                 <td>{{obj.cost}}</td>
                 <td>{{obj.duration}}</td>
-                <td><input type="button" class="btn text-white bg-dark" value="Buy" (click) = "orderInternet(ref.value)"/></td>
+                <td><input type="button" class="" value="Buy" (click) = "orderInternet(ref.value)"/></td>
             </tr>
         </table>
       
