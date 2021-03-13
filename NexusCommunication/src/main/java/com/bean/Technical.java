@@ -12,6 +12,13 @@ public class Technical
 	@Id
 	private long oid;
 	private long rid;
+	private String status;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public long getOid() {
 		return oid;
 	}
