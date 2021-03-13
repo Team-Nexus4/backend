@@ -21,4 +21,5 @@ export class AddcustomerComponent implements OnInit {
     this.customerService.addCustomer(customer).subscribe(data=>this.msg = data)
   }
 
+  goback() { window.history.back(); }
 }

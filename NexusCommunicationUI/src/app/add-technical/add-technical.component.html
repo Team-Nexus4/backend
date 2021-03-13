@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <h2>Add Technician</h2>
     <form [formGroup]="technicalInfo" (ngSubmit)="addTechnicalDetails()">
         <label>Username</label>
@@ -6,10 +6,45 @@
         <label>Password</label>
         <input type="password" formControlName="password" ngModel required/><br/>
         <label>Designation</label>
-        <!--<input type="text"/><br/>-->
+      
         <select formControlName="desg" required><option value="technical">technical</option></select><br/>
         <input type="submit" value="Add Technician"/>
         <input type="reset" value="reset"/>
         {{msg}}
     </form>
+</div> -->
+
+
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>ADD TECHNICAL</p>
+        </div>
+        <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
+        <div class="form-content">
+            <form [formGroup]="technicalInfo" (ngSubmit)="addTechnicalDetails()">
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Username</Label>
+                        <input type="text" class="form-control" formControlName="username" />
+                    </div>
+                   
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Enter Password</Label>
+                        <input type="password" class="form-control" formControlName="password" ngModel required>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Submit</button>
+           
+        </form>
+        </div>
+    </div>
 </div>

@@ -25,4 +25,5 @@ export class UpdatecustomerComponent implements OnInit {
       this.customerService.updateCustomer(this.customer).subscribe(res=>this.msg=res);
   }
 
+  goback() { window.history.back(); }
 }

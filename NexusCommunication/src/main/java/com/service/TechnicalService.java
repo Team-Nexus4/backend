@@ -84,6 +84,7 @@ public class TechnicalService {
 		String date = simpleDateFormat.format(new Date());
 		long empid = Long.parseLong(date);
 		e.setEid(empid);
+		e.setDesg("technical");
 		Employee emp = er.save(e);
 		if(emp!=null) {
 			return "Store success";

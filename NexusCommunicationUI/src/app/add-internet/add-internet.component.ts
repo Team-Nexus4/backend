@@ -27,4 +27,6 @@ export class AddInternetComponent implements OnInit {
     this.netser.storeDetails(empRef).subscribe(r=>this.msg=r);
   }
 
+  goback() { window.history.back(); }
+
 }

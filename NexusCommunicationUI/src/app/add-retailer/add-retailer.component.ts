@@ -18,4 +18,5 @@ export class AddRetailerComponent implements OnInit {
     this.retailerservice.addRetailer(retailerRef).subscribe(result=>this.msg=result)
   }
 
+  goback() { window.history.back(); }
 }

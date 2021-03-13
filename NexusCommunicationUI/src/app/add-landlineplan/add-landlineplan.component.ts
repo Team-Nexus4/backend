@@ -24,5 +24,5 @@ export class AddLandlineplanComponent implements OnInit {
     let landlineObj = this.landlineInfo.value;
     this.landlineSer.addLandLinePlan(landlineObj).subscribe(res => this.msg=res);
   }
-
+  goback() { window.history.back(); }
 }

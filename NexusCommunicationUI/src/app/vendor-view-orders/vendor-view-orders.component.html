@@ -1,8 +1,10 @@
 <div >
     <div>
+        <div  class="text-white bg-dark text-center my-1" >{{msg}}</div>
         <table border="1" class="text-white text-center bg-dark text-center w-100">
             <tr class="text-bold" style="height: 50px;">
             <th>Order Id</th>
+            <th>Retailer Id</th>
             <th>Requested Item</th>
             <th>Requested Stock</th>
             <th>Proceed</th>
@@ -10,11 +12,12 @@
         <tr *ngFor="let exm of ost">
             <td>{{exm.oid}}</td>
             <input type="hidden" value={{exm.oid}} #ref>
+            <th>{{exm.rid}}</th>
             <td>{{exm.requestedItem}}</td>
             <td>{{exm.requestedStock}}</td>
             <td><input type="button" value="Proceed" (click) = "fulfillOrderStock(ref.value)"/></td>
         </tr>
     </table>
-    <!-- {{msg}} -->
+    {{msg}}
 </div>
 </div>

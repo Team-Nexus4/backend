@@ -34,5 +34,6 @@ flag1:boolean=false;
  
   }
   
+  goback() { window.history.back(); }
 
 }
