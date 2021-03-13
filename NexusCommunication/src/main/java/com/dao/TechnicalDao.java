@@ -23,7 +23,7 @@ EntityManagerFactory emf;
 
 public List<Technical> displayTechnical(){
 	EntityManager manager = emf.createEntityManager();
-	Query qry = manager.createQuery("select t from Technical t");
+	Query qry = manager.createQuery("select t from Technical t where t.status='false'");
 	return qry.getResultList();
 }
 
@@ -32,6 +32,7 @@ public String placedOrderByTechnical(long oid) {
 	EntityManager manager = emf.createEntityManager();
 	EntityTransaction tran = manager.getTransaction();
 	Order o = manager.find(Order.class, oid);
+	Technical t = manager.find(Technical.class, oid);
 	if(o==null)
 	{
 		return "Order is not present in database";
@@ -39,9 +40,11 @@ public String placedOrderByTechnical(long oid) {
 	else
 	{
 		o.setStatus("true");
+		t.setStatus("true");
 		System.out.println("check 1");
 		tran.begin();
 			manager.merge(o);
+			manager.merge(t);
 		tran.commit();
 		return "Order Placed Success by Technical Person";
 	}

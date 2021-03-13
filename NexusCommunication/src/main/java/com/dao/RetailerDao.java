@@ -65,6 +65,7 @@ public class RetailerDao
 				o.setStatus("pass");	
 				t.setOid(o.getOid());
 				t.setRid(o.getRid());
+				t.setStatus("false");
 				tran.begin();
 					manager.merge(robj);
 					manager.merge(o);
