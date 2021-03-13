@@ -16,7 +16,7 @@ public class NexusCommunicationApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NexusCommunicationApplication.class, args);
-		System.out.println("Ok");
+		System.out.println("nexus communication");
 	}
 
 	
