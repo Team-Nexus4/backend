@@ -46,7 +46,7 @@ const routes: Routes = [
   {path:"\login" , component:FrontloginComponent},
   {path:"\loginEmployee",component:EmployeeloginComponent},
   {path:"",redirectTo:"\login",pathMatch:"full"},
-  {path:"\abc",component:UpdateInternetstockVendorComponent},
+
   {path:"\technicalDashboard",component:TechnicaldashboardComponent},
   {path:"updateinternetplan",component:UpdateInternetComponent},
   {path:"addinternetplan",component:AddInternetComponent},

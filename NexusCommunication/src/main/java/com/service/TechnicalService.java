@@ -55,7 +55,7 @@ public class TechnicalService {
 				con.setEnddate(LocalDate.now().plusDays(llp.getDuration()*30));
 				con.setBillstatus("unpaid");
 				Connection c1 = cr.save(con);
-			return c1==null?"Entry In connection table UnSuccesfull":"Entry In connection table Succesfull";
+			return c1==null?"Connection Activated":"Connection Not Activated";
 			
 			}else {
 				long iid=o.getRequested_plan();
@@ -69,11 +69,11 @@ public class TechnicalService {
 				con.setEnddate(LocalDate.now().plusDays(Integer.parseInt(iip.getDuration())*30));
 				con.setBillstatus("unpaid");
 				Connection c1 = cr.save(con);
-			return c1==null?"Entry In connection table UnSuccesfull":"Entry In connection table Succesfull";
+			return c1==null?"Connection Activated":"Connection Not Activated";
 			}
 			
 		}else {
-			return "Any Exception Occured at Order Placed by Technical Person Time";
+			return "Something went wrong";
 		}
 		
 	}
@@ -87,9 +87,9 @@ public class TechnicalService {
 		e.setDesg("technical");
 		Employee emp = er.save(e);
 		if(emp!=null) {
-			return "Store success";
+			return "Store successfully";
 		}else {
-			return "Any Exception is occured";
+			return "Something went wrong";
 		}
 	}
 	

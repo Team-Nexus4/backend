@@ -4,5 +4,6 @@ export class Internet
                 public speed?:string,
                 public cost?:number,
                 public duration?:number,
-                public status?:string){}
+                public status?:string,
+                public colori?:string){}
 }

@@ -66,7 +66,7 @@ public class CustomerDao
 			tran.begin();
 				manager.persist(order);
 			tran.commit();
-			return "Order Placed";
+			return " Your Order Placed";
 		}
 		else
 		{

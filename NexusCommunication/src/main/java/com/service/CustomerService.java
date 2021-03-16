@@ -39,9 +39,9 @@ public class CustomerService {
 		
 		Customer c1 = cr.save(c);
 		if(c1!=null) {
-			return "Store success";
+			return "Your Registration Successful";
 		}else {
-			return "Any Exception is occured";
+			return "Registration Unsuccessful";
 		}
 	}
 
@@ -51,9 +51,9 @@ public class CustomerService {
 		 if(c.isPresent()) {
 			 cr.deleteById(cid);
 			 if(cr.existsById(cid)) {
-				 return "Any Exception Occured";
+				 return "Something went wrong !!!";
 			 }else {
-				 return "Delete Success";
+				 return "Deleted Successfully";
 			 }
 		 }else {
 			 return "Record is not found";
@@ -70,7 +70,7 @@ public class CustomerService {
 			cust.setLname(c.getLname());
 			cust.setPhone(c.getPhone());
 			 cr.saveAndFlush(cust);
-			 return "updated success";
+			 return "updated successfully";
 		 }else {
 			 return "updated failed";
 		 }

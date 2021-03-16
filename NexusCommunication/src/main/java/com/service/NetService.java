@@ -25,7 +25,7 @@ public class NetService {
 	        }else if(result==0) {
 	            return "Reocrd didn't store";
 	        }else {
-	            return "Exception Occured(Duplicate record!!)";
+	            return "Duplicate record !!!";
 	        }
 		}
 	}

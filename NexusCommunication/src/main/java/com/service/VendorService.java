@@ -55,15 +55,15 @@ public class VendorService {
 				e.setEid(empid);
 				Employee emp = er.save(e);
 				if (emp != null) {
-					return "Vendor Registered Success";
+					return "Vendor Registered Successfully";
 				} else {
 					return "Vendor registartion failed";
 				}
 			} else {
-				return "Adding Vendor Failed";
+				return "Vendor registartion failed";
 			}
 		} else {
-			return "User Already Present try with Difreent Isername";
+			return "User Already Present try with Difreent Username";
 		}
 	}
 
@@ -95,7 +95,7 @@ public class VendorService {
 		if (vendorDao.replaceWithAnotherVendorE(r) > 0) {
 			return "Replaced Successfully";
 		} else {
-			return "Replacd Failed";
+			return "Replaced Failed";
 		}
 	}
 
@@ -106,7 +106,6 @@ public class VendorService {
 		for (Employee emp : listOfEmp) {
 			if ((emp.getUsername().equals(e.getUsername())) && (emp.getPassword().equals(emp.getPassword()))) {
 				emp1 = emp;
-				System.out.println("check 1");
 			}
 		}
 		return emp1;
@@ -131,7 +130,7 @@ public class VendorService {
 					if(res>0)
 					{
 						int res1=vendorDao.updateOrderStockStatus(os.getOid());
-						return "Internet Stock Updated succesfull";
+						return "Internet Stock Updated succesfully";
 					}
 					else
 						return "Stock Update failed....!";
@@ -159,7 +158,7 @@ public class VendorService {
 					if(res>0)
 					{
 						int res1=vendorDao.updateOrderStockStatus(os.getOid());
-						return "Land line Stock Updated succesfull";
+						return "Land line Stock Updated succesfully";
 					}
 					else
 						return "Stock Update failed....!";
@@ -170,8 +169,8 @@ public class VendorService {
 			else
 			{
 				return "Land Line Out ofStock";
-			}		}
-		//return "not performed";
+			}		
+		}
 	}
 
 	public List<Vendor> getVendorDetails(long vid) {
