@@ -33,7 +33,7 @@ public class Technical
 	}
 	@Override
 	public String toString() {
-		return "Technical [oid=" + oid + ", rid=" + rid + "]";
+		return "Technical [oid=" + oid + ", rid=" + rid + ", status=" + status + "]";
 	}
 	
 	

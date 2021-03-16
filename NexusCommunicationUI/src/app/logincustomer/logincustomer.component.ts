@@ -33,7 +33,7 @@ export class LogincustomerComponent implements OnInit {
           if(obj==null)
           {
             console.log("wrong customer");
-            
+            this.msg="Please Enter valid username or password"
           }
           else{
             

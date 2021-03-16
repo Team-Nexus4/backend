@@ -30,20 +30,19 @@ public class CustomerController {
 	@Autowired
 	CustomerService cs;
 	
-	//http://localhost:9070/customer/displayCustomer
+
 	@GetMapping(value="displayCustomer",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Customer> getCustomer() {
 		return cs.getCustomer();
 	}
 	
-	//http://localhost:9070/customer/storeCustomer
+
 	@PostMapping(value="storeCustomer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String storeCustomer(@RequestBody Customer c) {
-		System.out.println("Ok123");
 		return cs.storeCustomer(c);
 	}
 	
-	//http://localhost:9070/customer/deleteCustomer/3333000001
+
 	@DeleteMapping(value ="deleteCustomer/{cid}" ,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String deletEmp(@PathVariable("cid") long cid) {
 		return  cs.deleteCustomer(cid);	
@@ -90,9 +89,6 @@ public class CustomerController {
 		}
 		else {
 			cs.checkBillStatusCustomer(cust.getCid());
-			HttpSession session=request.getSession();  
-			session.setAttribute("pincode", cust.getPincode());
-			session.setAttribute("username", cust.getUsername());
 			return cust;
 			
 		}

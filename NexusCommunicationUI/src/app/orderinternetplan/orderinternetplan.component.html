@@ -18,7 +18,8 @@
                 <td>{{obj.speed}}</td>
                 <td>{{obj.cost}}</td>
                 <td>{{obj.duration}}</td>
-                <td><input type="button" class="" value="Buy" (click) = "orderInternet(ref.value)"/></td>
+                <!--<td><input type="button"  style="color:'{{co}}'" class="" value="Buy" (click) = "orderInternet(ref.value)"/></td>-->
+                <td><button value="Buy" class="text-white btn myDiv"  style="background-color:{{obj.colori}}" (click) = "orderInternet(ref.value,$event)">BUY</button></td>
             </tr>
         </table>
       

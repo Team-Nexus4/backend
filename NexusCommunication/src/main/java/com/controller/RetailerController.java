@@ -35,36 +35,29 @@ public class RetailerController
 		
 	}
 	
-	//http://localhost:9070/retailer/display/2222000001
+
 	@GetMapping(value = "display/{rid}"  ,produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Order> displayOrder(@PathVariable("rid") long rid)
 	{
-		List<Order> listOfOrder = rs.getAllOrderService(rid);
-		for(Order o :listOfOrder)
-			System.out.println(o);
-		return listOfOrder;
+		return rs.getAllOrderService(rid);
 	}
 	
 	@GetMapping(value="displayRetailer/{rid}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Retailer> displayRetailer(@PathVariable("rid") long rid)
 	{
-		List<Retailer> listOfRet=rs.getRetailerDetails(rid);
-		return listOfRet;
+		return rs.getRetailerDetails(rid);
 	}
 	
 	@PostMapping(value="placeOrder",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String placeOrder(@RequestBody Order o)
 	{
-		String res = rs.placeOrderService(o.getOid());
-		return res;
+		return rs.placeOrderService(o.getOid());
 	}
 	
 	@PostMapping(value = "placeOrderStock",consumes = MediaType.APPLICATION_JSON_VALUE,produces =  MediaType.TEXT_PLAIN_VALUE)
 	public String placeOrderStock(@RequestBody OrderStock o)
 	{
-		System.out.println(o);
-		String res = rs.placeOrderStockService(o);
-		return res;
+		return rs.placeOrderStockService(o);
 	}
 	
 	

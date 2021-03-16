@@ -47,12 +47,12 @@ public class RetailerService {
 			if (res == 1) {
 				return "Order Placed";
 			} else {
-				return "Order Didnt Placed 1";
+				return "Order Didnt Placed";
 			}
 		} else if (check == 2) {
 			return "Order Didnt Placed";
 		} else {
-			return "didn't have sufficient stock You Need To Place Order For Vendor for " + check;
+			return "Didn't Have Sufficient Stock You Need To Place Order To Vendor For " + check;
 		}
 	}
 
@@ -87,13 +87,13 @@ public class RetailerService {
 				e1.setEid(empid);
 				Employee emp = er.save(e1);
 				if (emp != null) {
-					return "Retailer Registered Success";
+					return "Retailer Registered Successfully";
 				} else {
 					return "Retailer registartion failed";
 				}
 
 			} else {
-				return "Any Exception is occured";
+				return "Something went wrong";
 			}
 		} else {
 			return "User Already Present try with Difreent username";
@@ -107,7 +107,7 @@ public class RetailerService {
 			emp.setUsername(e.getUsername());
 			emp.setPassword(e.getPassword());
 			er.saveAndFlush(emp);
-			return "Replace success";
+			return "Replace successfully";
 		} else {
 			return "Replace failed";
 		}

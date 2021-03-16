@@ -15,7 +15,8 @@
                 <input type="hidden" value={{obj.lid}} #ref>
                 <td>{{obj.duration}}</td>
                 <td>{{obj.cost}}</td>
-                <td><input type="button" value="Buy" (click) = "orderLandline(ref.value)"/></td>
+                <!--<td><input type="button" value="Buy" (click) = "orderLandline(ref.value)"/></td>-->
+                <td><button value="Buy" class="text-white btn myDiv"  style="background-color:{{obj.colori}}" (click) = "orderLandline(ref.value,$event)">Buy</button></td>
             </tr>
         </table>
         {{msg}}

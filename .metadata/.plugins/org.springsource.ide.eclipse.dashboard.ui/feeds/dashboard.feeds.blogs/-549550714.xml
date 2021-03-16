@@ -5,7 +5,346 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-03-01T14:40:00Z</updated>
+  <updated>2021-03-11T20:00:00Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: FF4J project creator and DataStax Astra SDK engineer Cedrick Lunven</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/03/11/a-bootiful-podcast-ff4j-project-creator-and-datastax-astra-sdk-engineer-cedrick-lunven" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-03-11:4382</id>
+    <updated>2021-03-11T20:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to FF4J project creator and DataStax Astra SDK engineer &lt;a href="http://twitters.com/clunven"&gt;Cedrick Lunven (@clunven)&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe title="FF4J project creator and DataStax Astra SDK engineer Cedrick Lunven" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/izywu-fd5bae?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Deploy Spring Boot applications by leveraging enterprise best practices – Azure Spring Cloud Reference Architecture</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/03/11/deploy-spring-boot-applications-by-leveraging-enterprise-best-practices-azure-spring-cloud-reference-architecture" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-03-10:4380</id>
+    <updated>2021-03-11T18:00:00Z</updated>
+    <content type="html">&lt;h1&gt;&lt;a href="#deploy-spring-boot-applications-by-leveraging-enterprise-best-practices-azure-spring-cloud-reference-architecture" class="anchor" name="deploy-spring-boot-applications-by-leveraging-enterprise-best-practices-azure-spring-cloud-reference-architecture"&gt;&lt;/a&gt;Deploy Spring Boot applications by leveraging enterprise best practices – Azure Spring Cloud Reference Architecture&lt;/h1&gt;
+&lt;p&gt;Today, we’re excited to announce the availability of the Azure Spring Cloud Reference Architecture. You can get started by deploying the &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-reference-architecture"&gt;Azure Spring Cloud Reference Architecture&lt;/a&gt; to accelerate and secure Spring Boot applications in the cloud at scale using validated best practices.&lt;/p&gt;
+&lt;p&gt;Over the past year, we worked with many enterprise customers to learn about their scenarios including thoughts on scaling properly, security, deployment, and cost requirements. Many of these customers have thousands of Spring Boot applications running in on-premises data centers. As they migrate these applications to cloud, they need battle-tested architectures that instill confidence to meet the requirements set forth by their IT departments and/or regulatory bodies. In many customer environments, they also need to show direct mappings from architectures to industry-defined security controls and benchmarks. We thank these customers for the opportunity to work with them, and for helping us to build an Azure Spring Cloud Reference Architecture. Using this reference architecture, you can deploy and customize to meet your specific requirements and showcase pre-defined mappings to security controls and benchmarks.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&amp;ldquo;The availability of Azure Spring Cloud Reference architecture reduced our internal cycles of researching architecture options and Spring Cloud feature sets, which allowed us to rapidly determine how we would want to implement and scale globally.&amp;rdquo; &amp;ndash; Devon Yost, Enterprise Architect, &lt;a href="https://www.digitalrealty.com/"&gt;Digital Realty Trust&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;“Congratulations to you and your team for creating and providing the Azure Spring Cloud Reference Architecture free to all customers. The reference architecture is a great way for users to compare their design to how the experts at Microsoft design deployments. It is incredible for the reference architecture to include deployments using multiple technologies. We were able to compare the reference Terraform implementation and quickly understand the architecture. We have even started testing Azure DNS as highlighted in the architecture to manage our DNS using Infrastructure as Code principles.” -Armando Guzman, Principal Software Engineer, Unified Commerce, &lt;a href="https://www.raleys.com/about/raleys-corporate-fact-sheet/"&gt;Raley’s &lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#ease-of-deploying-java-applications" class="anchor" name="ease-of-deploying-java-applications"&gt;&lt;/a&gt;Ease of Deploying Java Applications&lt;/h2&gt;
+&lt;p&gt;Azure Spring Cloud is jointly built, operated, and supported by Microsoft and VMware. It is a fully managed service for Spring Boot applications that lets you focus on building the applications that run your business without the hassle of managing infrastructure. The service incorporates Azure compute, network, and storage services in a well-architected design, reducing the number of infrastructure decisions. The Azure Spring Cloud Reference Architecture provides a deployable design that is mapped to industry security benchmarks providing a head start for compliance approval. The implementation and configuration of each service referenced in the architecture was evaluated against security controls to ensure a secure design. &lt;/p&gt;&lt;h2&gt;&lt;a href="#security-and-managed-virtual-network" class="anchor" name="security-and-managed-virtual-network"&gt;&lt;/a&gt;Security and Managed Virtual Network&lt;/h2&gt;
+&lt;p&gt;Security is a key tenet of Azure Spring Cloud, and you can secure Spring Boot applications by deploying to Azure Spring Cloud in Managed Virtual Networks (VNETs). With VNETs, you can secure the perimeters around your Spring Boot applications and other dependencies by: &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Isolating Spring Cloud from the Internet and placing your applications and Azure Spring Cloud in your private networks.&lt;/li&gt;
+  &lt;li&gt;Selectively exposing Spring Boot applications as Internet-facing applications.&lt;/li&gt;
+  &lt;li&gt;Enabling applications to interact with on-premises systems such as databases, messaging systems, and directories.&lt;/li&gt;
+  &lt;li&gt;Controlling inbound and outbound network communications for Azure Spring Cloud.&lt;/li&gt;
+  &lt;li&gt;Composing with Azure network resources such as Application Gateway, Azure Firewall, Azure Front Door, and Express Route, and popular network products such as Palo Alto Firewall, F5 Big-IP, Cloudflare, and Infoblox.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#reliable-deployment-patterns" class="anchor" name="reliable-deployment-patterns"&gt;&lt;/a&gt;Reliable Deployment Patterns&lt;/h2&gt;
+&lt;p&gt;When you deploy a collection of Azure Resources, including Azure Spring Cloud, in your private network and interconnect these resources with on-premises systems, you can be faced with multiple questions such as:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;How do you manage costs to maximize the value delivered?&lt;/li&gt;
+  &lt;li&gt;How do you build operational processes to keep the system up and running in production?&lt;/li&gt;
+  &lt;li&gt;How do you account for performance efficiency where your system can adapt to changes in load?&lt;/li&gt;
+  &lt;li&gt;How can your system recover from failures and continue to function?&lt;/li&gt;
+  &lt;li&gt;How do you protect applications and data from threats and risks?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To address these questions, you can start with a trial-and-error approach but that takes time. The time it takes to get it right and achieve these outcomes is time not spent on your organizational objectives. A repeatable, tested deployment pattern can help you to address issues from the start.&lt;/p&gt;
+&lt;p&gt;The Azure Spring Cloud Reference Architecture addresses the following solution design components:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Hub and spoke alignment&lt;/strong&gt;. Aligns with the Azure landing zone, which enables application migrations and greenfield development at enterprise-scale in Azure. A landing zone is an environment for hosting your workloads, pre-provisioned through infrastructure as code.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Well-Architected Framework.&lt;/strong&gt; Incorporates the guiding pillars of the Azure Well-Architected Framework to improve the quality of a workload. The framework consists of five pillars of architecture excellence: Cost Optimization, Operational Excellence, Performance Efficiency, Reliability, and Security.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Perimeter security.&lt;/strong&gt; Secures the perimeter for full egress management, managing secrets and certificates using Azure Key Vault. Wires up with networking resources of your choice, incorporating your IT-team-supplied route tables filled with user-defined network routes. And it is ready for interacting with private links exposed by Azure resources or endpoints exposed by your on-premises systems.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Authorized access to deployed environments.&lt;/strong&gt; Includes securing and authorizing access into a deployed environment through a jump host machine with necessary development tools via Azure Bastion.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Monitoring.&lt;/strong&gt; Enables observability by wiring up for Application Performance Monitoring (APM) and publishing logs and metrics for all the resources through Azure Monitor. This provides the option to aggregate logs and metrics in an aggregator of your choice, such as Azure Log Analytics, Elastic Stack, or Splunk.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Smoke tests.&lt;/strong&gt; Supplies deployment scripts to deploy a line of business system and to smoke test the deployed environment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src="https://raw.githubusercontent.com/Azure/azure-spring-cloud-reference-architecture/main/images/architecture-public.svg"/&gt;
+&lt;p&gt;Figure 1 - the diagram represents a well-architected hub and spoke design for applications selectively exposed as public applications&lt;/p&gt;&lt;h2&gt;&lt;a href="#start-here" class="anchor" name="start-here"&gt;&lt;/a&gt;Start Here&lt;/h2&gt;
+&lt;p&gt;This &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-reference-architecture"&gt;Azure Spring Cloud Reference Architecture&lt;/a&gt; is a foundation using a typical enterprise hub and spoke design for the use of Azure Spring Cloud. In the design, Azure Spring Cloud is deployed in a single spoke that is dependent on shared services hosted in the hub.&lt;/p&gt;
+&lt;p&gt;For an implementation of this architecture, see the &lt;a href="https://github.com/Azure/azure-spring-cloud-reference-architecture/tree/main/terraform"&gt;Azure Spring Cloud Reference Architecture repository on GitHub&lt;/a&gt; . Deployment options for this architecture include ready-to-go &lt;a href="https://github.com/Azure/azure-spring-cloud-reference-architecture/tree/main/ARM"&gt;Azure Resource Manager (ARM)&lt;/a&gt;, &lt;a href="https://github.com/Azure/azure-spring-cloud-reference-architecture/tree/main/terraform"&gt;Terraform&lt;/a&gt;, and &lt;a href="https://github.com/Azure/azure-spring-cloud-reference-architecture/tree/main/CLI"&gt;Azure CLI&lt;/a&gt; scripts. The artifacts in this repository provide groundwork that you can customize for your environment and automated provisioning pipelines.&lt;/p&gt;&lt;h2&gt;&lt;a href="#meet-the-team" class="anchor" name="meet-the-team"&gt;&lt;/a&gt;Meet the Team&lt;/h2&gt;
+&lt;img src="https://raw.githubusercontent.com/Azure/azure-spring-cloud-reference-architecture/main/images/team-mosaic-image.jpg"/&gt;
+&lt;p&gt;This Azure Spring Cloud Reference Architecture is created and maintained by Cloud Solution Architects, Java experts, and content authors at Microsoft, here in alphabetical order and row-wise from left to right:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Armen Kaleshian – Cloud Solution Architect&lt;/li&gt;
+  &lt;li&gt;Arshad Azeem – Cloud Solution Architect&lt;/li&gt;
+  &lt;li&gt;Asir Selvasingh – Architect, Java on Azure&lt;/li&gt;
+  &lt;li&gt;Bowen Wan – Software Engineering Manager, Java on Azure&lt;/li&gt;
+  &lt;li&gt;Brendan Mitchell – Content Developer&lt;/li&gt;
+  &lt;li&gt;David Apolinar – Cloud Solution Architect&lt;/li&gt;
+  &lt;li&gt;Dylan Reed – Customer Engineer&lt;/li&gt;
+  &lt;li&gt;Karl Erickson – Content Developer&lt;/li&gt;
+  &lt;li&gt;Matt Felton – Cloud Solution Architect&lt;/li&gt;
+  &lt;li&gt;Ryan Hudson – Cloud Solution Architect&lt;/li&gt;
+  &lt;li&gt;Troy Ault – Cloud Solution Architect&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#learn-more-about-azure-spring-cloud-and-start-building-today" class="anchor" name="learn-more-about-azure-spring-cloud-and-start-building-today"&gt;&lt;/a&gt;Learn more about Azure Spring Cloud and start building today!&lt;/h2&gt;
+&lt;p&gt;Azure Spring Cloud abstracts away the complexity of infrastructure management and Spring Cloud middleware management, so you can focus on building your business logic and let Azure take care of dynamic scaling, patches, security, compliance, and high availability. With a few steps, you can provision Azure Spring Cloud, create applications, deploy, and scale Spring Boot applications and start monitoring in minutes. We’ll continue to bring more developer-friendly and enterprise-ready features to Azure Spring Cloud. &lt;/p&gt;
+&lt;p&gt;We’d love to hear how you are building impactful solutions using Azure Spring Cloud. Get started with the &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-reference-architecture"&gt;Azure Spring Cloud Reference Architecture&lt;/a&gt; and these resources!&lt;/p&gt;&lt;h3&gt;&lt;a href="#resources" class="anchor" name="resources"&gt;&lt;/a&gt;Resources&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Learn using an &lt;a href="https://docs.microsoft.com/en-us/learn/modules/azure-spring-cloud-workshop/"&gt;MS Learn module&lt;/a&gt; or &lt;a href="https://github.com/microsoft/azure-spring-cloud-training"&gt;self-paced workshop&lt;/a&gt; on GitHub&lt;/li&gt;
+  &lt;li&gt;Learn &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/"&gt;more&lt;/a&gt; about implementing solutions on Azure Spring Cloud&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/Azure-Samples/spring-petclinic-microservices"&gt;Deploy&lt;/a&gt; a distributed version of Spring Petclinic built with Spring Cloud&lt;/li&gt;
+  &lt;li&gt;Migrate your &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud"&gt;Spring Boot&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-cloud"&gt;Spring Cloud&lt;/a&gt;, and &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud"&gt;Tomcat&lt;/a&gt; applications to Azure Spring Cloud&lt;/li&gt;
+  &lt;li&gt;Wire Spring applications to &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/"&gt;interact with Azure services&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;For feedback and questions, please &lt;a href="mailto:AzureSpringCloud-Talk@service.microsoft.com"&gt;e-mail&lt;/a&gt; us.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Announcing Spring Native Beta!</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/03/11/announcing-spring-native-beta" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Sébastien Deleuze</name>
+    </author>
+    <id>tag:spring.io,2021-03-11:4381</id>
+    <updated>2021-03-11T13:32:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Today, after one year and half of work, I am pleased to announce that we’re launching the beta release of &lt;a href="https://github.com/spring-projects-experimental/spring-native"&gt;Spring Native&lt;/a&gt; and its availability on &lt;a href="https://start.spring.io/"&gt;start.spring.io&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In practice, that means that in addition to the regular Java Virtual Machine supported by Spring since its inception, we are adding beta support for compiling Spring applications to &lt;a href="https://www.graalvm.org/reference-manual/native-image/"&gt;native images&lt;/a&gt; with &lt;a href="https://www.graalvm.org/"&gt;GraalVM&lt;/a&gt; in order to provide a new way to deploy Spring applications. Java and Kotlin are supported.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Those native Spring applications can be deployed as a standalone executable (no JVM installation required) and offer interesting characteristics including almost instant startup (typically &amp;lt; 100ms), instant peak performance and lower memory consumption at the cost of longer build times and fewer runtime optimizations than the JVM.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/sdeleuze/20210311/spring-native-startup.png" alt="Native Spring Boot web application starting in 38 ms"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With simple &lt;code&gt;mvn spring-boot:build-image&lt;/code&gt; or &lt;code&gt;gradle bootBuildImage&lt;/code&gt; commands, you can generate an optimized container image that will contain a minimal OS layer and a small native executable that ships just the required bits from the JDK, Spring and the dependencies that you are using in your application. See for example below a minimal container image with a 50MB executable containing Spring Boot, Spring MVC, Jackson, Tomcat, the JDK and the application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/sdeleuze/20210311/spring-native-container.png" alt="Minimal container image with a 50MB executable containing: Spring Boot" width="Spring MVC" height="Jackson"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;There is wide range of use cases where native could make sense for your Spring application:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Serverless with Spring Cloud Function&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cheaper and more sustainable hosting of your Spring microservices&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Good fit with Kubernetes platforms like &lt;a href="https://tanzu.vmware.com/"&gt;VMware Tanzu&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Want to create optimal container images packaging your Spring applications and services&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;I am sure the amazing Spring community will find more, like &lt;a href="https://piotrminkowski.com/2021/03/05/microservices-on-knative-with-spring-boot-and-graalvm/"&gt;this great tutorial&lt;/a&gt; from Piotr Mi?kowski about how to build native microservices on &lt;a href="https://knative.dev/"&gt;Knative&lt;/a&gt; with Spring Boot and GraalVM.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="team-work"&gt;&lt;a class="anchor" href="#team-work"&gt;&lt;/a&gt;Team work&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Native beta is the result of a wide collaboration across the Spring team and its portfolio of projects: Spring Framework, Spring Boot but also Spring Data, Spring Security, Spring Cloud and Spring Initializr. Check this video to watch the Spring team explaining how we built Spring Native beta and what it provides, including a demo of the brand new &lt;a href="https://start.spring.io/"&gt;start.spring.io&lt;/a&gt; support.&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe style="display: block; margin: auto;" width="560" height="315" src="https://www.youtube-nocookie.com/embed/96n_YpGx-JU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The scope of our native effort is wider than Spring, since native concerns the wider JVM ecosystem, so we have been collaborating with the GraalVM team in order to improve native image compatibility and footprint. Here is a quote from &lt;a href="https://twitter.com/vojjov"&gt;Vojin Jovanovic&lt;/a&gt; from the GraalVM team:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;“It is a great joy to collaborate with the Spring team on crafting the native JVM ecosystem: their deep technical knowledge, wrapped with sensitive touch for the community always leads to the best solutions. The latest Spring Native release, and its numerous usages in the JVM ecosystem, pave the way for the wide adoption of native compilation.”&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="scope-of-the-support"&gt;&lt;a class="anchor" href="#scope-of-the-support"&gt;&lt;/a&gt;Scope of the support&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With Spring Native graduating from alpha to beta, I think it is important to clarify the scope of the support we provide.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Alpha was the first step where we experimented a lot and refined the Spring Native (previously named Spring GraalVM Native) architecture, compatibility and footprint on a set of samples with a lot of breaking changes. We also reported &lt;a href="https://github.com/oracle/graal/labels/spring"&gt;a lot of issues&lt;/a&gt; that the GraalVM team fixed in order to reduce the gap between JVM and native for Spring applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;While it is still considered as experimental, beta means that Spring now provides &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/#support"&gt;support for native on a subset of the Spring ecosystem&lt;/a&gt;. You can try it on your projects if they are using the supported dependencies and &lt;a href="https://github.com/spring-projects-experimental/spring-native/issues"&gt;raise bugs&lt;/a&gt; or &lt;a href="https://github.com/spring-projects-experimental/spring-native/pulls"&gt;contribute pull requests&lt;/a&gt; if something goes wrong. A new release of Spring Native will happen for each patch release of the latest Spring Boot 2.x minor version. Spring Native 0.9.0 supports Spring Boot 2.4.3, Spring Native 0.9.1 will support Spring Boot 2.4.4, etc. Breaking changes will happen but we will document migration paths. The documentation quality has reached a new level : the reference documentation is available as &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/"&gt;html single page&lt;/a&gt; or &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/pdf/spring-native-reference.pdf"&gt;pdf&lt;/a&gt;, and we publish &lt;a href="https://docs.spring.io/spring-native/docs/current/api/"&gt;Javadoc for the native hints public API&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="start-spring-io"&gt;&lt;a class="anchor" href="#start-spring-io"&gt;&lt;/a&gt;start.spring.io&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/snicoll"&gt;Stéphane Nicoll&lt;/a&gt; has introduced support for Spring Native on &lt;a href="https://start.spring.io/"&gt;start.spring.io&lt;/a&gt; and related IDE integrations, so as of today this is probably the simplest way to explore how to build a native application with Spring.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://static.spring.io/blog/sdeleuze/20210311/spring-native-initializr.png" alt="Spring Native support on start.spring.io"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Adding the Spring Native dependency will automatically configure your Maven or Gradle project with the required dependency and plugin to support native. The application code itself is unchanged.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Make sure to check the generated &lt;code&gt;HELP.md&lt;/code&gt; file which contains useful links and documentation, but also indicates if you have selected some dependencies not known to be supported on native.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="ahead-of-time-transformations"&gt;&lt;a class="anchor" href="#ahead-of-time-transformations"&gt;&lt;/a&gt;Ahead-of-time transformations&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Native is different from the JVM : the classpath is fixed at build time, configuration is required for reflection or resources for example, there is no class lazy loading (everything shipped in the executable is loaded in memory on startup) and some code can be invoked at build time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In order to fully embrace those characteristics and allow Spring applications to run with maximal compatibility and minimal footprint on native, &lt;a href="https://twitter.com/bclozel"&gt;Brian Clozel&lt;/a&gt; has introduced in this release Spring ahead-of-time (AOT) Maven and Gradle plugins, which perform ahead-of-time transformations on your application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The first kind of transformation intends to generate GraalVM native configuration (reflection, resources, proxies, native-image options) based on an inference engine designed and implemented by the amazing &lt;a href="https://twitter.com/andy_clement"&gt;Andy Clement&lt;/a&gt;, which understands what Spring programming model and infrastructure is. For example, for each class annotated by &lt;code&gt;@Controller&lt;/code&gt;, an entry will be added to a generated &lt;a href="https://www.graalvm.org/reference-manual/native-image/Reflection/#manual-configuration"&gt;&lt;code&gt;reflect-config.json&lt;/code&gt;&lt;/a&gt; file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Some native configuration can not be inferred, for those cases we are introducing &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/#native-hints"&gt;native hint annotations&lt;/a&gt; (see the &lt;a href="https://docs.spring.io/spring-native/docs/0.9.0-SNAPSHOT/api/"&gt;Javadoc&lt;/a&gt; for more details) which allows Spring Native to support native configuration in a more maintainable, typesafe and flexible way than regular JSON based native image configuration. For example the MySQL driver support with Spring Native provides hints that will allow generation of the right entries in native image &lt;code&gt;reflect-config.json&lt;/code&gt;, &lt;code&gt;resource-config.json&lt;/code&gt; and &lt;code&gt;native-image.properties&lt;/code&gt; as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;@NativeHint(
+    trigger = Driver.class,
+    options = "--enable-all-security-services",
+    types = @TypeHint(types = {
+       FailoverConnectionUrl.class,
+       FailoverDnsSrvConnectionUrl.class,
+       // ...
+    }), resources = {
+	@ResourceHint(patterns = "com/mysql/cj/TlsSettings.properties"),
+	@ResourceHint(patterns = "com.mysql.cj.LocalizedErrorMessages",
+                      isBundle = true)
+})
+public class MySqlHints implements NativeConfiguration {}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;code&gt;NativeConfiguration&lt;/code&gt; and others &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/#how-to-contribute-dynamic-native-configuration"&gt;dynamic configuration mechanisms&lt;/a&gt; allow more powerful and dynamic configuration generation, but beware their APIs will evolve a lot in upcoming versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring developers can also directly annotate their &lt;code&gt;@Configuration&lt;/code&gt; or &lt;code&gt;@SpringBootApplication&lt;/code&gt; classes with application-specific native hints, for example for serializing a &lt;code&gt;Book&lt;/code&gt; class as JSON by programmatic APIs like &lt;code&gt;RestTemplate&lt;/code&gt; or &lt;code&gt;WebClient&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;@TypeHint(types = Book.class)
+@SpringBootApplication
+public class WebClientApplication {
+    // ...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The last and probably most powerful mechanism available when working with the ahead-of-time transformation system is the capability to automatically generate native-optimized code (source and bytecode) using the closed-world assumptions introduced by Spring Boot deployment model combined with GraalVM native image characteristics. The goal here is to limit the amount of required extra native configuration to increase the compatibility, by using code constructs that can be analyzed out of the box by the native image compiler, and lower the footprint by reducing the amount of configuration required for reflection, resources or proxies. A concrete example of that is an ahead-of-time transformation of the various &lt;a href="https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories"&gt;&lt;code&gt;spring.factories&lt;/code&gt;&lt;/a&gt; (the extension mechanism behind Spring Boot) to an optimized programmatic version that requires no reflection and that filters out unnecessary entries in the context of your application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This is just a start for Spring AOT, we intend to add even more powerful transformations like &lt;a href="https://github.com/spring-projects-experimental/spring-native/issues/386"&gt;&lt;code&gt;@Configuration&lt;/code&gt; to functional configuration&lt;/a&gt; to replace runtime reflection by an ahead-of-time analysis that will automatically generate configuration classes that will use programmatic constructs like lambdas and method references. This will allow the GraalVM native image compiler to understand Spring configurations out of the box without needing any reflection configuration or &lt;code&gt;*.class&lt;/code&gt; resources.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A key point to keep in mind is that this AOT generated code is also used by default on the JVM when using Spring Native in order to allow you to exercise the “native friendly code path” with the short feedback loop that the JVM allows, with your debugger and all your regular tooling.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;While Spring AOT transformations are currently mainly driven by native needs, a lot of those are not native specific and it is possible that some could provide optimizations for running Spring Boot applications on the JVM. As usual for this kind of topic, it is important to be data driven so we will measure efficiency and performances to drive our decisions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We will likely refine the IDE integration, for now make sure to read the &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/#_intellij_idea"&gt;related documentation&lt;/a&gt; for potential manual configuration step to update the generated sources before running the application in your IDE.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="conclusion"&gt;&lt;a class="anchor" href="#conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;There are two main pillars in the Spring strategy to go native.  The first one is to adapt Spring infrastructure for native without requiring significant changes to the millions of existing Spring Boot applications. That includes changes we make in Spring top-level projects to be native friendly, the infrastructure like &lt;code&gt;@NativeHint&lt;/code&gt; and the Spring AOT build plugins that we are maturing in Spring Native. Check our &lt;a href="https://github.com/spring-projects-experimental/spring-native/milestones"&gt;roadmap&lt;/a&gt; for more information about the upcoming steps.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The second pillar is wider than Spring itself, native is a platform with different characteristics than the JVM, but the Java ecosystem needs to be as consistent as possible in order to avoid two very different flavors of Java that will be challenging to maintain. That’s why we collaborate intensively with the GraalVM team to reduce this gap. This collaboration is going to focus on improving native testing and native configuration for the wider JVM ecosystem in the upcoming months.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring developers can learn more about native with the various &lt;a href="https://github.com/spring-projects-experimental/spring-native/tree/master/samples"&gt;samples&lt;/a&gt; we provide, go on &lt;a href="https://start.spring.io/"&gt;start.spring.io&lt;/a&gt; to test our new native support, read the updated &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/"&gt;reference guide&lt;/a&gt;, read the &lt;a href="https://github.com/spring-projects-experimental/spring-native/releases/tag/0.9.0"&gt;release notes&lt;/a&gt; especially if you are upgrading from a previous version, or even &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/#how-to-contribute"&gt;contribute&lt;/a&gt; the support for your favorite dependency. You can also &lt;a href="mailto:ask@spring.io"&gt;contact us&lt;/a&gt; if you want to learn more about related Spring commercial support.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;I will finish by a big thank you to the Spring community that has already provided a lot of useful feedback and contribution, to the GraalVM team for this amazing collaboration and to the wider Spring team who has worked hard to make native adoption easier for Spring developers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - March 9th, 2021</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/03/09/this-week-in-spring-march-9th-2021" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-03-10:4379</id>
+    <updated>2021-03-10T01:14:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! Tomorrow is the day of Spring One Tour - do &lt;em&gt;not&lt;/em&gt; miss this event! We&amp;rsquo;ve also got a lot to get into this week so, without further ado&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In last week&amp;rsquo;s installment of a &lt;a href="https://spring.io/blog/2021/03/04/a-bootiful-podcast-spring-cloud-gateway-for-kubernetes-lead-chris-sterling-on-api-gateways-microservices-spring-cloud-and-more"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talk Spring Cloud Gateway for Kubernetes lead Chris Sterling on API Gateways, Microservices, Spring Cloud and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Tanzu Observability for Wavefront (formerly Wavefront) delivers scalable observability as a service where Spring developers can build analytics-driven dashboards based on multi-sourced data including metrics, traces, histograms, and span logs. The Spring team has worked side-by-side with the Tanzu Observability team to make the process quick and seamless—but there&amp;rsquo;s always room for improvement. You can provide feedback by participating in a user research effort going on right now and make your voice heard about how to make the Tanzu Observability experience with Spring better—choose a time good for you, &lt;a href="https://calendly.com/mgist1/spring-boot-wavefront"&gt;click here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;I really enjoyed this &lt;a href="https://cacm.acm.org/magazines/2021/3/250706-a-second-conversation-with-werner-vogels/fulltext"&gt;Second Conversation with Amazon&amp;rsquo;s Werner Vogels from March 2021 in &lt;em&gt;Communications of the ACM&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I loved this post by &lt;a href="https://calendly.com/mgist1/spring-boot-wavefront?month=2021-03"&gt;https://calendly.com/mgist1/spring-boot-wavefront?month=2021-03&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/kotlin/status/1368082451877294081?s=12"&gt;Kotlin and RSocket tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1367629885036916739"&gt; Check out this neat talk from Microsoft&amp;rsquo;s Julien Dubois about running Spring in a serverless environment from DevNexus 2021&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Taboola has built a very interesting Spring Boot Actuator that helps you debug asynchronous code - &lt;a href="https://github.com/taboola/async-profiler-actuator-endpoint"&gt;taboola/async-profiler-actuator-endpoint&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The Baeldung blog has updated their article on &lt;a href="https://www.baeldung.com/spring-boot-security-autoconfiguration"&gt;Spring Boot Security autoconfiguration&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;How to build an API to &lt;a href="https://codeburst.io/how-to-build-an-api-to-perform-web-scraping-in-spring-boot-e8bfaaa4622e"&gt;perform web scraping in Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=bg16bu_Gj-w"&gt;Example of CockroachDB &amp;amp; Java Spring Boot Application Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=m-7oUV1x7jc"&gt;Caching in Spring Boot with the Caffeine cache&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This looks interesing: &lt;a href="https://www.youtube.com/watch?v=Ll-Cz6h8s6I"&gt;Spring Boot password encrption with Jasypt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: Spring Cloud Gateway for Kubernetes lead Chris Sterling on API Gateways, Microservices, Spring Cloud and more</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/03/04/a-bootiful-podcast-spring-cloud-gateway-for-kubernetes-lead-chris-sterling-on-api-gateways-microservices-spring-cloud-and-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-03-04:4378</id>
+    <updated>2021-03-04T22:24:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Spring Cloud Gateway for Kubernetes lead &lt;a href="http://twitter.com/csterwa"&gt;Chris Sterling (@csterwa)&lt;/a&gt; about API Gateways, Microservices, Spring Cloud, and more.&lt;/p&gt;
+&lt;iframe title="Spring Cloud Gateway for Kubernetes lead Chris Sterling on API Gateways, Microservices, Spring Cloud and more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/3yu9y-fca825?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - March 2nd, 2021</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/03/02/this-week-in-spring-march-2nd-2021" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-03-02:4377</id>
+    <updated>2021-03-02T22:47:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I&amp;rsquo;ve finally managed to get my &lt;a href="https://joshlong.com/feed.html"&gt;joshlong.com/feed.html&lt;/a&gt; page working again so if you&amp;rsquo;re curious about what I&amp;rsquo;m doing, check this feed out. &lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve got a really great roundup this week, so let&amp;rsquo;s get into it.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.amazon.com/Spring-Boot-Running-Building-Applications-ebook/dp/B08W2QRQGQ/ref=mp_s_a_1_3?dchild=1&amp;keywords=spring+boot+up+and+running&amp;qid=1614279138&amp;sr=8-3"&gt;Check out our very own Mark Heckler’s new book “Spring Boot Up and Running”!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/02/25/a-bootiful-podcast-spring-legend-greg-turnquist-on-spring-data-rest-hateoas-ci-and-so-much-more"&gt;A Bootiful Podcast: Spring legend Greg Turnquist on Spring Data REST, HATEOAS, CI, and so much more.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out this first new installment of &lt;em&gt;Spring Tips&lt;/em&gt; in which I revisit &lt;a href="https://spring.io/blog/2021/02/23/spring-tips-spring-cloud-gateway-redux"&gt;Spring Cloud Gateway&lt;/a&gt;. This episode features a long, detailed look at all things Spring Cloud Gateway and features interviews with Spring Cloud cofounder and Spring Cloud Gateway creator Spencer Gibb and an interview with Spring Cloud Gateway for Kubernetes lead Chris Sterling.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/dbbaskette/status/1364684787785596940?s=12"&gt;Congrats to Jacques Chester on his new book KNative in Action&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://mkyong.com/java/java-custom-annotations-example/"&gt;Custom annotations with Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://foojay.io/today/deploying-spring-boot-applications-on-kubernetes/"&gt;Deploying Spring Boot Application on Kubernetes &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/opensource/2021/02/25/do-i-make-myself-clear/"&gt;Do I Make Myself Clear?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I dig this &lt;a href="https://www.infoq.com/articles/java-pattern-matching/"&gt;Java Feature Spotlight looking at pattern matching&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/news/2021/02/netflix-graphql-spring-boot/"&gt;Netflix Open Sources Their Domain Graph Service Framework: GraphQL for Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/03/01/spring-integration-zip-1-0-4-cve-2021-22114"&gt;Spring Integration Zip 1.0.4 &amp;amp; CVE-2021-22114&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love this video from RedMonk, &lt;a href="https://redmonk.com/videos/what-is-a-distributed-api-gateway/"&gt;&lt;em&gt;What is a Distributed API Gateway? How to get started with Spring Cloud Gateway for Kubernetes&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Integration Zip 1.0.4 &amp; CVE-2021-22114</title>
     <link rel="alternate" href="https://spring.io/blog/2021/03/01/spring-integration-zip-1-0-4-cve-2021-22114" />
@@ -385,507 +724,6 @@ Artem&lt;/p&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/releases/tag/2.3.1"&gt;Release &lt;code&gt;2.3.1&lt;/code&gt; on GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.3.1/reference/html/"&gt;Documentation for &lt;code&gt;2.3.1&lt;/code&gt;&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework 5.3.4 and 5.2.13 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/02/16/spring-framework-5-3-4-and-5-2-13-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Stéphane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2021-02-16:4362</id>
-    <updated>2021-02-16T12:07:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.3.4&lt;/code&gt; and &lt;code&gt;5.2.13&lt;/code&gt; are available now.&lt;/p&gt;
-&lt;p&gt;Spring Framework &lt;code&gt;5.3.4&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.4"&gt;62 fixes and improvements&lt;/a&gt;. Spring Framework &lt;code&gt;5.2.13&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.13.RELEASE"&gt;18 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Stay tuned for follow-up Spring Boot releases later this week.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.4/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Authorization Server 0.1.0 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/02/11/spring-authorization-server-0-1-0-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Joe Grandja</name>
-    </author>
-    <id>tag:spring.io,2021-02-12:4361</id>
-    <updated>2021-02-12T03:23:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the team and everyone who has contributed, it is my pleasure to announce the general availability of Spring Authorization Server 0.1.0.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can download it from &lt;a href="https://repo.spring.io/release/"&gt;repo.spring.io&lt;/a&gt; and Maven Central by using the module coordinates:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.security.experimental:spring-security-oauth2-authorization-server:0.1.0'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For additional details on this new project, see the &lt;a href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server"&gt;initial announcement&lt;/a&gt; and &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server"&gt;project page&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The main features delivered in this release are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;OpenID Connect Core 1.0&amp;#8201;&amp;#8212;&amp;#8201;&lt;a href="https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth"&gt;Authorization Code Flow&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;OpenID Connect Discovery 1.0&amp;#8201;&amp;#8212;&amp;#8201;&lt;a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig"&gt;OpenID Provider Configuration&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;JSON Web Token (JWT) headers and claims customizer&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server/releases/tag/0.1.0"&gt;release notes&lt;/a&gt; for complete details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To get started using Spring Authorization Server, see the &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server/tree/master/samples/boot/oauth2-integration"&gt;sample&lt;/a&gt; to become familiar with setup and configuration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We would love to gather your feedback as we strive to improve and build upon this release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects-experimental/spring-authorization-server/issues"&gt;GitHub Issues&lt;/a&gt; |  &lt;a href="https://app.zenhub.com/workspaces/authorization-server-5e8f3182b5e8f5841bfc4902/board?repos=248032165"&gt;ZenHub Board&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security 5.4.4, 5.3.8, and 5.2.9 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/02/11/spring-security-5-4-4-5-3-8-and-5-2-9-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2021-02-12:4360</id>
-    <updated>2021-02-12T02:04:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Security 5.4.4 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.4.4"&gt;release notes&lt;/a&gt;), 5.3.8 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.3.8.RELEASE"&gt;release notes&lt;/a&gt;), and 5.2.9 (&lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.2.9.RELEASE"&gt;release notes&lt;/a&gt;). These releases deliver bug fixes along with some minor improvements. Users are encouraged to update to the latest patch release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: There was an issue releasing 5.4.3 and 5.3.7 which caused us to need to release 5.4.4 and 5.3.8.&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Doordash tech lead manager Zohaib Sibte Hassan on Spring Boot, Kotlin, GRPC, and more</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/02/11/a-bootiful-podcast-doordash-tech-lead-manager-zohaib-sibte-hassan-on-spring-boot-kotlin-grpc-and-more" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-02-12:4359</id>
-    <updated>2021-02-12T01:07:00Z</updated>
-    <content type="html">&lt;iframe title="Doordash tech lead manager Zohaib Sibte Hassan on Spring Boot, Kotlin, GRPC, and more" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/irvrk-fa794b?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi, Spring fans! In this episode, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Doordash tech lead manager &lt;a href="http://twitter.com/zohaibility"&gt;Zohaib Sibte Hassan (@zohaibility)&lt;/a&gt; about Spring Boot, Kotlin, GRPC, organizational scalability, and more at Doordash.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;the &lt;a href="https://doordash.engineering/"&gt;Doordash Engineering blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/LogNet/grpc-spring-boot-starter"&gt;A GRPC Spring Boot Starter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the Gitter &lt;a href="https://gitter.im/R2DBC/r2dbc"&gt;chat for R2DBC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.linkedin.com/in/zohaibsibtehassan/"&gt;Zohaib on LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Hoxton.SR10 has been released</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/02/11/spring-cloud-hoxton-sr10-has-been-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Olga Maciaszek-Sharma</name>
-    </author>
-    <id>tag:spring.io,2021-02-11:4358</id>
-    <updated>2021-02-11T16:37:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Service Release 10 (SR10) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Hoxton&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Hoxton.SR10/"&gt;Maven Central&lt;/a&gt;. You can check out the Hoxton &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Hoxton-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-hoxton-release-train" class="anchor" name="notable-changes-in-the-hoxton-release-train"&gt;&lt;/a&gt;Notable Changes in the Hoxton Release Train&lt;/h2&gt;
-&lt;p&gt;See all issues included in this release &lt;a href="https://github.com/orgs/spring-cloud/projects/47"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This was primarily a bug fix and documentation release. Hoxton.SR10 is compatible with Spring Boot 2.3.x and 2.2.x.&lt;/p&gt;&lt;h3&gt;&lt;a href="#fix-for-cve-2021-22113" class="anchor" name="fix-for-cve-2021-22113"&gt;&lt;/a&gt;Fix for CVE-2021-22113&lt;/h3&gt;
-&lt;p&gt;This release contains the fix for CVE-2021-22113. Please find the report &lt;a href="https://tanzu.vmware.com/security/cve-2021-22113"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/issues/688"&gt;Random algorithm added for Spring Cloud LoadBalancer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/issues/689"&gt;Sticky implementation added for Spring Cloud LoadBalancer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/issues/856"&gt;Backported standalone &lt;code&gt;RetryableLoadBalancerExchangeFilterFunction&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Added the possibility to &lt;a href="https://github.com/spring-cloud/spring-cloud-commons/pull/855"&gt;refetch the instances for health-check&lt;/a&gt; in Spring Cloud LoadBalancer&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Fixed CVE-2021-22113&lt;/li&gt;
-  &lt;li&gt;Several dependencies upgraded&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud OpenFeign&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/issues/3"&gt;Encoding path variables with &lt;code&gt;/&lt;/code&gt; added&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Several dependencies upgraded&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1742"&gt;Improved the efficiency of messaging TracingChannelInterceptor&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1772"&gt;Displaying method names added&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Added &lt;a href="https://github.com/spring-cloud/spring-cloud-config/pull/1593"&gt;Index regeneration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Added &lt;a href="https://github.com/spring-cloud/spring-cloud-config/issues/717"&gt;the option to clone git submodules at start&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Improved &lt;a href="https://github.com/spring-cloud/spring-cloud-config/pull/1743"&gt;root exception handling&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#spring-cloud-consul" class="anchor" name="spring-cloud-consul"&gt;&lt;/a&gt;Spring Cloud Consul&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/issues/680"&gt;Added LoadBalancer support for &lt;code&gt;serverListQueryTags&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Several dependencies upgraded&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr/&gt;
-&lt;p&gt;The following modules were updated as part of Hoxton.SR10:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Starter Build &lt;/td&gt;
-      &lt;td&gt;Hoxton.SR10 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
-      &lt;td&gt;2.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/96?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Openfeign &lt;/td&gt;
-      &lt;td&gt;2.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/milestone/31?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
-      &lt;td&gt;2.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/86?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
-      &lt;td&gt;2.2.6.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-aws/milestone/36?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gateway &lt;/td&gt;
-      &lt;td&gt;2.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/milestone/44?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Gcp &lt;/td&gt;
-      &lt;td&gt;1.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;2.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/82?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
-      &lt;td&gt;2.2.6.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/milestone/52?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
-      &lt;td&gt;2.2.6.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/71?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
-      &lt;td&gt;1.1.8.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
-      &lt;td&gt;2.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/83?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
-      &lt;td&gt;2.2.7.RELEASE &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-vault/milestone/44?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud CLI &lt;/td&gt;
-      &lt;td&gt;2.2.4.RELEASE &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;Hoxton.SR10&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    ...&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;or with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;buildscript {&#xD;
-  dependencies {&#xD;
-    classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.10.RELEASE&amp;quot;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
-&#xD;
-dependencyManagement {&#xD;
-  imports {&#xD;
-    mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR10&amp;#39;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-  //...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Metrics and Tracing: Better Together</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/02/09/metrics-and-tracing-better-together" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Tommy Ludwig</name>
-    </author>
-    <id>tag:spring.io,2021-02-10:4357</id>
-    <updated>2021-02-10T03:22:00Z</updated>
-    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This blog post was co-authored by our very own, always excited about all things Spring, &lt;a href="https://spring.io/team/joshlong"&gt;Josh Long&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;You&amp;rsquo;ve decided to put your talents to work in the service of humanity and - in the age of the pandemic, and having no other real skills to speak of besides software - you&amp;rsquo;re going to build a web service that people can check for the availability of the highly vaunted Playstation 5 video game console, on your new website, &lt;code&gt;www.ps5ownersarebetterpeople.com.net&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#it-all-started-so-auspiciously-hellip" class="anchor" name="it-all-started-so-auspiciously-hellip"&gt;&lt;/a&gt;It All Started so Auspiciously&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;Go to the trusty &lt;a href="https://start.spring.io"&gt;Spring Initializr&lt;/a&gt; and generate a new project (called &lt;code&gt;service&lt;/code&gt;) using the latest version of Java ( &lt;em&gt;natch!&lt;/em&gt; ) and add the &lt;code&gt;Reactive Web&lt;/code&gt;, &lt;code&gt;Wavefront&lt;/code&gt;, &lt;code&gt;Lombok&lt;/code&gt;, &lt;code&gt;Sleuth&lt;/code&gt;, and &lt;code&gt;Actuator&lt;/code&gt; dependencies to the project. Click the &lt;code&gt;Generate&lt;/code&gt; button to download a &lt;code&gt;.zip&lt;/code&gt; file containing the code for a project you should open in your favorite IDE. &lt;/p&gt;
-&lt;p&gt;Add the following configuration values to &lt;a href="https://github.com/shakuzen/console-availability/tree/master/basics/service/src/main/resources/application.properties"&gt;&lt;code&gt;application.properties&lt;/code&gt;&lt;/a&gt;. We&amp;rsquo;ll review them as they become relevant. For now, the critical thing to keep in mind is that we&amp;rsquo;re running the &lt;code&gt;service&lt;/code&gt; on port &lt;code&gt;8083&lt;/code&gt;, and we&amp;rsquo;ve given this service a name with the &lt;code&gt;spring.application.name&lt;/code&gt; property, &lt;code&gt;service&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.application.name=service&#xD;
-server.port=8083&#xD;
-wavefront.application.name=console-availability&#xD;
-management.metrics.export.wavefront.source=my-cloud-server
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here&amp;rsquo;s &lt;a href="https://github.com/shakuzen/console-availability/blob/master/basics/service/src/main/java/server/ServiceApplication.java"&gt;the Java code&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Slf4j&#xD;
-@SpringBootApplication&#xD;
-public class ServiceApplication {&#xD;
-&#xD;
-    public static void main(String[] args) {&#xD;
-        log.info(&amp;quot;starting server&amp;quot;);&#xD;
-        SpringApplication.run(ServiceApplication.class, args);&#xD;
-    }&#xD;
-}&#xD;
-&#xD;
-@RestController&#xD;
-class AvailabilityController {&#xD;
-&#xD;
-    private boolean validate(String console) {&#xD;
-        return StringUtils.hasText(console) &amp;amp;&amp;amp;&#xD;
-               Set.of(&amp;quot;ps5&amp;quot;, &amp;quot;ps4&amp;quot;, &amp;quot;switch&amp;quot;, &amp;quot;xbox&amp;quot;).contains(console);&#xD;
-    }&#xD;
-&#xD;
-    @GetMapping(&amp;quot;/availability/{console}&amp;quot;)&#xD;
-    Map&amp;lt;String, Object&amp;gt; getAvailability(@PathVariable String console) {&#xD;
-        return Map.of(&amp;quot;console&amp;quot;, console,&#xD;
-                &amp;quot;available&amp;quot;, checkAvailability(console));&#xD;
-    }&#xD;
-&#xD;
-    private boolean checkAvailability(String console) {&#xD;
-        Assert.state(validate(console), () -&amp;gt; &amp;quot;the console specified, &amp;quot; + console + &amp;quot;, is not valid.&amp;quot;);&#xD;
-        return switch (console) {&#xD;
-            case &amp;quot;ps5&amp;quot; -&amp;gt; throw new RuntimeException(&amp;quot;Service exception&amp;quot;);&#xD;
-            case &amp;quot;xbox&amp;quot; -&amp;gt; true;&#xD;
-            default -&amp;gt; false;&#xD;
-        };&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Given a request for a particular type of console (&lt;code&gt;ps5&lt;/code&gt;, &lt;code&gt;nintendo&lt;/code&gt;, &lt;code&gt;xbox&lt;/code&gt;, &lt;code&gt;ps4&lt;/code&gt;), the API returns the console&amp;rsquo;s availability (presumably sourced from local electronics outlets). Except for some reason, which for our demo will have to be &lt;em&gt;deus ex machina&lt;/em&gt; - there is no PlayStation 5 availability. Worse, the service itself is experiencing errors and blowing chunks every time someone even dares to inquire about the Playstation 5! We&amp;rsquo;ll use this particular code path - asking about the availability of Playstation 5&amp;rsquo;s in particular - to simulate an error in our system. Don&amp;rsquo;t judge. You&amp;rsquo;ve probably made an error at some point, too. Probably. &lt;/p&gt;
-&lt;p&gt;We want as much information as possible about individual microservices and their interactions, and we will most want that information when we&amp;rsquo;re trying to flush out bugs in the system. Let&amp;rsquo;s see how tracing and metrics can work together to provide an observability posture superior to using either metrics or tracing alone. &lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;ll need a client to talk to the service and drive some traffic to it. Return to the &lt;a href="https://start.spring.io"&gt;Spring Initializr&lt;/a&gt; and generate another project precisely like the &lt;code&gt;service&lt;/code&gt;, but give this one the &lt;code&gt;spring.application.name&lt;/code&gt; value of &lt;code&gt;client&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;Here&amp;rsquo;s &lt;a href="https://github.com/shakuzen/console-availability/blob/master/basics/client/src/main/resources/application.properties"&gt;the configuration file&lt;/a&gt;. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint properties"&gt;spring.application.name=client&#xD;
-wavefront.application.name=console-availability&#xD;
-management.metrics.export.wavefront.source=my-cloud-server
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The code uses the reactive, non-blocking &lt;code&gt;WebClient&lt;/code&gt; to issue requests against the service. The entire application - both &lt;code&gt;client&lt;/code&gt; and &lt;code&gt;service&lt;/code&gt; - use reactive, non-blocking HTTP. You could just as easily use the traditional Servlet-based Spring MVC. Or you could avoid HTTP altogether and use messaging technologies. Or you could use both. Here&amp;rsquo;s &lt;a href="https://github.com/shakuzen/console-availability/blob/master/basics/client/src/main/java/client/ClientApplication.java"&gt;the Java code&lt;/a&gt;. &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Slf4j&#xD;
-@SpringBootApplication&#xD;
-public class ClientApplication {&#xD;
-&#xD;
-    public static void main(String[] args) {&#xD;
-        log.info(&amp;quot;starting client&amp;quot;);&#xD;
-        SpringApplication.run(ClientApplication.class, args);&#xD;
-    }&#xD;
-&#xD;
-    @Bean&#xD;
-    WebClient webClient(WebClient.Builder builder) {&#xD;
-        return builder.build();&#xD;
-    }&#xD;
-&#xD;
-    @Bean&#xD;
-    ApplicationListener&amp;lt;ApplicationReadyEvent&amp;gt; ready(AvailabilityClient client) {&#xD;
-        return applicationReadyEvent -&amp;gt; {&#xD;
-            for (var console : &amp;quot;ps5,xbox,ps4,switch&amp;quot;.split(&amp;quot;,&amp;quot;)) {&#xD;
-                Flux.range(0, 20).delayElements(Duration.ofMillis(100)).subscribe(i -&amp;gt;&#xD;
-                        client&#xD;
-                                .checkAvailability(console)&#xD;
-                                .subscribe(availability -&amp;gt;&#xD;
-                                        log.info(&amp;quot;console: {}, availability: {} &amp;quot;, console, availability.isAvailable())));&#xD;
-            }&#xD;
-        };&#xD;
-    }&#xD;
-}&#xD;
-&#xD;
-@Data&#xD;
-@AllArgsConstructor&#xD;
-@NoArgsConstructor&#xD;
-class Availability {&#xD;
-    private boolean available;&#xD;
-    private String console;&#xD;
-}&#xD;
-&#xD;
-@Component&#xD;
-@RequiredArgsConstructor&#xD;
-class AvailabilityClient {&#xD;
-&#xD;
-    private final WebClient webClient;&#xD;
-    private static final String URI = &amp;quot;http://localhost:8083/availability/{console}&amp;quot;;&#xD;
-&#xD;
-    Mono&amp;lt;Availability&amp;gt; checkAvailability(String console) {&#xD;
-        return this.webClient&#xD;
-                .get()&#xD;
-                .uri(URI, console)&#xD;
-                .retrieve()&#xD;
-                .bodyToMono(Availability.class)&#xD;
-                .onErrorReturn(new Availability(false, console));&#xD;
-    }&#xD;
-&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Start the &lt;code&gt;service&lt;/code&gt; application, and then start the &lt;code&gt;client&lt;/code&gt; application. The &lt;code&gt;client&lt;/code&gt; application generates a lot of demand directed at the service, some of which results in failed requests. We want to capture all of that information. &lt;/p&gt;&lt;h2&gt;&lt;a href="#a-number-by-any-other-name" class="anchor" name="a-number-by-any-other-name"&gt;&lt;/a&gt;A Number By Any Other Name&lt;/h2&gt;
-&lt;p&gt;First, we want to have an aggregate view of all the data, &lt;em&gt;metrics&lt;/em&gt;, that give us statistics about all the requests. Metrics are numbers, aggregations. Metrics can cover things like memory/thread usage, garbage collection, process metrics, etc. They also often encompass key performance indicators that the business might set, like how many orders were fulfilled, how many users authenticated, etc.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Actuator&lt;/code&gt; starter, in turn, brings in &lt;a href="https://micrometer.io"&gt;Micrometer&lt;/a&gt;, which provides a simple facade over the instrumentation clients for the most popular monitoring systems, allowing you to instrument your JVM-based application code without vendor lock-in. Think SLF4J, but for metrics. &lt;/p&gt;
-&lt;p&gt;The most straightforward possible use of Micrometer is to capture metrics and keep them in memory, which the Spring Boot Actuator will do. You can configure your application to show those metrics under an Actuator management endpoint - &lt;code&gt;/actuator/metrics/&lt;/code&gt;. More commonly, though, you&amp;rsquo;ll want to send these metrics to a time-series database like Graphite, Prometheus, Netflix Atlas, Datadog, or InfluxDB. Time series databases store the evolving value of a metric over time, so you can see how it has changed.&lt;/p&gt;&lt;h2&gt;&lt;a href="#follow-the-data" class="anchor" name="follow-the-data"&gt;&lt;/a&gt;Follow the Data&lt;/h2&gt;
-&lt;p&gt;Danger is the snack food of a true sleuth. -Mac Barnett&lt;/p&gt;
-&lt;p&gt;We also want to have detailed breakdowns of individual requests and traces to give us context around particular failed requests. The &lt;code&gt;Sleuth&lt;/code&gt; starter brings in the &lt;a href="https://spring.io/projects/spring-cloud-sleuth"&gt;Spring Cloud Sleuth&lt;/a&gt; distributed tracing abstraction, which provides a simple facade over distributed tracing systems like OpenZipkin and Google Cloud Stackdriver Trace and Wavefront. &lt;/p&gt;
-&lt;p&gt;Micrometer and Sleuth give you the power of choice in metrics and tracing backends. We &lt;em&gt;could&lt;/em&gt; use these two different abstractions and separately stand up a dedicated cluster for our tracing and metrics aggregation systems. People do. Crazier things have happened. We&amp;rsquo;re all about the idea that you shouldn&amp;rsquo;t run what you can&amp;rsquo;t charge for, so let&amp;rsquo;s use an easy, turnkey, hosted, software-as-a-service (SaaS) offering and let someone else do that work. We don&amp;rsquo;t envy the integration task that having such highly related data living in two different, unrelated backend systems otherwise implies. &lt;/p&gt;&lt;h2&gt;&lt;a href="#to-the-observability-cave-statsman" class="anchor" name="to-the-observability-cave-statsman"&gt;&lt;/a&gt;To The Observability Cave, Statsman!&lt;/h2&gt;
-&lt;p&gt;We will use VMware Tanzu&amp;rsquo;s &lt;a href="https://tanzu.vmware.com/observability"&gt;excellent Wavefront observability platform&lt;/a&gt;, which understands both metrics and traces and can link them together for us. We already added the &lt;code&gt;Wavefront&lt;/code&gt; starter to our build.&lt;/p&gt;
-&lt;p&gt;Start the &lt;code&gt;service&lt;/code&gt; and then start the &lt;code&gt;client&lt;/code&gt;. The &lt;code&gt;client&lt;/code&gt; will generate a lot of traffic. Well, not a &lt;em&gt;lot&lt;/em&gt;. Remember, &lt;a href="https://en.wikipedia.org/wiki/Reddit"&gt;Reddit&lt;/a&gt; uses Wavefront successfully at their global scale. So, all things being equal, our data is &lt;em&gt;nothing&lt;/em&gt;. But it&amp;rsquo;s enough to see some core concepts in action. A Wavefront URL is printed out when our Spring Boot application starts up. This is the URL to access the &lt;em&gt;freemium&lt;/em&gt; Wavefront cluster. You already have a valid Wavefront configuration, and you didn&amp;rsquo;t even have to sign up for an account! It will take a minute for metrics to publish to Wavefront. Wait for a minute and then visit the URL printed in the console in your browser.&lt;/p&gt;
-&lt;p&gt;That URL dumps you into the Wavefront dashboard for Spring Boot. There&amp;rsquo;s a lot here, so we&amp;rsquo;ll focus on a few key things in particular. &lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/1.png" width = "500" /&gt;
-&lt;p&gt;You can see that Wavefront comes fully loaded with a &lt;code&gt;Spring Boot&lt;/code&gt; dashboard in the &lt;code&gt;Dashboards&lt;/code&gt; menu at the top of the screen. The top of the dashboard shows that the &lt;code&gt;Source&lt;/code&gt; is &lt;code&gt;my-cloud-server&lt;/code&gt;, which comes from the configuration property &lt;code&gt;management.&#xD;
-.export.wavefront.source&lt;/code&gt; (or use the default, which is the hostname of the machine). The &lt;code&gt;Application&lt;/code&gt; we&amp;rsquo;re interested in is &lt;code&gt;console-availability&lt;/code&gt;, which comes from the configuration property &lt;code&gt;wavefront.application.name&lt;/code&gt;. &lt;em&gt;Application&lt;/em&gt; refers to the logical group of Spring Boot microservices, not any specific one. &lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/2.png" width = "500" /&gt;
-&lt;p&gt;Click on that, and you&amp;rsquo;ll see everything about your application at a glance. You can choose to look at information for either module - &lt;code&gt;client&lt;/code&gt; or &lt;code&gt;service&lt;/code&gt;. Click &lt;code&gt;Jump To&lt;/code&gt; to navigate to a particular set of graphs. We&amp;rsquo;re interested in the data in the &lt;code&gt;HTTP&lt;/code&gt; section. &lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/4.png" width = "500" /&gt;
-&lt;p&gt;You can see a useful thing like the &lt;code&gt;Top Requests&lt;/code&gt;, the &lt;code&gt;Top Failed Requests&lt;/code&gt;, and &lt;code&gt;Top Exceptions&lt;/code&gt; encountered in the code - mouse over a particular type of request to get some details associated with each entry. You can get information like the HTTP method (&lt;code&gt;GET&lt;/code&gt;), service (&lt;code&gt;service&lt;/code&gt;), status code (&lt;code&gt;500&lt;/code&gt;), and URI (&lt;code&gt;/availability/{console}&lt;/code&gt;) associated with the failing requests.&lt;/p&gt;
-&lt;p&gt;These kinds of at-a-glance numbers are metrics. Metrics are not based on sampled data; they&amp;rsquo;re an aggregation of every single request. You should use metrics for your alerting because they ensure that you see &lt;em&gt;all&lt;/em&gt; your requests (and &lt;em&gt;all&lt;/em&gt; the errors, slow requests, etc.). Trace data, on the other hand, usually needs to be sampled at high volumes of traffic because the amount of data increases proportionally to the traffic volume.&lt;/p&gt;
-&lt;p&gt;We can see that the metrics collection has ignored the values for the &lt;code&gt;{console}&lt;/code&gt; path variable in distinguishing the requests, which means that - as far as our data is concerned - there&amp;rsquo;s only one URI (&lt;code&gt;/availability/{console}&lt;/code&gt;). This is by design. &lt;code&gt;{console}&lt;/code&gt; is a path variable we&amp;rsquo;re using to specify the console, but it could just as easily have been a user ID, an order ID, or some other thing for which there are likely many, possibly unbounded, values. It would be dangerous for the metrics system to record high cardinality metrics by default. Bounded cardinality metrics are cheap! Cost does not increase with traffic. Watch for cardinality in your metrics.&lt;/p&gt;
-&lt;p&gt;It is a little unfortunate because even though we know that &lt;code&gt;{console}&lt;/code&gt; is a low-cardinality variable - there&amp;rsquo;s a finite set of possible values - we can&amp;rsquo;t drill down into the data any further to see at a glance which paths are failing. Metrics represent aggregated statistics, so even if we broke down the metrics in terms of the &lt;code&gt;{console}&lt;/code&gt; variable, the metrics still lacks context around individual requests.&lt;/p&gt;
-&lt;p&gt;There&amp;rsquo;s always the trace data! Click on the little breadcrumb/sandwich icon to the right of the words &lt;code&gt;Top Failed Requests&lt;/code&gt;, and find the service by going to &lt;code&gt;Traces&lt;/code&gt; &amp;gt; &lt;code&gt;console-availability&lt;/code&gt;. &lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/5.png" width = "500" /&gt;
-&lt;p&gt;Here are all the traces collected for the application: good, bad, or otherwise. &lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/6.png" width = "500" /&gt;
-&lt;p&gt;Let&amp;rsquo;s drill down into only the errant requests by adding an &lt;code&gt;Error&lt;/code&gt; filter to the search. Then click &lt;code&gt;Search&lt;/code&gt;. Now we can scrutinize individual errant requests. You can see how long was taken in each service call, the relationship between services, and where the error originated.&lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/8.png" width = "500" /&gt;
-&lt;p&gt;Click on the &lt;code&gt;Expand&lt;/code&gt; icon for the panel labeled &lt;code&gt;client: GET&lt;/code&gt; in the screen&amp;rsquo;s bottom right. You can see each hop in the request&amp;rsquo;s journey: how long it took, the trace ID, the URL, and the path.&lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/9.png" width = "500" /&gt;
-&lt;p&gt;Expand the &lt;code&gt;Tags&lt;/code&gt; branch under a particular segment of the trace, and you can see the metadata collected on your behalf, automatically, by Spring Cloud Sleuth. A trace is made up of individual segments, called &lt;em&gt;spans&lt;/em&gt;, that describe one hop in the request&amp;rsquo;s journey.&lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/10.png" width = "500" /&gt;&lt;h2&gt;&lt;a href="#enriching-the-data-with-business-domain-context" class="anchor" name="enriching-the-data-with-business-domain-context"&gt;&lt;/a&gt;Enriching the Data with Business/Domain Context&lt;/h2&gt;
-&lt;p&gt;We got a lot out of the default configuration. We didn&amp;rsquo;t really do anything to the code to get the results we just saw except for adding the Spring Boot &lt;code&gt;Actuator&lt;/code&gt; starter, the &lt;code&gt;Wavefront&lt;/code&gt; starter, and the &lt;code&gt;Sleuth&lt;/code&gt; starter and starting the application. See? It was easy! Very easy. As easy as falling off a log&amp;hellip;ging-centric system and onto a real observability platform, even. We got trace information and metrics and a dashboard that we could consult for the details. We made precisely zero changes to our Java code to support any of this.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s take things a bit further and customize the metadata captured by Spring Cloud Sleuth and Micrometer to make it even easier to drill down by a domain-specific concept: the type of console requested. We can do this with the &lt;code&gt;{console}&lt;/code&gt; path variable. The code already validates that the console&amp;rsquo;s value falls within a set of well-known consoles. It is important that we validate the input before using it, which ensures the type of console is low cardinality. You should not use arbitrary input (like a path variable or query parameter) that could be high cardinality as a metric tag - though you could use high cardinality data as a trace tag. Now, instead of gleaning the type of console from the HTTP path in the trace data, we can use a tag on the metrics and traces.&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;ll update the service to inject a &lt;code&gt;SpanCustomizer&lt;/code&gt; to customize the trace information. We&amp;rsquo;ll also update the service to configure a &lt;code&gt;WebFluxTagsContributor&lt;/code&gt; to customize the tags captured by Spring Boot and given to Micrometer. Here&amp;rsquo;s the &lt;a href="https://github.com/shakuzen/console-availability/blob/master/enhanced/service/src/main/java/server/ServiceApplication.java"&gt;new and updated code&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Slf4j&#xD;
-@SpringBootApplication&#xD;
-public class ServiceApplication {&#xD;
-&#xD;
-    @Bean&#xD;
-    WebFluxTagsContributor consoleTagContributor() {&#xD;
-        return (exchange, ex) -&amp;gt; {&#xD;
-            var console = &amp;quot;UNKNOWN&amp;quot;;&#xD;
-            var consolePathVariable = ((Map&amp;lt;String,String&amp;gt;) exchange.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE)).get(&amp;quot;console&amp;quot;);&#xD;
-            if (AvailabilityController.validateConsole(consolePathVariable)) {&#xD;
-                console = consolePathVariable;&#xD;
-            }&#xD;
-            return Tags.of(&amp;quot;console&amp;quot;, console);&#xD;
-        };&#xD;
-    }&#xD;
-&#xD;
-    public static void main(String[] args) {&#xD;
-        log.info(&amp;quot;starting server&amp;quot;);&#xD;
-        SpringApplication.run(ServiceApplication.class, args);&#xD;
-    }&#xD;
-}&#xD;
-&#xD;
-@RestController&#xD;
-@AllArgsConstructor&#xD;
-class AvailabilityController {&#xD;
-&#xD;
-    private final SpanCustomizer spanCustomizer;&#xD;
-&#xD;
-    @GetMapping(&amp;quot;/availability/{console}&amp;quot;)&#xD;
-    Map&amp;lt;String, Object&amp;gt; getAvailability(@PathVariable String console) {&#xD;
-        Assert.state(validateConsole(console), () -&amp;gt; &amp;quot;the console specified, &amp;quot; + console + &amp;quot;, is not valid.&amp;quot;);&#xD;
-        this.spanCustomizer.tag(&amp;quot;console&amp;quot;, console);&#xD;
-        return Map.of(&amp;quot;console&amp;quot;, console, &amp;quot;available&amp;quot;, checkAvailability(console));&#xD;
-    }&#xD;
-&#xD;
-    private boolean checkAvailability(String console) {&#xD;
-        return switch (console) {&#xD;
-            case &amp;quot;ps5&amp;quot; -&amp;gt; throw new RuntimeException(&amp;quot;Service exception&amp;quot;);&#xD;
-            case &amp;quot;xbox&amp;quot; -&amp;gt; true;&#xD;
-            default -&amp;gt; false;&#xD;
-        };&#xD;
-    }&#xD;
-&#xD;
-    static boolean validateConsole(String console) {&#xD;
-        return StringUtils.hasText(console) &amp;amp;&amp;amp;&#xD;
-               Set.of(&amp;quot;ps5&amp;quot;, &amp;quot;ps4&amp;quot;, &amp;quot;switch&amp;quot;, &amp;quot;xbox&amp;quot;).contains(console);&#xD;
-    }&#xD;
-&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Re-run the service with the above changes and then the client (same as before), and wait a minute for metrics to be published. Then open up the Wavefront console again; use that handy link printed in the console output!&lt;/p&gt;
-&lt;p&gt;You can now see different metrics broken down by the console. Click on &lt;code&gt;Dashboards&lt;/code&gt; &amp;gt; &lt;code&gt;Spring Boot Dashboard&lt;/code&gt;, and you&amp;rsquo;ll note that the &lt;code&gt;Top Requests&lt;/code&gt; and &lt;code&gt;Top Failed Requests&lt;/code&gt; have more entries. This time, you may break down the results in terms of each console. Hover over them, and you&amp;rsquo;ll see the details. &lt;/p&gt;
-&lt;p&gt;Here are successful requests.&lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/15.png" width = "500" /&gt;
-&lt;p&gt;Here are failed requests.&lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/16.png" width = "500" /&gt;
-&lt;p&gt;It seems to us that the &lt;code&gt;ps5&lt;/code&gt; console has a high coincidence with the failed requests. Let&amp;rsquo;s look at the trace information. Click on &lt;code&gt;Applications&lt;/code&gt; &amp;gt; &lt;code&gt;Traces&lt;/code&gt;, to see the updated data. &lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/11.png" width = "500" /&gt;
-&lt;p&gt;Click on the critical path breakdown and expand the panel. Click on a particular segment, as shown here, and extend the &lt;code&gt;Tags&lt;/code&gt; branch. You&amp;rsquo;ll see all the tags associated with a particular request, including the &lt;code&gt;console&lt;/code&gt; tag. The failing request depicted was after someone requested the availability of the &lt;code&gt;ps5&lt;/code&gt; console. It&amp;rsquo;d sure be nice to filter based on the console, wouldn&amp;rsquo;t it? Click the &lt;code&gt;+&lt;/code&gt; icon next to the tag &lt;code&gt;console&lt;/code&gt;, and Wavefront will add it to the search criteria. Click &lt;code&gt;Search&lt;/code&gt; to see all the errant traces and find the culprits.&lt;/p&gt;
-&lt;img src = "https://github.com/shakuzen/console-availability/raw/master/images/12.png" width = "500" /&gt;
-&lt;p&gt;Our data breaks down both traces and metrics in terms of the console, our domain-specific concept.&lt;/p&gt;&lt;h2&gt;&lt;a href="#metrics-and-tracing-go-together-like-chicken-and-pickle-brine" class="anchor" name="metrics-and-tracing-go-together-like-chicken-and-pickle-brine"&gt;&lt;/a&gt;Metrics and Tracing Go Together like Chicken and Pickle Brine&lt;/h2&gt;
-&lt;p&gt;What? You&amp;rsquo;ve &lt;em&gt;never&lt;/em&gt; tried chicken and pickle brine? It&amp;rsquo;s good. It&amp;rsquo;s &lt;a href="https://www.eatthis.com/weird-food-combinations/"&gt;really good&lt;/a&gt;. Can you imagine how much more free time you&amp;rsquo;ll have once you&amp;rsquo;ve standardized on Spring and Wavefront and don&amp;rsquo;t have to maintain as much undifferentiated infrastructure yourself? It&amp;rsquo;s gonna be sweet. You&amp;rsquo;ll have so much time. You&amp;rsquo;ll have time enough to try chicken and pickle brine. &lt;/p&gt;
-&lt;p&gt;You have seen a concrete example of using metrics and tracing together. Let&amp;rsquo;s review some uses and anti-patterns for metrics and tracing. This hopefully makes clear why you want both metrics and tracing and how to use each for what. It may be useful to consider the framing set up in &lt;a href="https://peter.bourgon.org/blog/2017/02/21/metrics-tracing-and-logging.html"&gt;Peter Bourgon&amp;rsquo;s Metrics, tracing, and logging&lt;/a&gt; blog post.&lt;/p&gt;
-&lt;p&gt;Tracing and metrics overlap in providing insight on request-scoped interactions in our services. However, some information provided by metrics and tracing is disjointed. Traces excel at showing the relationship between services as well as high-cardinality data about a specific request, such as a user ID associated with a request. Distributed tracing helps you pinpoint the source of an issue in your distributed system quickly. The tradeoff is that at high volumes and strict performance requirements, traces need to be sampled to control costs. This means that the specific request you are interested in may not be in the sampled tracing data. &lt;/p&gt;
-&lt;p&gt;On the other side of the coin, metrics aggregate all measurements and export the aggregate at time intervals to define the time series data. All data is included in this aggregation and cost does not increase with traffic, so long as best practices on tag cardinality are followed. Therefore, a metric measuring the maximum latency of something will include the slowest request, and a calculation of error rate will be accurate, regardless of any sampling on tracing data.&lt;/p&gt;
-&lt;p&gt;Metrics can be used beyond the scope of requests for monitoring memory, CPU usage, garbage collection, and caches, to name a few. You will want to use metrics for your alerting, SLOs (service-level objectives), and dashboards. In the &lt;code&gt;console-availability&lt;/code&gt; example, it would be an alert about an SLO violation that notifies us about a high error rate for our service. (You don&amp;rsquo;t want to stare at dashboards 24/7 to detect issues, do you?)&lt;/p&gt;
-&lt;p&gt;Then, with both metrics and traces, we can jump from one to the other using common metadata available in each. Both metrics and trace information support capturing arbitrary key-value pairs with the data called tags. For example, given an alert notification about high latency on an HTTP-based service (based on metrics), you could link to a search of spans (trace data) that match the alert. You would search for spans with the same service, HTTP method, HTTP URI, and that are above a duration threshold to quickly get a sampling of traces matching the alert.&lt;/p&gt;
-&lt;p&gt;In conclusion, data is better than no data, and integrated data is better than non-integrated data. Micrometer and Spring Cloud Sleuth provides a solid observability posture, out of the box, but can be configured and adapted to your business/domain&amp;rsquo;s context. And, finally, while you &lt;em&gt;could&lt;/em&gt; use Micrometer or Spring Cloud Sleuth with any number of other backends, we find Wavefront a convenient and powerful option. The code shown in the example is available from &lt;a href="https://github.com/shakuzen/console-availability"&gt;this GitHub repository&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

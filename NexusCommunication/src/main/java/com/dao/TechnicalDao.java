@@ -24,7 +24,10 @@ EntityManagerFactory emf;
 public List<Technical> displayTechnical(){
 	EntityManager manager = emf.createEntityManager();
 	Query qry = manager.createQuery("select t from Technical t where t.status='false'");
-	return qry.getResultList();
+	List<Technical> li = qry.getResultList();
+	for(Technical t:li)
+		System.out.println(t);
+	return li;
 }
 
 public String placedOrderByTechnical(long oid) {
