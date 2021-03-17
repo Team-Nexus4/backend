@@ -23,7 +23,7 @@ employee = new Employee;
   logout()
   {
     sessionStorage.removeItem("customer");
-    this.router.navigate(["login"]);
+    this.router.navigate(["home"]);
   }
 
 }

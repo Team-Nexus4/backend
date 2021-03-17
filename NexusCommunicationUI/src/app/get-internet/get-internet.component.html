@@ -1,8 +1,10 @@
 
-   <div> <button class="btn btn-lg bg-dark text-white float-right mb-2" (click)="addInternetKit()" >Add Internet Plan</button> </div>
+   <div class="pr-5"> <button class="btn btn-lg bg-success text-white float-right " (click)="addInternetKit()" >Add Internet Plan</button> </div>
     <div *ngIf="flag"> 
-        <table border="1" class="text-white text-center bg-dark w-100">
-            <tr class="text-bold" style="height: 50px;">
+        <div class=" text-black text-center mt-5 mb-3"><h4 class="mb-0">Internet Plans</h4></div>
+        <div class="text-center text-black my-1 alert-danger">{{msg}}</div>
+        <table border="1" class="text-black text-center mx-auto br-5" style="width: 85%;">
+            <tr class="text-bold  bg-primary text-white" style="height: 50px;">
                 <th>Id</th>
                 <th>Speed</th>
                 <th>Cost in Ruppes</th>
@@ -11,16 +13,16 @@
                 <th>Delete plan</th>
             </tr>
             <tr *ngFor="let net of netInfo">
-                <th>{{net.iid}}</th>
-                <th>{{net.speed}}</th>
-                <th>{{net.cost}}</th>
-                <th>{{net.duration}}</th>
+                <td>{{net.iid}}</td>
+                <td>{{net.speed}}</td>
+                <td>{{net.cost}}</td>
+                <td>{{net.duration}}</td>
                 <input type="hidden" value="{{net.iid}}" #id>
                 <input type="hidden" value="{{net.speed}}" #speed>
                 <input type="hidden" value="{{net.cost}}" #cost>
                 <input type="hidden" value="{{net.duration}}" #duration>
-                <th> <button  (click)="updateInternetKit(id.value,speed.value,cost.value,duration.value)" >update</button> </th>
-                <th><button  (click)="deleteInternetKit(id.value)" >delete</button> </th>
+                <th> <button class="btn btn-warning text-white" (click)="updateInternetKit(id.value,speed.value,cost.value,duration.value)" >update</button> </th>
+                <th><button  class="btn btn-danger" (click)="deleteInternetKit(id.value)" >delete</button> </th>
             </tr>
         </table>
     </div>

@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class GetInternetComponent implements OnInit {
 
   flag=false;
-  flag1=true
+  flag1=true;
+  msg:string=""
   constructor(public netserv:InternetServiceService,public router:Router) { }
   netInfo:Array<Internet>=[];
   ngOnInit(): void {
@@ -51,7 +52,7 @@ export class GetInternetComponent implements OnInit {
       }
     }
     
-    this.netserv.deleteNet(id).subscribe(r=>r)
+    this.netserv.deleteNet(id).subscribe(r=>this.msg=r)
     this.ngOnInit();
   }
 

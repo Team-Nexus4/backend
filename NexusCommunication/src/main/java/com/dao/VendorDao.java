@@ -26,6 +26,7 @@ public class VendorDao {
 		EntityManager manager=emf.createEntityManager();
 		Query qry=manager.createQuery("select v from Vendor v");
 		List<Vendor> listOfRec=qry.getResultList();
+		manager.close();
 		return listOfRec;
 	}
 
@@ -39,9 +40,11 @@ public class VendorDao {
 		Vendor v=manager.find(Vendor.class,vv.getVid());
 		if(v==null)
 		{
+			manager.close();
 			return 0;
 		}else
 		{
+			manager.close();
 			return 1;
 		}
 	}
@@ -52,6 +55,7 @@ public class VendorDao {
 		Vendor v = manager.find(Vendor.class,vid);
 		if(v==null)
 		{
+			manager.close();
 			return 0;
 		}
 		else
@@ -59,6 +63,7 @@ public class VendorDao {
 			tran.begin();
 			manager.remove(v);
 			tran.commit();
+			manager.close();
 			return 1;
 		}
 	}
@@ -69,6 +74,7 @@ public class VendorDao {
 		Vendor v=manager.find(Vendor.class,vv.getVid());
 		if(v==null)
 		{
+			manager.close();
 			return 0;
 		}else
 		{
@@ -76,6 +82,7 @@ public class VendorDao {
 			v.setInternetKit(v.getInternetKit()+vv.getInternetKit());
 			manager.merge(v);
 			tran.commit();
+			manager.close();
 			return 1;
 		}
 	}
@@ -87,6 +94,7 @@ public class VendorDao {
 		OrderStock os=manager.find(OrderStock.class,oid);
 		if(os==null)
 		{
+			manager.close();
 			return 0;
 		}else
 		{
@@ -94,6 +102,7 @@ public class VendorDao {
 			os.setStatus("true");
 			manager.merge(os);
 			tran.commit();
+			manager.close();
 			return 1;
 		}
 	}
@@ -104,6 +113,7 @@ public class VendorDao {
 		Vendor v=manager.find(Vendor.class,vv.getVid());
 		if(v==null)
 		{
+			manager.close();
 			return 0;
 		}else
 		{
@@ -111,6 +121,7 @@ public class VendorDao {
 			v.setLandlineKit(v.getLandlineKit()+vv.getLandlineKit());
 			manager.merge(v);
 			tran.commit();
+			manager.close();
 			return 1;
 		}
 	}
@@ -120,6 +131,7 @@ public class VendorDao {
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select r from Retailer r where r.vid=?1");
 		qry.setParameter(1, vid);
+		manager.close();
 		return qry.getResultList();	
 	}
 
@@ -129,7 +141,10 @@ public class VendorDao {
 		EntityTransaction  tran = manager.getTransaction();
 		Vendor v = manager.find(Vendor.class,r.getRid());
 		if(v == null)
+		{
+			manager.close();
 			return 0;
+		}
 		else
 		{
 			Query qry = manager.createQuery("select r.rid from Retailer r where r.vid=?1");
@@ -154,6 +169,7 @@ public class VendorDao {
 					
 				}
 				tran.commit();
+				manager.close();
 			return 1;
 		}
 		
@@ -164,6 +180,7 @@ public class VendorDao {
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select v.vid from Vendor v");
 		List<Long> list= qry.getResultList();
+		manager.close();
 		return Collections.max(list);
 		
 		
@@ -180,7 +197,7 @@ public class VendorDao {
 		{
 			on=os;
 		}
-		
+		manager.close();
 		return on;
 	}
 
@@ -194,7 +211,7 @@ public class VendorDao {
 		{
 			vn=vnd;
 		}
-		
+		manager.close();
 		return vn;
 	}
 
@@ -208,7 +225,7 @@ public class VendorDao {
 		{
 			vn=vnd;
 		}
-		
+		manager.close();
 		return vn;
 	}
 
@@ -221,9 +238,11 @@ public class VendorDao {
 		Retailer r=manager.find(Retailer.class,ro.getRid());
 		if(r==null)
 		{
+			manager.close();
 			return 0;
 		}else
 		{
+			manager.close();
 			return 1;
 		}
 	}
@@ -232,7 +251,9 @@ public class VendorDao {
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select v from Vendor v where v.vid=?1");
 		qry.setParameter(1, vid);
-		return qry.getResultList();
+		List<Vendor> li = qry.getResultList();
+		manager.close();
+		return li;
 	}
 
 	public List<OrderStock> getOrdDetails(long vid) {
@@ -240,7 +261,9 @@ public class VendorDao {
 		System.out.println(vid);
 		Query qry = manager.createQuery("select os from OrderStock os where os.vid=?1 and os.status='false'");
 		qry.setParameter(1, vid);
-		return qry.getResultList();
+		List<OrderStock> li = qry.getResultList();
+		manager.close();
+		return li;
 	}
 
 	

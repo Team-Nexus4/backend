@@ -12,6 +12,7 @@ export class GetLandlineplanComponent implements OnInit {
   landlineInfo:Array<LandLine>=[]
   flag:boolean = false;
   flag1=true
+  msg:string=""
   constructor(public landlineService:LandlineplanService,public router:Router) { }
 
   ngOnInit(): void 
@@ -47,7 +48,7 @@ export class GetLandlineplanComponent implements OnInit {
       }
     }
 
-    this.landlineService.deleteLandLinePlan(id).subscribe(r=>r)
+    this.landlineService.deleteLandLinePlan(id).subscribe(r=>this.msg=r)
     this.ngOnInit();
   }
 

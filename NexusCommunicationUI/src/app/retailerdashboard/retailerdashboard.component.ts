@@ -22,7 +22,7 @@ export class RetailerdashboardComponent implements OnInit {
 
   logout()
   {
-    sessionStorage.removeItem("customer");
-    this.router.navigate(["login"]);
+    sessionStorage.removeItem("employee");
+    this.router.navigate(["home"]);
   }
 }

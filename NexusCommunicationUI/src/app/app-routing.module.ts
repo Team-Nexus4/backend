@@ -43,9 +43,9 @@ import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 
 const routes: Routes = [
   {path:"\loginCustomer",component:LogincustomerComponent,children:[{path:"addcustomer",component:AddcustomerComponent}]},
-  {path:"\login" , component:FrontloginComponent},
+  {path:"\home" , component:FrontloginComponent},
   {path:"\loginEmployee",component:EmployeeloginComponent},
-  {path:"",redirectTo:"\login",pathMatch:"full"},
+  {path:"",redirectTo:"\home",pathMatch:"full"},
 
   {path:"\technicalDashboard",component:TechnicaldashboardComponent},
   {path:"updateinternetplan",component:UpdateInternetComponent},
@@ -84,25 +84,27 @@ const routes: Routes = [
     ]
   },
 
-  {path:"retailerDashboard",component:RetailerdashboardComponent},
+  
 
   {path:"technicalDashboard",component:TechnicaldashboardComponent,canActivate:[MyGaurdsCustomer],
         children:[
           {path:"viewOrder",component:DisplayTechnicalComponent},
           
         ]},
+        
    {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[MyGaurdsCustomer],
        children:[
          {path:"viewOrders",component:VendorViewOrdersComponent},
-         {path:"placeOrder",component:VendordashboardComponent},
+
    ]},
+
   {path:"retailerDashboard",component:RetailerdashboardComponent,canActivate:[MyGaurdsCustomer],
         children:[
         {path:"viewOrder",component:RetailerDisplayOrderComponent},
         {path:"placeOrderStock",component:RetailerPlaceOrderStockComponent},
         //{path:"placeOrderStock",component:PlaceOrderByTechnicalComponent}
   ]},
-  {path:"adminDashboard",component:AdmindashboardComponent,canActivate:[MyGaurdsCustomer]},
+  
 
   {path:"customerDashboard",component:DashboardComponent,canActivate:[MyGaurds],
       children:[

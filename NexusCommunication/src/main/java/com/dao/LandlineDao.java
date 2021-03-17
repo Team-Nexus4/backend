@@ -23,7 +23,10 @@ public class LandlineDao
 	{
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select l from LandlinePlan l");
-		return qry.getResultList();
+		
+		List<LandlinePlan> li = qry.getResultList();
+		manager.close();
+		return li;
 	}
 	
 	public int addLandlinePlan(LandlinePlan l)
@@ -31,7 +34,6 @@ public class LandlineDao
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 		int du = l.getDuration();
-		//System.out.println(du);
 		Query q2 = manager.createQuery("select l from LandlinePlan l where l.duration=?1");
 		q2.setParameter(1, du);
 		
@@ -43,10 +45,12 @@ public class LandlineDao
 			tran.begin();
 				manager.persist(l);
 			tran.commit();
+			manager.close();
 			return 1;
 		}
 		else
 		{
+			manager.close();
 			return 0;
 		}
 		
@@ -59,6 +63,7 @@ public class LandlineDao
 		LandlinePlan l = manager.find(LandlinePlan.class, lid);
 		if(l==null)
 		{
+			manager.close();
 			return 2;
 		}
 		else
@@ -66,6 +71,7 @@ public class LandlineDao
 			tran.begin();
 				manager.remove(l);
 			tran.commit();
+			manager.close();
 			return 1;
 		}
 	}
@@ -78,6 +84,7 @@ public class LandlineDao
 		System.out.println(l);
 		if(l1==null)
 		{
+			manager.close();
 			return 2;
 		}
 		else
@@ -87,6 +94,7 @@ public class LandlineDao
 			tran.begin();
 				manager.merge(l1);
 			tran.commit();
+			manager.close();
 			return 1;
 		}
 	}

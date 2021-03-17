@@ -40,8 +40,11 @@ public class CustomerDao
 		Query qry = manager.createQuery("select r.rid from RetailerMapping r where r.pincode=?1");
 		qry.setParameter(1, pincode);
 		List<Long> li = qry.getResultList();
-		if(li.isEmpty())
+		if(li.isEmpty())	
+		{
+			manager.close();
 			return 0;
+		}
 		else
 		{
 			long rid=0;
@@ -49,6 +52,7 @@ public class CustomerDao
 			{
 				 rid = r;
 			}
+			manager.close();
 			return rid;
 		}
 	}
@@ -66,10 +70,12 @@ public class CustomerDao
 			tran.begin();
 				manager.persist(order);
 			tran.commit();
+			manager.close();
 			return " Your Order Placed";
 		}
 		else
 		{
+			manager.close();
 			return "That Type Of Order Is Alreay Placed";
 		}
 		
@@ -84,35 +90,9 @@ public class CustomerDao
 		qry.setParameter(1,cid);
 		listOfOrder = qry.getResultList();
 		System.out.println(listOfOrder.size());
+		manager.close();
 		return listOfOrder;
-//		Iterator<Order> li =  listOfOrder.iterator();
-//		int i=0;
-//		while(li.hasNext())
-//		{
-//			
-//			
-//			Order oo = li.next();
-//			long request = oo.getRequested_plan();
-//			long divider = Long.parseLong("9000000000");
-//
-//			if(request<divider)
-//			{
-//				System.out.println(i);
-//				qry = manager.createNativeQuery("select l.duration,l.cost,o.status from landline_plan l , order_table o where l.lid=o.requested_plan and o.oid=:cid");
-//				qry.setParameter("cid", oo.getOid());
-//				listOfObject.addAll(qry.getResultList());
-//
-//			}
-//			else if(request>divider)
-//			{
-//				System.out.println(i );
-//				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,o.status from internet_plan i , order_table o where i.iid=o.requested_plan and o.oid=:cid");
-//				qry.setParameter("cid", oo.getOid());
-//				listOfObject.addAll(qry.getResultList());
-//			}	
-//			i++;
-//		}
-//		return listOfObject;
+
 	}
 
 	public List<PlanBill> getAllPlanBill(long cid) {
@@ -121,7 +101,6 @@ public class CustomerDao
 		Query qry = manager.createQuery("select cn from Connection cn where cn.cid=?1 and cn.billstatus='unpaid'");
 		qry.setParameter(1,cid);
 		List<Connection> listOfOrder = qry.getResultList();
-		//System.out.println(listOfOrder.size());
 		Iterator<Connection> li =  listOfOrder.iterator();
 		int i=0;
 		while(li.hasNext())
@@ -134,10 +113,10 @@ public class CustomerDao
 
 			if(request<divider)
 			{
-				System.out.println(i);
+
 				qry = manager.createNativeQuery("select l.duration,l.cost,cn.status,cn.bill,cn.startdate,cn.enddate,cn.cnid,cn.billstatus from landline_plan l , connection cn where l.lid=cn.reqplan and cn.cnid=:cid");
 				qry.setParameter("cid", oo.getCnid());
-				//listOfObject.add(qry.getResultList());
+
 				List<?> lit = qry.getResultList();
 				Iterator<?> li1 =  lit.iterator();
 				while(li1.hasNext()) {
@@ -161,7 +140,7 @@ public class CustomerDao
 			}
 			else if(request>divider)
 			{
-				System.out.println(i);
+
 				qry = manager.createNativeQuery("select i.speed, i.duration,i.cost,cn.status,cn.bill,cn.startdate,cn.enddate,cn.cnid,cn.billstatus from internet_plan i , connection cn where i.iid=cn.reqplan and cn.cnid=:cid");
 				qry.setParameter("cid", oo.getCnid());
 				List<?> lit = qry.getResultList();
@@ -187,6 +166,7 @@ public class CustomerDao
 			}	
 			i++;
 		}
+		manager.close();
 		return listOfObject;
 
 	}

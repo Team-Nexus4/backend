@@ -25,8 +25,9 @@ public List<Technical> displayTechnical(){
 	EntityManager manager = emf.createEntityManager();
 	Query qry = manager.createQuery("select t from Technical t where t.status='false'");
 	List<Technical> li = qry.getResultList();
-	for(Technical t:li)
-		System.out.println(t);
+//	for(Technical t:li)
+//		System.out.println(t);
+	manager.close();
 	return li;
 }
 
@@ -38,6 +39,7 @@ public String placedOrderByTechnical(long oid) {
 	Technical t = manager.find(Technical.class, oid);
 	if(o==null)
 	{
+		manager.close();
 		return "Order is not present in database";
 	}
 	else
@@ -49,6 +51,7 @@ public String placedOrderByTechnical(long oid) {
 			manager.merge(o);
 			manager.merge(t);
 		tran.commit();
+		manager.close();
 		return "Order Placed Success by Technical Person";
 	}
 }

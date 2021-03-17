@@ -55,7 +55,7 @@ public class TechnicalService {
 				con.setEnddate(LocalDate.now().plusDays(llp.getDuration()*30));
 				con.setBillstatus("unpaid");
 				Connection c1 = cr.save(con);
-			return c1==null?"Connection Activated":"Connection Not Activated";
+			return c1!=null?"Connection Activated":"Connection Not Activated";
 			
 			}else {
 				long iid=o.getRequested_plan();
@@ -69,7 +69,7 @@ public class TechnicalService {
 				con.setEnddate(LocalDate.now().plusDays(Integer.parseInt(iip.getDuration())*30));
 				con.setBillstatus("unpaid");
 				Connection c1 = cr.save(con);
-			return c1==null?"Connection Activated":"Connection Not Activated";
+			return c1!=null?"Connection Activated":"Connection Not Activated";
 			}
 			
 		}else {

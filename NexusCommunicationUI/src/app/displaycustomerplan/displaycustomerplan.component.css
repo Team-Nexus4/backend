@@ -1,0 +1,18 @@
+.note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color:black;
+    font-weight: bold;
+    line-height: 80px;
+}
+
+.br-5
+{
+    border: 3px solid black;
+}
+
+tr,td,th{
+    border: 1px solid black;
+}

@@ -12,8 +12,8 @@ body {
 
   .wrapper
   {
-    background-image:url("../images/custlogin.jpg");
-    background-size: cover;
+    background-image:url("../images/custlogin2.jpg");
+    background-size: 100% 100%;
   }
   
   a {
@@ -26,7 +26,7 @@ body {
   .content {
     padding: 2rem 0; 
     background-color: transparent;
-    opacity: 0.8;
+    opacity: 0.96;
   }
   
   h2 {

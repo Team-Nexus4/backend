@@ -1,10 +1,11 @@
 
-<div>
+<div class="mt-5">
     <div *ngIf ="flagl">
         <div>
-            <div class="bg-secondary text-white text-center mt-2"><h4 class="mb-0">Landline Order Details</h4></div>
-            <table class="w-100 text-white text-center bg-dark border" border="1"> 
-                <tr class="bg-dark" style="height: 50px;">
+            <div class=" text-black text-center mt-2"><h4 class="mb-0">Landline Order Details</h4></div>
+            <table class="mx-auto text-black text-center br-5" style="width: 85%;"> 
+                <tr class="bg-primary text-white" style="height: 50px;">
+                    
                 <th>lid</th>
                 <th>Duration</th>
                 <th>Cost</th>
@@ -24,9 +25,9 @@
         
 <div>
     <div *ngIf ="flagi">
-        <div class="bg-secondary text-white text-center mt-2"><h4 class="mb-0">Internet Order Details</h4></div>
-        <table class="w-100 text-white text-center bg-dark border" border="1"> 
-            <tr class="bg-dark" style="height: 50px;">
+        <div class=" text-black text-center mt-2"><h4 class="mb-0">Internet Order Details</h4></div>
+        <table class="mx-auto text-black text-center br-5 " style="width: 85%;"> 
+            <tr class="bg-primary text-white" style="height: 50px;">
                 <th>iid</th>
                 <th>Speed</th>
                 <th>Cost</th>
@@ -44,40 +45,7 @@
             </tr>
         </table>
         {{msg}}
-        <!--constructor(public oid?:number,
-                public rid?:number,
-                public cid?:number,
-                public request?:number,
-                public status?:string){}
-
-                <div>
-    <div>
-        <div>
-        <table>
-            <tr>
-                <th>oid</th>
-                <th>rid</th>
-                <th>cid</th>
-                <th>request</th>
-                <th>status</th>
-            </tr>
-            <tr *ngFor = "let o of order">
-                
-                <td>{{o.oid}}</td>
-                <td>{{o.rid}}</td>
-                <td>{{o.cid}}</td>
-                <td>{{o.requested_plan}}</td>
-                <td>{{o.status}}</td>
-            </tr>
-        </table>
-    </div>
-
-        <br>
-
-
-    </div>
-</div>
-}-->
+       
 
 
     </div>

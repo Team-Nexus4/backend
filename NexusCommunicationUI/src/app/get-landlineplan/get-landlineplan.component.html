@@ -1,8 +1,10 @@
 
-<div> <button class="btn btn-lg bg-dark text-white float-right mb-2" (click)="addLandlineKit()" >Add Landline Plan</button> </div>
+<div class="pr-5"> <button class="btn btn-lg btn-success text-white float-right mb-2" (click)="addLandlineKit()" >Add Landline Plan</button> </div>
 <div *ngIf="flag"> 
-    <table border="1" class="text-white text-center bg-dark text-center w-100">
-        <tr class="text-bold" style="height: 50px;">
+    <div class=" text-black text-center mt-5 mb-3"><h4 class="mb-0">Landline Plans</h4></div>
+        <div class="text-center text-black my-1 alert-danger">{{msg}}</div>
+        <table border="1" class="text-black text-center mx-auto br-5" style="width: 85%;">
+            <tr class="text-bold  bg-primary text-white" style="height: 50px;">
             <th>Id</th>
             <th>Duration in month</th>
             <th>Cost in Ruppes</th>
@@ -16,8 +18,8 @@
                 <input type="hidden" value="{{landline.lid}}" #id>
                 <input type="hidden" value="{{landline.cost}}" #cost>
                 <input type="hidden" value="{{landline.duration}}" #duration>
-                <th> <button  (click)="updateLandlineKit(id.value,cost.value,duration.value)" >update</button> </th>
-                <th><button  (click)="deleteLandlineKit(id.value)" >delete</button> </th>
+                <th> <button class="btn btn-warning text-white"  (click)="updateLandlineKit(id.value,cost.value,duration.value)" >update</button> </th>
+                <th><button  class="btn btn-danger" (click)="deleteLandlineKit(id.value)" >delete</button> </th>
             </tr>
         </table>
 
