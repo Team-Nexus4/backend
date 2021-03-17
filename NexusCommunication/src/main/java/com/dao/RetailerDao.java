@@ -27,14 +27,18 @@ public class RetailerDao
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select o from Order o where o.rid=?1 and o.status='false'");
 		qry.setParameter(1, rid);
-		return qry.getResultList();
+		List<Order> li = qry.getResultList();
+		manager.close();
+		return li;
 	}
 	
 	public List<Retailer> getRetDetails(long rid) {
 		EntityManager manager = emf.createEntityManager();
 		Query qry = manager.createQuery("select r from Retailer r where r.rid=?1");
 		qry.setParameter(1, rid);
-		return qry.getResultList();
+		List<Retailer> li = qry.getResultList();
+		manager.close();
+		return li;
 	}
 	
 	public int placeOrder(long oid)
@@ -45,6 +49,7 @@ public class RetailerDao
 		//OrderStock oo = manager.find((OrderStock.class, oid);
 		if(o==null)
 		{
+			manager.close();
 			return 2;
 		}
 		else
@@ -71,6 +76,7 @@ public class RetailerDao
 					manager.merge(o);
 					manager.merge(t);
 				tran.commit();
+				manager.close();
 					return 1;
 			}
 			else if(request>divider)
@@ -85,19 +91,14 @@ public class RetailerDao
 					manager.merge(o);
 					manager.merge(t);
 				tran.commit();
+				manager.close();
 					return 1;
 			}
 			else {
+				manager.close();
 				return 0;
 			}
-			
-			
-//			Retailer robj = (Retailer) qry.getSingleResult();
-//			o.setStatus("true");
-//			tran.begin();
-//				manager.merge(o);
-//			tran.commit();
-//			return 1;
+
 		}
 	}
 
@@ -109,6 +110,7 @@ public class RetailerDao
 		
 		if(o==null)
 		{
+			manager.close();
 			return 2;
 		}
 		else
@@ -122,16 +124,19 @@ public class RetailerDao
 			Retailer robj = (Retailer) qry.getSingleResult();
 			if(request<divider)
 			{	
+				manager.close();
 				return robj.getLandlineKit()>0?1:0;
 				
 				
 			}
 			else if(request>divider)
 			{
+				manager.close();
 				return robj.getInternetKit()>0?1:0;
 				
 			}
 			else {
+				manager.close();
 				return 0;
 			}
 		}
@@ -153,7 +158,9 @@ public class RetailerDao
 			com = "landline kit";
 		else
 			com = "internet kit ";
-		return "Order For " + com + "to Vendor " + o.getVid() + " is placed";
+		
+		manager.close();
+		return "Order For " + com + " to Vendor " + o.getVid() + " is placed";
 	}
 
 	public long getEmpId(int pincode) {
@@ -161,6 +168,7 @@ public class RetailerDao
 		Query qry = manager.createQuery("select r from Retailer r where pincode=?1");
 		qry.setParameter(1, pincode);
 		Retailer r= (Retailer) qry.getSingleResult();
+		manager.close();
 		return r.getRid();
 	}
 

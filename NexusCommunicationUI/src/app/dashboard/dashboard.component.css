@@ -3,3 +3,13 @@ a:hover{
     text-decoration: none;
   
 }
+
+.note
+{
+    text-align: center;
+    
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color:black;
+    font-weight: bold;
+    line-height: 50px;
+}

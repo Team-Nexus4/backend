@@ -1,0 +1,14 @@
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 40%;
+    align-items: center;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+tr,td,th{
+    border: 1px solid black;
+}

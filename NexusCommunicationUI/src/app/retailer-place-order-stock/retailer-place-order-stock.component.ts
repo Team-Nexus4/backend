@@ -22,7 +22,6 @@ export class RetailerPlaceOrderStockComponent implements OnInit {
   ngOnInit(): void {
     this.flag=true;
     this.retailerService.findRetailer().subscribe(data=>this.retailer=data);
-    console.log(this.retailer);
   }
 
   placeOrderStocki(lstocki:any)

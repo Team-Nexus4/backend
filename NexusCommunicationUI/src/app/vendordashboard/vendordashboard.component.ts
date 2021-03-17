@@ -29,6 +29,6 @@ export class VendordashboardComponent implements OnInit {
   logout()
   {
     sessionStorage.removeItem("employee");
-    this.router.navigate(["login"]);
+    this.router.navigate(["home"]);
   }
 }

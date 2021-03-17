@@ -1,10 +1,11 @@
 
-<div>
-    <div class="text-center text-white bg-dark my-1">{{msg}}</div>
+<div class="mt-5">
+    <div class=" text-black text-center mt-2"><h4 class="mb-0">Landline Plans</h4></div>
+    <div class="text-center text-black  my-1 alert-danger">{{msg}}</div>
     <div *ngIf ="flag">
 
-        <table class="w-100 text-white text-center bg-dark border" border="1"> 
-            <tr class="bg-dark" style="height: 50px;">
+        <table class="w-100 text-black text-center  border" border="1"> 
+            <tr class="bg-primary" style="height: 50px;">
                 <th>lid</th>
                 <th>Duration in Months</th>
                 <th>Cost in Ruppes</th>
@@ -19,7 +20,7 @@
                 <td><button value="Buy" class="text-white btn myDiv"  style="background-color:{{obj.colori}}" (click) = "orderLandline(ref.value,$event)">Buy</button></td>
             </tr>
         </table>
-        {{msg}}
+        
 
 
 

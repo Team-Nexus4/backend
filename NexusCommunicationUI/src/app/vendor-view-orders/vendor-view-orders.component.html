@@ -1,8 +1,9 @@
 <div >
     <div>
-        <div  class="text-white bg-dark text-center my-1" >{{msg}}</div>
-        <table border="1" class="text-white text-center bg-dark text-center w-100">
-            <tr class="text-bold" style="height: 50px;">
+        <div class=" text-black text-center mt-5 mb-3"><h4 class="mb-0">View Order</h4></div>
+        <div class="text-center text-black my-1 alert-success">{{msg}}</div>
+        <table border="1" class="text-black text-center mx-auto br-5" style="width: 85%;">
+            <tr class="text-bold  bg-primary text-white" style="height: 50px;">
             <th>Order Id</th>
             <th>Retailer Id</th>
             <th>Requested Item</th>
@@ -12,10 +13,10 @@
         <tr *ngFor="let exm of ost">
             <td>{{exm.oid}}</td>
             <input type="hidden" value={{exm.oid}} #ref>
-            <th>{{exm.rid}}</th>
-            <td>{{exm.requestedItem}}</td>
+            <td>{{exm.rid}}</td>
+            <td>{{exm.requestedItem | ItemTypePipe }}</td>
             <td>{{exm.requestedStock}}</td>
-            <td><input type="button" value="Proceed" (click) = "fulfillOrderStock(ref.value)"/></td>
+            <td><input type="button" value="Proceed" class="btn btn-success" (click) = "fulfillOrderStock(ref.value)"/></td>
         </tr>
     </table>
     {{msg}}

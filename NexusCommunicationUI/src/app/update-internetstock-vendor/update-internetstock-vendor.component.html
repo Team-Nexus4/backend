@@ -12,11 +12,10 @@
 <div class="container register-form">
     <div class="form">
         <form #internetRef="ngForm" (ngSubmit)="updateInternetStock(internetRef.value); internetRef.reset()" >
-        <div class="note">
-            <p>UPDATE VENDOR INTERNET STOCK</p>
- 
-        </div>
-        <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
+            <div class="note">
+                <h4 class="mt-5 pt-3">Update Vendor Internet Stock</h4>
+            </div>
+        <div class="my-1 bg-success text-center">{{msg}}</div>
         <div class="form-content">
            <div class="row">
             <div class="col-md-6">
@@ -32,8 +31,10 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" class="btnSubmit" value="Submit">
-            <button type="button" class="btnSubmit" (click)="goback()" >Back</button>
+            <div class="mx-auto">
+                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+                <button type="button" class="btnSubmit" (click)="goback()">Back</button>
+            </div>
        
         </div>
         </form>

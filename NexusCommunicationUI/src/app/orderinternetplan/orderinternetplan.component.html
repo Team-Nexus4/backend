@@ -1,10 +1,11 @@
 
-<div>
-    <div class="text-center text-white bg-dark my-1">{{msg}}</div>
+<div class="mt-5">
+    <div class=" text-black text-center mt-2"><h4 class="mb-0">Internet Plans</h4></div>
+    <div class="text-center text-black my-1 alert-danger">{{msg}}</div>
     <div *ngIf ="flag">
 
-        <table class="w-100 text-white text-center bg-dark border" border="1"> 
-            <tr class="bg-dark" style="height: 50px;">
+        <table class="w-100 text-black text-center  border" border="1"> 
+            <tr class="bg-primary" style="height: 50px;">
                 <th>iid</th>
                 <th>Speed</th>
                 <th>Cost in Ruppes</th>
@@ -18,7 +19,6 @@
                 <td>{{obj.speed}}</td>
                 <td>{{obj.cost}}</td>
                 <td>{{obj.duration}}</td>
-                <!--<td><input type="button"  style="color:'{{co}}'" class="" value="Buy" (click) = "orderInternet(ref.value)"/></td>-->
                 <td><button value="Buy" class="text-white btn myDiv"  style="background-color:{{obj.colori}}" (click) = "orderInternet(ref.value,$event)">BUY</button></td>
             </tr>
         </table>

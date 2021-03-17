@@ -2,3 +2,17 @@
     border: 3px solid tomato;
     margin: -3px;
 }
+.note
+{
+    text-align: center;
+    
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color:black;
+    font-weight: bold;
+    line-height: 50px;
+}
+.nav-hover:hover
+{
+    border: 3px solid tomato;
+    margin: -3px;
+}

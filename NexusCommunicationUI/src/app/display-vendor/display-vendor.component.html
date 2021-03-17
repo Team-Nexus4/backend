@@ -1,7 +1,8 @@
-<div> <button class="btn btn-lg bg-dark text-white float-right mb-2" (click)="addVendor()" >Add New Vendor</button> </div>
+<div class="mr-5"> <button class="btn btn-lg btn-success text-white float-right mb-2" (click)="addVendor()" >Add New Vendor</button> </div>
     <div *ngIf="flag"> 
-        <table border="1" class="text-white text-center bg-dark text-center w-100">
-            <tr class="text-bold" style="height: 50px;">
+        <div class=" text-black text-center mt-5"><h4 class="mb-3">Vendor Details</h4></div>
+        <table class="mx-auto text-black text-center br-5" style="width: 85%;"> 
+            <tr class="bg-primary text-white" style="height: 50px;">
                 <th>Vid</th>
                 <th>Internet Kit</th>
                 <th>Landline Kit</th>
@@ -15,8 +16,8 @@
                 <input type="hidden" name="vid" value="{{vendor.vid}}" #id>
                 <input type="hidden" name="ikit" value="{{vendor.internetKit}}" #internetkit>
                 <input type="hidden" name="lkit" value="{{vendor.landlineKit}}" #landlinekit>
-                <td><button  (click)="updateInternetKit(id.value,internetkit.value)" >update</button></td>
-                <td><button  (click)="updateLandlineKit(id.value,landlinekit.value)" >update</button></td>
+                <td><button class=" btn btn-warning" (click)="updateInternetKit(id.value,internetkit.value)" >update</button></td>
+                <td><button class=" btn btn-warning" (click)="updateLandlineKit(id.value,landlinekit.value)" >update</button></td>
 
             </tr>
         </table>

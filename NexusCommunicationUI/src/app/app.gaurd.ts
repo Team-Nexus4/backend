@@ -15,7 +15,7 @@ export class MyGaurds implements CanActivate
         }
         else
         {
-            this.router.navigate(["login"]);
+            this.router.navigate(["home"]);
             return false;
         } 
     }
@@ -35,7 +35,7 @@ export class MyGaurdsCustomer implements CanActivate
         }
         else
         {
-            this.router.navigate(["login"]);
+            this.router.navigate(["home"]);
             return false;
         } 
     }

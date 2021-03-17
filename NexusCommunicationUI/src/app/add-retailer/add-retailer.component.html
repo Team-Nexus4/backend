@@ -1,22 +1,9 @@
-<!-- <p>add-retailer works!</p>
-<div>
-    <form #retrailerRef="ngForm" (ngSubmit)="addretailer(retrailerRef.value)">
-        username: <input type="text" name="username" ngModel> <br>
-        password: <input type="password" name="password" ngModel> <br>
-        Internet Kit: <input type="number" name="internetKit" ngModel> <br>
-        Landline Kit: <input type="number" name="landlineKit" ngModel> <br>
-        pincode: <input type="number" name="pincode" ngModel> <br>
-        Vendor Id: <input type="number" name="vid" ngModel> <br>
-        <input type="submit" value="Submit">
-    </form>
-    {{msg}}
-</div> -->
 
 
 <div class="container register-form">
     <div class="form">
         <div class="note">
-            <p>ADD RETAILER</p>
+            <h4 class="mt-5 pt-3">Add Retailer Plan</h4>
         </div>
         <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
         <div class="form-content">
@@ -28,34 +15,59 @@
                         <Label class="text-primary text-bold" style="font-size: 20px;">Username</Label>
                         <input type="text" class="form-control" name="username" ngModel />
                     </div>
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    
+                    
+                    
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Password</Label>
                         <input type="password" class="form-control" name="password" ngModel>
                     </div>
-                    <div class="form-group">
-                        <Label class="text-primary text-bold" style="font-size: 20px;">Enter Pincode (eg.123456)</Label>
-                        <input type="number" class="form-control" name="pincode" ngModel>
-                    </div>
+
                 </div>
+
                 <div class="col-md-6">
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Internet Kit(eg.12)</Label>
                         <input type="number" class="form-control" name="internetKit" ngModel/>
                     </div>
+
+                </div>
+                <div class="col-md-6">
+                    
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Landline Kit(eg.12)</Label>
                         <input type="number" class="form-control" name="landlineKit" ngModel>
                     </div>
+
+                </div>
+                <div class="col-md-6">
+                    
+                    
+                    <div class="form-group">
+                        <Label class="text-primary text-bold" style="font-size: 20px;">Enter Pincode (eg.123456)</Label>
+                        <input type="number" class="form-control" name="pincode" ngModel>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Vendor ID</Label>
                         <input type="number" class="form-control" name="vid" ngModel>
                     </div>
 
                 </div>
+
             </div>
-            <button type="submit" class="btnSubmit">Submit</button>
-            <button type="button" class="btnSubmit" (click)="goback()" >Back</button>
+            <div class="mx-auto mt-4">
+                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+                <button type="button" class="btnSubmit" (click)="goback()">Back</button>
+            </div>
         </form>
         </div>
     </div>
