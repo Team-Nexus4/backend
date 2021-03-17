@@ -6,7 +6,7 @@
         <div class="note">
             <h4 class="mt-5 pt-3">Register Customer</h4>
         </div>
-        <div class="my-1 text-white bg-dark text-center">{{msg}}</div>
+        <div class="my-1 text-white bg-success text-center">{{msg}}</div>
         <div class="form-content">
             <form #userRef="ngForm" (ngSubmit)="addCustomerComponent(userRef.value); userRef.reset()" >
             <div class="row">
@@ -14,16 +14,34 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">First Name</Label>
-                        <input type="text" class="form-control" name="fname" ngModel />
+                        <input type="text" class="form-control" name="fname" ngModel #firstname1="ngModel"  required/>
+                        <div *ngIf="firstname1.errors && (firstname1.dirty || firstname1.touched)">
+                            <span [hidden]="!firstname1.errors.required" style="color:red">
+                              First Name is required
+                            </span>
+      
+                          </div>
                     </div>
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Username</Label>
-                        <input type="text" class="form-control" name="username" ngModel>
+                        <input type="text" class="form-control" name="username" ngModel #username1="ngModel"  required/>
+                        <div *ngIf="username1.errors && (username1.dirty || username1.touched)">
+                            <span [hidden]="!username1.errors.required" style="color:red">
+                              User Name is required
+                            </span>
+      
+                          </div>
                     </div>
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Pincode (eg.123456)</Label>
-                        <input type="number" class="form-control" name="pincode" ngModel>
+                        <input type="number" class="form-control" name="pincode" ngModel #pincode1="ngModel"  required/>
+                        <div *ngIf="pincode1.errors && (pincode1.dirty || pincode1.touched)">
+                            <span [hidden]="!pincode1.errors.required" style="color:red">
+                              Pincode is required
+                            </span>
+      
+                          </div>
                     </div>
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Phone Number</Label>
@@ -37,10 +55,16 @@
                     </div>
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Password</Label>
-                        <input type="password" class="form-control" name="password" ngModel>
+                        <input type="password" class="form-control" name="password" ngModel #pass1="ngModel"  required/>
+                        <div *ngIf="pass1.errors && (pass1.dirty || pass1.touched)">
+                            <span [hidden]="!pass1.errors.required" style="color:red">
+                              Password is required
+                            </span>
+      
+                          </div>
                     </div>
                     <div class="form-group">
-                        <Label class="text-primary text-bold" style="font-size: 20px;">Enter your Address</Label>
+                        <Label class="text-primary text-bold" style="font-size: 20px;"  >Enter your Address</Label>
                         <input type="text" class="form-control" name="addres" ngModel/>
                     </div>
                     
@@ -49,7 +73,7 @@
                 </div>
             </div>
             <div class="mx-auto mt-4">
-                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+                <button type="submit" class="btnSubmit  mx-5" [disabled]="!userRef.valid">Submit</button>
                 <button type="button" class="btnSubmit" (click)="goback()">Back</button>
             </div>
         </form>

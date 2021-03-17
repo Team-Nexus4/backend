@@ -1,49 +1,52 @@
-<!-- <div>
-    <h2>Login Employee Page</h2>
-    <form #userRef="ngForm" (ngSubmit)="checkEmp(userRef.value)">
-        <label>User NAme</label>
-        
-        <input type="text" name="user" ngModel /><br>
-        <label>Password</label>
-        <input type="password" name="pass" ngModel /><br>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
-    </form>
-    {{msg}}
-</div> -->
-
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-<div class="content">
+<div class="wrapper">
+  <div class="content">
     <div class="container">
       <div class="row justify-content-center">
-       
+
         <div class="col-md-6 contents">
           <div class="row justify-content-center">
             <div class="col-md-12 ">
               <div class="form-block">
-                  <div class="mb-4">
+                <div class="mb-4">
                   <h3>Sign In to <strong>Employee</strong></h3>
-                 </div>
-                 <form #userRef="ngForm" (ngSubmit)="checkEmp(userRef.value)">
-                   <div class="w-100 bg-primary text-center text-white">{{msg}}</div>
+                </div>
+                <form #userRef="ngForm" (ngSubmit)="checkEmp(userRef.value)">
+                  <div class="w-100  text-center bg-danger text-white" style="border-radius: 15px;">{{msg}}</div>
                   <div class="form-group first">
-                    <label for="username">Username</label> <br><br><br>
-                    <input type="text" class="form-control"  name="user" ngModel />
+                    <label for="username" style="font-size: 20px;">Username</label> <br><br><br>
+                    <input type="text" class="form-control" name="user" #user="ngModel" ngModel required />
+
+                    <div *ngIf="user.errors && (user.dirty || user.touched)">
+                      <span [hidden]="!user.errors.required" style="color:red">
+                        UserName is required
+                      </span>
+
+                    </div>
                   </div>
                   <div class="form-group last mb-4">
-                    <label for="password">Password</label><br><br><br>
-                    <input type="password" class="form-control" name="pass" ngModel   >
+                    <label for="password" style="font-size: 20px;">Password</label><br><br><br>
+                    <input type="password" class="form-control" name="pass" #pass="ngModel" ngModel required>
+                    <div *ngIf="pass.errors && (pass.dirty || pass.touched)">
+                      <span [hidden]="!pass.errors.required" style="color:red">
+                        Password is required
+                      </span>
+
+                    </div>
                   </div>
-                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary mb-4">
-                  <span class="ml-auto"><a href="home">Back</a></span> 
-                  
+
+                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary mb-4"
+                    [disabled]="!userRef.valid">
+                  <span class="ml-auto"><a href="home">Back</a></span>
+
                 </form>
               </div>
             </div>
           </div>
-          
+
         </div>
-        
+
       </div>
     </div>
   </div>
+</div>

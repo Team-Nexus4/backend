@@ -11,14 +11,34 @@
         <tr>
             <td>Internet Kit</td>
             <td>{{retailer[0].internetKit}}</td>
-            <td><input type="number" class=" text-black br-3 text-center" placeholder="Enter Stock" #reqstocki></td>
-            <td><input type="button" class="btn btn-success" value="click here" (click)="placeOrderStocki(reqstocki.value)"></td>
+            <td><input type="number" class=" text-black br-3 text-center form-control" placeholder="Enter Stock" #reqstocki #resti="ngModel" ngModel required>
+                <div *ngIf="resti.errors && (resti.dirty || resti.touched)">
+                    <span [hidden]="!resti.errors.required" style="color:red">
+                      Stock value is required
+                    </span>
+      
+                  </div>
+              </td>
+            <td><input type="button" class="btn btn-success" value="click here" (click)="placeOrderStocki(reqstocki.value)" [disabled]="!resti.valid"></td>
         </tr>
         <tr>
             <td>Landline Kit</td>
             <td>{{retailer[0].landlineKit}}</td>
-            <td><input type="number" class="text-black br-3 text-center" placeholder="Enter Stock" #reqstockl></td>
-            <td><input type="button" class="btn btn-success" value="click here" (click)="placeOrderStockl(reqstockl.value)"></td>
+            <td><input type="number" class="text-black br-3 text-center form-control"  placeholder="Enter Stock" #reqstockl #restl="ngModel" ngModel required>
+
+            <div *ngIf="restl.errors && (restl.dirty || restl.touched)">
+              <span [hidden]="!restl.errors.required" style="color:red">
+                Stock value is required
+              </span>
+
+            </div>
+        </td>
+
+
+
+
+            <td><input type="button" class="btn btn-success" value="click here" (click)="placeOrderStockl(reqstockl.value)" [disabled]="!restl.valid"></td>
+
         </tr>
     </table>
     

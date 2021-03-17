@@ -17,12 +17,18 @@
                <div class="col-md-6">
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Landline Stock *</Label>
-                        <input type="text" class="form-control" name="landlineKit" [(ngModel)]="landlineKit" placeholder="eg.1200" />
+                        <input type="text" class="form-control" name="landlineKit" [(ngModel)]="landlineKit" placeholder="eg.1200"  #landlinekit1="ngModel"  required/>
+                        <div *ngIf="landlinekit1.errors && (landlinekit1.dirty || landlinekit1.touched)">
+                            <span [hidden]="!landlinekit1.errors.required" style="color:red">
+                              Landline Kit is required
+                            </span>
+      
+                          </div>
                     </div>
                 </div>
             </div>
             <div class="mx-auto">
-                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+                <button type="submit" class="btnSubmit  mx-5"  [disabled]="!landlineRef.valid">Submit</button>
                 <button type="button" class="btnSubmit" (click)="goback()">Back</button>
             </div>
        
