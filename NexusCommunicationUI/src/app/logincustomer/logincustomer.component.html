@@ -8,25 +8,39 @@
           <div class="row justify-content-center">
             <div class="col-md-12 ">
               <div class="form-block">
-                <div class="mb-4">
+                <div class="mb-3">
                   <h3>Sign In to <strong>Customer</strong></h3>
                 </div>
                 <form #userRef="ngForm" (ngSubmit)="checkUser(userRef.value)">
-                  <div class="w-100 bg-primary text-center text-white" style="border-radius: 15px;">{{msg}}</div>
+                  <div class="w-100  text-center bg-danger text-white" style="border-radius: 15px;">{{msg}}</div>
                   <div class="form-group first">
-                    <label for="username">Username</label> <br><br><br>
-                    <input type="text" class="form-control" name="user" ngModel />
+                    <label for="username" style="font-size: 20px;">Username</label> <br><br>
+                    <input type="text" class="form-control" name="user" #user="ngModel" ngModel required />
+
+                    <div *ngIf="user.errors && (user.dirty || user.touched)">
+                      <span [hidden]="!user.errors.required" style="color:red">
+                        UserName is required
+                      </span>
+
+                    </div>
                   </div>
-                  <div class="form-group last mb-4">
-                    <label for="password">Password</label><br><br><br>
-                    <input type="password" class="form-control" name="pass" ngModel>
+                  <div class="form-group last mb-3">
+                    <label for="password" style="font-size: 20px;">Password</label><br><br>
+                    <input type="password" class="form-control" name="pass" #pass="ngModel" ngModel required>
+                    <div *ngIf="pass.errors && (pass.dirty || pass.touched)">
+                      <span [hidden]="!pass.errors.required" style="color:red">
+                        Password is required
+                      </span>
+
+                    </div>
                   </div>
-                  
-                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary mb-4">
+
+                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary mb-4"
+                    [disabled]="!userRef.valid">
                   <div class="d-flex">
-                  <span class="mr-auto d-block"><a href="addcustomer">Customer registration</a></span>
-                  <span class="mr-auto d-block"><a href="home">Back</a></span> 
-                </div>
+                    <span class="mr-auto d-block"><a href="addcustomer">Customer registration</a></span>
+                    <span class="mr-auto d-block"><a href="home">Back</a></span>
+                  </div>
                 </form>
               </div>
             </div>

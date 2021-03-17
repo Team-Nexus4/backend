@@ -13,7 +13,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Username</Label>
-                        <input type="text" class="form-control" name="username" ngModel />
+                        <input type="text" class="form-control" name="username" ngModel #user1="ngModel"  required/>
+                        <div *ngIf="user1.errors && (user1.dirty || user1.touched)">
+                            <span [hidden]="!user1.errors.required" style="color:red">
+                              Username is required
+                            </span>
+      
+                          </div>
                     </div>
                     
                    
@@ -23,7 +29,13 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Password</Label>
-                        <input type="password" class="form-control" name="password" ngModel>
+                        <input type="password" class="form-control" name="password" ngModel #pass1="ngModel"  required/>
+                        <div *ngIf="pass1.errors && (pass1.dirty || pass1.touched)">
+                            <span [hidden]="!pass1.errors.required" style="color:red">
+                              Password is required
+                            </span>
+      
+                          </div>
                     </div>
                    
 
@@ -33,7 +45,13 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Internet Kit(eg.12)</Label>
-                        <input type="number" class="form-control" name="internetKit" ngModel/>
+                        <input type="number" class="form-control" name="internetKit" ngModel #internetkit1="ngModel"  required/>
+                        <div *ngIf="internetkit1.errors && (internetkit1.dirty || internetkit1.touched)">
+                            <span [hidden]="!internetkit1.errors.required" style="color:red">
+                              Internet Kit is required
+                            </span>
+      
+                          </div>
                     </div>
 
                 </div>
@@ -41,14 +59,20 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Landline Kit(eg.12)</Label>
-                        <input type="number" class="form-control" name="landlineKit" ngModel>
+                        <input type="number" class="form-control" name="landlineKit" ngModel #landlinekit1="ngModel"  required/>
+                        <div *ngIf="landlinekit1.errors && (landlinekit1.dirty || landlinekit1.touched)">
+                            <span [hidden]="!landlinekit1.errors.required" style="color:red">
+                              Landline Kit is required
+                            </span>
+      
+                          </div>
                     </div>
                    
 
                 </div>
             </div>
             <div class="mx-auto mt-4">
-                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+                <button type="submit" class="btnSubmit  mx-5" [disabled]="!vendorRef.valid">Submit</button>
                 <button type="button" class="btnSubmit" (click)="goback()">Back</button>
             </div>
         </form>

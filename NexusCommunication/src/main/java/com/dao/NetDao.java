@@ -29,7 +29,7 @@ public class NetDao {
 	}
 
 	public int storePlan(InternetPlan i) {
-
+		System.out.println(i);
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 		InternetPlan p1 = manager.find(InternetPlan.class, i.getIid());

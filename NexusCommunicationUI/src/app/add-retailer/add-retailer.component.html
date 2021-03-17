@@ -13,18 +13,29 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Username</Label>
-                        <input type="text" class="form-control" name="username" ngModel />
-                    </div>
-                    
-                    
+                        <input type="text" class="form-control" name="username" ngModel #user1="ngModel" required />
+                        <div *ngIf="user1.errors && (user1.dirty || user1.touched)">
+                            <span [hidden]="!user1.errors.required" style="color:red">
+                                User Name is required
+                            </span>
+
+                        </div>
+                    </div>               
                 </div>
+
                 <div class="col-md-6">
                     
                     
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Password</Label>
-                        <input type="password" class="form-control" name="password" ngModel>
+                        <input type="password" class="form-control" name="password" ngModel #password1="ngModel" required />
+                        <div *ngIf="password1.errors && (password1.dirty || password1.touched)">    
+                        <span [hidden]="!password1.errors.required" style="color:red">
+                            Password is required
+                        </span>
+
+                        </div>
                     </div>
 
                 </div>
@@ -33,7 +44,12 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Internet Kit(eg.12)</Label>
-                        <input type="number" class="form-control" name="internetKit" ngModel/>
+                        <input type="number" class="form-control" name="internetKit" ngModel #internetkit1="ngModel" required />
+                        <div *ngIf="internetkit1.errors && (internetkit1.dirty || internetkit1.touched)">
+                        <span [hidden]="!internetkit1.errors.required" style="color:red">
+                            Internet Kit is required
+                        </span>
+                    </div>
                     </div>
 
                 </div>
@@ -41,7 +57,12 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Landline Kit(eg.12)</Label>
-                        <input type="number" class="form-control" name="landlineKit" ngModel>
+                        <input type="number" class="form-control" name="landlineKit" ngModel #landline1="ngModel" required />
+                        <div *ngIf="landline1.errors && (landline1.dirty || landline1.touched)">
+                        <span [hidden]="!landline1.errors.required" style="color:red">
+                            Landline Kit is required
+                        </span>
+                    </div>
                     </div>
 
                 </div>
@@ -50,7 +71,12 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Pincode (eg.123456)</Label>
-                        <input type="number" class="form-control" name="pincode" ngModel>
+                        <input type="number" class="form-control" name="pincode" ngModel #pincode1="ngModel" required />
+                        <div *ngIf="pincode1.errors && (pincode1.dirty || pincode1.touched)">
+                        <span [hidden]="!pincode1.errors.required" style="color:red">
+                            Pincode is required
+                        </span>
+                    </div>
                     </div>
 
                 </div>
@@ -58,14 +84,19 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Vendor ID</Label>
-                        <input type="number" class="form-control" name="vid" ngModel>
+                        <input type="number" class="form-control" name="vid" ngModel #vid1="ngModel" required />
+                        <div *ngIf="vid1.errors && (vid1.dirty || vid1.touched)">
+                        <span [hidden]="!vid1.errors.required" style="color:red">
+                            Vid is required
+                        </span>
+                    </div>
                     </div>
 
                 </div>
 
             </div>
             <div class="mx-auto mt-4">
-                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+                <button type="submit" class="btnSubmit  mx-5" [disabled]="!retrailerRef.valid">Submit</button>
                 <button type="button" class="btnSubmit" (click)="goback()">Back</button>
             </div>
         </form>

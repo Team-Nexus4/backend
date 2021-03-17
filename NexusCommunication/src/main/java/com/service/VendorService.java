@@ -104,7 +104,7 @@ public class VendorService {
 		Employee emp1 = null;
 		int flag = 0;
 		for (Employee emp : listOfEmp) {
-			if ((emp.getUsername().equals(e.getUsername())) && (emp.getPassword().equals(emp.getPassword()))) {
+			if ((emp.getUsername().equals(e.getUsername())) && (emp.getPassword().equals(e.getPassword()))) {
 				emp1 = emp;
 			}
 		}

@@ -1,12 +1,5 @@
 
 
-<!-- <div *ngIf="flag1">
- 
-<input type="number" name="internetKit" #InternetKit>
-<input type="button" value="Submit" (click)="updateInternetStock(InternetKit.value)"><br>
-{{msg}}
-</div> -->
-
 
 
 <div class="container register-form">
@@ -27,12 +20,18 @@
                <div class="col-md-6">
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Internet Stock *</Label>
-                        <input type="text" class="form-control" name="internetKit" [(ngModel)]="internetKit" placeholder="eg.1200" />
+                        <input type="text" class="form-control" name="internetKit" [(ngModel)]="internetKit" placeholder="eg.1200" #internetkit1="ngModel"  required/>
+                        <div *ngIf="internetkit1.errors && (internetkit1.dirty || internetkit1.touched)">
+                            <span [hidden]="!internetkit1.errors.required" style="color:red">
+                              Internet Kit is required
+                            </span>
+      
+                          </div>
                     </div>
                 </div>
             </div>
             <div class="mx-auto">
-                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+                <button type="submit" class="btnSubmit  mx-5" [disabled]="!internetRef.valid">Submit</button>
                 <button type="button" class="btnSubmit" (click)="goback()">Back</button>
             </div>
        

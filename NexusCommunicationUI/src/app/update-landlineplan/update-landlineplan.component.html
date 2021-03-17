@@ -1,4 +1,3 @@
-
 <div class="container register-form">
     <div class="form">
         <div class="note">
@@ -6,34 +5,50 @@
         </div>
         <div class="my-1 text-white btn-success text-center">{{msg}}</div>
         <div class="form-content">
-            <form #landlineRef="ngForm" (ngSubmit)="updateProductInfo(landlineRef.value); landlineRef.reset()" >
-            <div class="row">
-                
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <Label class="text-primary text-bold" style="font-size: 20px;">Landline ID:</Label>
-                        <input type="text" class="form-control" name="lid" [(ngModel)]="lid" />
-                    </div>
-                    <div class="form-group">
-                        <Label class="text-primary text-bold" style="font-size: 20px;">Price of Plan(eg.1200)</Label>
-                        <input type="text" class="form-control" name="cost" [(ngModel)]="cost"/>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    
-                    
-                    <div class="form-group">
-                        <Label class="text-primary text-bold" style="font-size: 20px;">Duration of Plan in months(eg.12)</Label>
-                        <input type="text" class="form-control" name="duration" [(ngModel)]="duration"/>
-                    </div>
+            <form #landlineRef="ngForm" (ngSubmit)="updateProductInfo(landlineRef.value); landlineRef.reset()">
+                <div class="row">
 
-                </div>
-            </div>
-            <div class="mx-auto">
-                <button type="submit" class="btnSubmit  mx-5">Submit</button>
-                <button type="button" class="btnSubmit" (click)="goback()">Back</button>
-            </div>
-        </form>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <Label class="text-primary text-bold" style="font-size: 20px;">Landline ID:</Label>
+                            <input type="text" class="form-control" name="lid" [(ngModel)]="lid" />
+                        </div>
+                        <div class="form-group">
+                            <Label class="text-primary text-bold" style="font-size: 20px;">Price of
+                                Plan(eg.1200)</Label>
+                            <input type="text" class="form-control" name="cost" [(ngModel)]="cost" #cost1="ngModel"
+                                ngModel required />
+                            <div *ngIf="cost1.errors && (cost1.dirty || cost1.touched)">
+                                <span [hidden]="!cost1.errors.required" style="color:red">
+                                    Cost is required
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+
+                        <div class="form-group">
+                            <Label class="text-primary text-bold" style="font-size: 20px;">Duration of Plan in
+                                months(eg.12)</Label>
+                            <input type="text" class="form-control" name="duration" [(ngModel)]="duration"
+                                #duration1="ngModel" ngModel required />
+                            <div *ngIf="duration1.errors && (duration1.dirty || duration1.touched)">
+                                <span [hidden]="!duration.errors.required" style="color:red">
+                                    Duration is required
+                                </span>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto">
+                        <button type="submit" class="btnSubmit  mx-5" [disabled]="!landlineRef.valid">Submit</button>
+                        <button type="button" class="btnSubmit" (click)="goback()">Back</button>
+                    </div>
+                
+            </form>
         </div>
     </div>
 </div>
