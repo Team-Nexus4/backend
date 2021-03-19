@@ -47,23 +47,23 @@ const routes: Routes = [
   {path:"\loginEmployee",component:EmployeeloginComponent},
   {path:"",redirectTo:"\home",pathMatch:"full"},
 
-  {path:"\technicalDashboard",component:TechnicaldashboardComponent},
-  {path:"updateinternetplan",component:UpdateInternetComponent},
-  {path:"addinternetplan",component:AddInternetComponent},
-  {path:"addlandlineplan",component:AddLandlineplanComponent},
-  {path:"updatelandlineplan",component:UpdateLandlineplanComponent},
-  {path:"addretailer",component:AddRetailerComponent},
-  {path:"replaceretailer",component:ReplaceRetailerComponent},
-  {path:"addvendor",component:AddVendorComponent},
-  {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
-  {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
-  {path:"addcustomer",component:AddcustomerComponent},
+
+  
+  
   {path:"\adminDashboard",component:AdmindashboardComponent,canActivate:[AdminGaurads],
     children:[
       {path:"\seeinternetplan",component:GetInternetComponent,}, 
-      {path:"seelandlineplan",component:GetLandlineplanComponent},  
-      {path:"seeallvendor",component:DisplayVendorComponent,children:[  
-      ]},
+      {path:"updateinternetplan",component:UpdateInternetComponent},
+      {path:"addinternetplan",component:AddInternetComponent},
+      {path:"seelandlineplan",component:GetLandlineplanComponent}, 
+      {path:"updatelandlineplan",component:UpdateLandlineplanComponent}, 
+      {path:"addlandlineplan",component:AddLandlineplanComponent},
+      {path:"replaceretailer",component:ReplaceRetailerComponent},
+      {path:"addvendor",component:AddVendorComponent},
+      {path:"updatevendorinternetkit",component:UpdateInternetstockVendorComponent},
+      {path:"updatevendorlandlinekit",component:UpdateLandlinestockVendorComponent},
+      {path:"addretailer",component:AddRetailerComponent},
+      {path:"seeallvendor",component:DisplayVendorComponent},
       {path:"addtechnical",component:AddTechnicalComponent},
       {path:"displaytechnical",component:DisplayTechnicalComponent},
      
@@ -72,9 +72,6 @@ const routes: Routes = [
     ]
   },
   
-
- 
-
   {path:"vendorDashboard",component:VendordashboardComponent,canActivate:[],
     children:[
       {path:"vendorstock",component:DisplayVendorComponent , children:[
@@ -83,8 +80,6 @@ const routes: Routes = [
       
     ]
   },
-
-  
 
   {path:"technicalDashboard",component:TechnicaldashboardComponent,canActivate:[MyGaurdsCustomer],
         children:[
@@ -102,7 +97,6 @@ const routes: Routes = [
         children:[
         {path:"viewOrder",component:RetailerDisplayOrderComponent},
         {path:"placeOrderStock",component:RetailerPlaceOrderStockComponent},
-        //{path:"placeOrderStock",component:PlaceOrderByTechnicalComponent}
   ]},
   
 
@@ -111,8 +105,9 @@ const routes: Routes = [
         {path:"internet",component:OrderinternetplanComponent},
         {path:"landline",component:OrderlandlineplanComponent},
         {path:"viewstatus",component:DisplaycustomerplanComponent},
-        {path:"viewBill",component:PlanbillcomponentComponent}
-      ]},
+        {path:"viewBill",component:PlanbillcomponentComponent},
+  ]},
+  {path:"addcustomer",component:AddcustomerComponent},
   
 ];
 

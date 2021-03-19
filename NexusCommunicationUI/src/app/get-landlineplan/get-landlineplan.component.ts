@@ -33,7 +33,7 @@ export class GetLandlineplanComponent implements OnInit {
     sessionStorage.setItem("cost",cost);
     sessionStorage.setItem("duration",duration);
     console.log(lid,cost,duration)
-    this.router.navigate(["updatelandlineplan"])
+    this.router.navigate(['/adminDashboard/updatelandlineplan'])
    
   }
   deleteLandlineKit(id:any){
@@ -53,7 +53,7 @@ export class GetLandlineplanComponent implements OnInit {
   }
 
   addLandlineKit(){
-    this.router.navigate(["addlandlineplan"])
+    this.router.navigate(['/adminDashboard/addlandlineplan'])
   }
 
 }

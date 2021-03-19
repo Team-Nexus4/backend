@@ -1,6 +1,3 @@
-
-
-
 <div class="container register-form">
     <div class="form">
         <div class="note bg-primary">
@@ -8,30 +5,42 @@
         </div>
         <div class="my-1 text-white bg-success text-center">{{msg}}</div>
         <div class="form-content">
-            <form [formGroup]="technicalInfo" (ngSubmit)="addTechnicalDetails()">
-            <div class="row">
+            <form #formInfo="ngForm" (ngSubmit)="addTechnicalDetails(formInfo.value); formInfo.reset()">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <Label class="text-primary text-bold" style="font-size: 20px;">Username</Label>
+                            <input type="text" class="form-control mb-0" name="username" ngModel #user1="ngModel" required />
+                            <div class="ml-2" *ngIf="user1.errors && (user1.dirty || user1.touched)">
+                                <span [hidden]="!user1.errors.required" style="color:red">
+                                    Username is required
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
                 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <Label class="text-primary text-bold" style="font-size: 20px;">Username</Label>
-                        <input type="text" class="form-control" formControlName="username" />
-                    </div>
-                   
-                    
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Password</Label>
-                        <input type="password" class="form-control" formControlName="password" ngModel required>
+                        <input type="password" class="form-control mb-0" name="password" ngModel #pass1="ngModel" required />
+                        <div class="ml-2" *ngIf="pass1.errors && (pass1.dirty || pass1.touched)">
+                            <span [hidden]="!pass1.errors.required" style="color:red">
+                                Password is required
+                            </span>
+
+                        </div>
                     </div>
-                    
 
                 </div>
-            </div>
-            <div >
-                <button type="submit" class="btnSubmit" style="margin-left: 30%;">Submit</button>
-            </div>
-        </form>
+                </div>
+                <div>
+                    <button type="submit" class="btnSubmit" style="margin-left: 30%;">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -20,11 +20,11 @@ export class DisplayRetailerComponent implements OnInit {
   }
 
   addRetailer(){
-    this.router.navigate(["addretailer"])
+    this.router.navigate(['/adminDashboard/addretailer'])
   }
 
   replaceretailer(id:any){
-    this.router.navigate(["replaceretailer"])
+    this.router.navigate(['/adminDashboard/replaceretailer'])
     sessionStorage.setItem("rid",id);
   }
 }

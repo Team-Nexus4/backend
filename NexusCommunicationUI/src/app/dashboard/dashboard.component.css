@@ -13,3 +13,14 @@ a:hover{
     font-weight: bold;
     line-height: 50px;
 }
+
+.activeTab
+{
+background-color: coral !important;
+border-radius: 5px;
+}
+.wrpper
+{
+    background-image: url("/src/assets/images/custlogin2.jpg");
+    background-size: cover;
+}

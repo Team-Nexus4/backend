@@ -15,9 +15,9 @@
                   <div class="w-100  text-center bg-danger text-white" style="border-radius: 15px;">{{msg}}</div>
                   <div class="form-group first">
                     <label for="username" style="font-size: 20px;">Username</label> <br><br><br>
-                    <input type="text" class="form-control" name="user" #user="ngModel" ngModel required />
+                    <input type="text" class="form-control mb-0" name="user" #user="ngModel" ngModel required />
 
-                    <div *ngIf="user.errors && (user.dirty || user.touched)">
+                    <div class="ml-2" *ngIf="user.errors && (user.dirty || user.touched)">
                       <span [hidden]="!user.errors.required" style="color:red">
                         UserName is required
                       </span>
@@ -26,8 +26,8 @@
                   </div>
                   <div class="form-group last mb-4">
                     <label for="password" style="font-size: 20px;">Password</label><br><br><br>
-                    <input type="password" class="form-control" name="pass" #pass="ngModel" ngModel required>
-                    <div *ngIf="pass.errors && (pass.dirty || pass.touched)">
+                    <input type="password" class="form-control mb-0" name="pass" #pass="ngModel" ngModel required>
+                    <div class="ml-2" *ngIf="pass.errors && (pass.dirty || pass.touched)">
                       <span [hidden]="!pass.errors.required" style="color:red">
                         Password is required
                       </span>

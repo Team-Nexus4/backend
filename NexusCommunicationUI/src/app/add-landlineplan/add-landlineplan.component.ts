@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { LandLine } from '../landline.module';
 import { LandlineplanService } from '../landlineplan.service';
 
 @Component({
@@ -8,21 +9,17 @@ import { LandlineplanService } from '../landlineplan.service';
   styleUrls: ['./add-landlineplan.component.css']
 })
 export class AddLandlineplanComponent implements OnInit {
-  landlineInfo = new FormGroup({
-   
-    duration:new FormControl(),
-    cost:new FormControl()
-  })
+
   msg:string=""
   
   constructor(public landlineSer:LandlineplanService) { }
 
   ngOnInit(): void {
   }
-  addLandLinePlan()
+  addLandLinePlan(landline:LandLine)
   {
-    let landlineObj = this.landlineInfo.value;
-    this.landlineSer.addLandLinePlan(landlineObj).subscribe(res => this.msg=res);
+
+    this.landlineSer.addLandLinePlan(landline).subscribe(res => this.msg=res);
   }
   goback() { window.history.back(); }
 }

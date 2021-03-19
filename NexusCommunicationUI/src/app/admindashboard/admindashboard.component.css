@@ -16,3 +16,14 @@
     border: 3px solid tomato;
     margin: -3px;
 }
+
+.activeTab
+{
+background-color: coral !important;
+border-radius: 5px;
+}
+.wrpper
+{
+    background-image: url("/src/assets/images/custlogin2.jpg");
+    background-size: cover;
+}

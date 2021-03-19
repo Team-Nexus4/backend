@@ -6,14 +6,20 @@
         </div>
         <div class="my-1 text-white bg-success text-center">{{msg}}</div>
         <div class="form-content">
-            <form [formGroup]="landlineInfo" (ngSubmit)="addLandLinePlan()">
+            <form #userRef="ngForm" (ngSubmit)="addLandLinePlan(userRef.value)">
             <div class="row">
                 
                 <div class="col-md-6">
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Price of Plan *</Label>
-                        <input type="text" class="form-control" formControlName="cost" placeholder="eg.1200" value=""/>
+                        <input type="text" class="form-control mb-0" name="cost" placeholder="eg.1200" value="" ngModel #cost1="ngModel"  required/>
+                        <div class="ml-2" *ngIf="cost1.errors && (cost1.dirty || cost1.touched)">
+                            <span [hidden]="!cost1.errors.required" style="color:red">
+                              Cost is required
+                            </span>
+      
+                          </div>
                     </div>
                     
                 </div>
@@ -21,7 +27,13 @@
                     
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Duration of Plan *</Label>
-                        <input type="text" class="form-control" formControlName="duration" placeholder="eg.12" value=""/>
+                        <input type="text" class="form-control mb-0" name="duration" placeholder="eg.12" value="" ngModel #duration1="ngModel"  required/>
+                        <div class="ml-2" *ngIf="duration1.errors && (duration1.dirty || duration1.touched)">
+                            <span [hidden]="!duration1.errors.required" style="color:red">
+                              Duration is required
+                            </span>
+      
+                          </div>
                     </div>
                 </div>
                 

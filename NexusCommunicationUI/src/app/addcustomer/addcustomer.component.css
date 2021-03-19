@@ -12,6 +12,8 @@
     padding: 5%;
     border: 1px solid #ced4da;
     margin-bottom: 2%;
+    opacity: .95 ;
+    background: white;
 }
 .form-control{
     border-radius:1.5rem;
@@ -27,3 +29,8 @@
     background: #0062cc;
     color: #fff;
 }
+.wrapper
+    {
+      background-image:url("src/assets/images/custlogin2.jpg");
+      background-size: 100% 100%;
+    }
