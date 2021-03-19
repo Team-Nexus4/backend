@@ -37,7 +37,7 @@ export class GetInternetComponent implements OnInit {
     sessionStorage.setItem("speed",speed);
     sessionStorage.setItem("duration",duration);
     console.log(iid,speed,cost,duration)
-    this.router.navigate(["updateinternetplan"])
+    this.router.navigate(['/adminDashboard/updateinternetplan'])
    
   }
   deleteInternetKit(id:any){
@@ -57,7 +57,7 @@ export class GetInternetComponent implements OnInit {
   }
 
   addInternetKit(){
-    this.router.navigate(["addinternetplan"])
+    this.router.navigate(['/adminDashboard/addinternetplan'])
   }
 
 }

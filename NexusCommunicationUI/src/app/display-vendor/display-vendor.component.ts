@@ -20,20 +20,20 @@ export class DisplayVendorComponent implements OnInit {
 
 
   addVendor(){
-    this.router.navigate(["addvendor"])
+    this.router.navigate(['/adminDashboard/addvendor'])
   }
  
   updateInternetKit(id:any,internetkit:any){
     sessionStorage.setItem("vid",id);
     sessionStorage.setItem("internetkit",internetkit)
-    this.router.navigate(["updatevendorinternetkit"])
+    this.router.navigate(['/adminDashboard/updatevendorinternetkit'])
     console.log(id,internetkit)
   }
 
   updateLandlineKit(id:any,landlinekit:any){
     sessionStorage.setItem("vid",id);
     sessionStorage.setItem("landlineKit",landlinekit)
-    this.router.navigate(["updatevendorlandlinekit"])
+    this.router.navigate(['/adminDashboard/updatevendorlandlinekit'])
 
     console.log(id,landlinekit)
   }

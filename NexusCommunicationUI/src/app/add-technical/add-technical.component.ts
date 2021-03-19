@@ -21,10 +21,10 @@ export class AddTechnicalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addTechnicalDetails()
+  addTechnicalDetails(tech:Technical)
   {
     //console.log(this.technicalInfo.value)
-    let technicalRef=this.technicalInfo.value;
-    this.technicalService.addTechnicalInfo(technicalRef).subscribe(result=>this.msg=result);
+ 
+    this.technicalService.addTechnicalInfo(tech).subscribe(result=>this.msg=result);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { InternetServiceService } from '../internet-service.service';
+import { Internet } from '../internet.model';
 
 @Component({
   selector: 'app-add-internet',
@@ -9,22 +10,22 @@ import { InternetServiceService } from '../internet-service.service';
 })
 export class AddInternetComponent implements OnInit {
 
-  netinfo=new FormGroup({
-    iid:new FormControl(),
-    speed:new FormControl(),
-    cost:new FormControl(),
-    duration:new FormControl()
-  })
+  // netinfo=new FormGroup({
+  //   iid:new FormControl(),
+  //   speed:new FormControl(),
+  //   cost:new FormControl(),
+  //   duration:new FormControl()
+  // })
   constructor(public netser:InternetServiceService) { }
 
   ngOnInit(): void {
   }
 
   msg:string="";
-  storeNetDetail(){
-    let empRef=this.netinfo.value;
-   // console.log(this.empinfo.value);
-    this.netser.storeDetails(empRef).subscribe(r=>this.msg=r);
+  storeNetDetail(internet:Internet){
+    
+    console.log(internet);
+    this.netser.storeDetails(internet).subscribe(r=>this.msg=r);
   }
 
   goback() { window.history.back(); }

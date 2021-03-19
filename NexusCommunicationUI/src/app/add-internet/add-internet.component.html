@@ -7,28 +7,46 @@
         </div>
         <div class="my-1 text-white bg-success text-center">{{msg}}</div>
         <div class="form-content">
-            <form [formGroup]="netinfo" (ngSubmit)="storeNetDetail(); netinfo.reset()">
+            <form #userRef="ngForm" (ngSubmit)="storeNetDetail(userRef.value); userRef.reset()">
             <div class="row">
                 
                 <div class="col-md-6">
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Internet Speed *</Label>
-                        <input type="text" class="form-control" formControlName="speed" placeholder="eg.10 Mbps" value=""/>
+                        <input type="text" class="form-control mb-0" name="speed" placeholder="eg.10 Mbps" value="" ngModel #firstname1="ngModel"  required/>
+                        <div class="ml-2" *ngIf="firstname1.errors && (firstname1.dirty || firstname1.touched)">
+                            <span [hidden]="!firstname1.errors.required" style="color:red">
+                              Speed is required
+                            </span>
+      
+                          </div>
                     </div>
                     <div class="form-group">
                         <Label class="text-primary text-bold" style="font-size: 20px;">Enter Duration of Plan *</Label>
-                        <input type="text" class="form-control" formControlName="duration" placeholder="eg.12" value=""/>
+                        <input type="text" class="form-control mb-0" name="duration" placeholder="eg.12" value="" ngModel #duration1="ngModel"  required/>
+                        <div class="ml-2" *ngIf="duration1.errors && (duration1.dirty || duration1.touched)">
+                            <span [hidden]="!duration1.errors.required" style="color:red">
+                              Duration is required
+                            </span>
+      
+                          </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <Label class="text-primary text-bold" style="font-size: 20px;">Enter Price of Plan *</Label>
                     <div class="form-group">
-                        <input type="text" class="form-control" formControlName="cost" placeholder="eg.1200" value=""/>
+                        <input type="text" class="form-control mb-0" name="cost" placeholder="eg.1200" value="" ngModel #speed1="ngModel"  required/>
+                        <div class="ml-2" *ngIf="speed1.errors && (speed1.dirty || speed1.touched)">
+                            <span [hidden]="!speed1.errors.required" style="color:red">
+                              Cost is required
+                            </span>
+      
+                          </div>
                     </div>
                 </div>
             </div >
-            <div class="mx-auto">
-                <button type="submit" class="btnSubmit  mx-5">Submit</button>
+            <div class="mx-auto mt-4">
+                <button type="submit" class="btnSubmit  mx-5" [disabled]="!userRef.valid">Submit</button>
                 <button type="button" class="btnSubmit" (click)="goback()">Back</button>
             </div>
         </form>
