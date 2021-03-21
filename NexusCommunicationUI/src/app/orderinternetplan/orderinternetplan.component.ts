@@ -43,7 +43,6 @@ export class OrderinternetplanComponent implements OnInit {
             this.flagc=true
             
           }
-          console.log(io)
           
         }
         if(this.flagc)
@@ -58,21 +57,13 @@ export class OrderinternetplanComponent implements OnInit {
         }
         j++;
         this.flagc=false;
-        console.log("check 3")
       }
 
-      for(let i of this.internetArray)
-      {
-        console.log(i.colori)
-      }
-    
     });
   }
   
   orderInternet(iid:any,event:any)
   {
-  //  this.element = document.getElementById("myDiv");
-  //   this.element.classList.add("bg-danger");
     this.customerService.placeLandlineOrder(iid).subscribe(res =>
       { this.msg = res 
         if(this.msg!=null)
@@ -80,8 +71,6 @@ export class OrderinternetplanComponent implements OnInit {
           event.target.classList.add('bg-danger');
         }
       });
-
-    console.log(this.msg);
 
   }
 

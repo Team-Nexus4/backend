@@ -1,3 +1,4 @@
+
 package com.dao;
 
 import java.util.List;
@@ -46,7 +47,6 @@ public class RetailerDao
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 		Order o = manager.find(Order.class, oid);
-		//OrderStock oo = manager.find((OrderStock.class, oid);
 		if(o==null)
 		{
 			manager.close();
@@ -116,7 +116,7 @@ public class RetailerDao
 		else
 		{
 			long rid = o.getRid();
-			System.out.println(rid);
+
 			long request = o.getRequested_plan();
 			long divider = Long.parseLong("9000000000");
 			Query qry = manager.createQuery("select r from Retailer r where r.rid=?1");

@@ -24,9 +24,6 @@ export class EmployeeloginComponent implements OnInit {
   {
       let user = userRef.user;
       let pass = userRef.pass;
-
-
-      console.log(user+" "+pass);
       
       this.employee.username=user;
       this.employee.password=pass;
@@ -34,47 +31,33 @@ export class EmployeeloginComponent implements OnInit {
         this.employeeService.checkLogin(this.employee).subscribe(obj=>{
           if(obj==null)
           {
-            console.log("wrong");
-            console.log("emp")
             this.msg="Please Enter valid username or password"
           }
           else{
             if(obj.desg=="technical")
             {
-              console.log(obj);
               this.employee1=obj;
               sessionStorage.setItem("employee",JSON.stringify(obj));
               this.router.navigate(["technicalDashboard"]);
             }
             else if(obj.desg=="retailer")
             {
-              console.log(obj);
               this.employee1=obj;
               sessionStorage.setItem("employee",JSON.stringify(obj));
               this.router.navigate(["retailerDashboard"]);
             }
             else if(obj.desg=="vendor")
             {
-              console.log(obj);
               this.employee1=obj;
               sessionStorage.setItem("employee",JSON.stringify(obj));
               this.router.navigate(["vendorDashboard"]);
             }
             else if(obj.desg=="admin")
             {
-              console.log(obj);
               this.employee1=obj;
-
               sessionStorage.setItem("admin",JSON.stringify(obj));
-
-             
-
               this.router.navigate(["adminDashboard"]);
             }
-            // console.log(obj);
-            // this.employee1=obj;
-            // sessionStorage.setItem("employee",JSON.stringify(obj));
-            // this.router.navigate(["customerDashboard"]);
           }
         })
       

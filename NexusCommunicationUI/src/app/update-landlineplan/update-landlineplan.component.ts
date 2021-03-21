@@ -23,7 +23,7 @@ export class UpdateLandlineplanComponent implements OnInit {
 
   updateProductInfo(landlineInfo:LandLine)
   {
-    console.log(landlineInfo)
+ 
     this.landlineSer.updateLandLinePlna(landlineInfo).subscribe(data=>this.msg=data);  
   }
 

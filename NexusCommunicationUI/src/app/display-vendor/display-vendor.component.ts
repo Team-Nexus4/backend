@@ -27,14 +27,11 @@ export class DisplayVendorComponent implements OnInit {
     sessionStorage.setItem("vid",id);
     sessionStorage.setItem("internetkit",internetkit)
     this.router.navigate(['/adminDashboard/updatevendorinternetkit'])
-    console.log(id,internetkit)
   }
 
   updateLandlineKit(id:any,landlinekit:any){
     sessionStorage.setItem("vid",id);
     sessionStorage.setItem("landlineKit",landlinekit)
     this.router.navigate(['/adminDashboard/updatevendorlandlinekit'])
-
-    console.log(id,landlinekit)
   }
 }

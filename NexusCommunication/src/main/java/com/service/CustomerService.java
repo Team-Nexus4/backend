@@ -109,7 +109,7 @@ public class CustomerService {
 	}
 
 	public List<Order> getCustomersPlan(long cid) {
-		// TODO Auto-generated method stub
+
 		return cd.getAllPlan(cid);
 	}
 	

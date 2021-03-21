@@ -21,9 +21,6 @@ public class Retailer
 	@Column(name = "landline_kit")
 	private int landlineKit;
 	private long vid;
-	
-//	@OneToMany(mappedBy="rid",cascade = CascadeType.REMOVE )
-//	private List<Customer> listOfCusomer;
 
 	public long getRid() {
 		return rid;
@@ -64,14 +61,6 @@ public class Retailer
 	public void setVid(long vid) {
 		this.vid = vid;
 	}
-
-//	public List<Customer> getListOfCusomer() {
-//		return listOfCusomer;
-//	}
-//
-//	public void setListOfCusomer(List<Customer> listOfCusomer) {
-//		this.listOfCusomer = listOfCusomer;
-//	}
 
 	@Override
 	public String toString() {

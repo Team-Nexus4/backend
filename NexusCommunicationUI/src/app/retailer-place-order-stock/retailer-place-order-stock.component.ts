@@ -1,4 +1,4 @@
-import { ThrowStmt } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { OrderStock } from '../orderstock.model';
 import { Retailer } from '../retailer.model';
@@ -12,8 +12,7 @@ import { RetailerService } from '../retailer.service';
 export class RetailerPlaceOrderStockComponent implements OnInit {
 
   retailer:Array<Retailer>=[];
-  
-  //retailer=new Retailer;
+
   msg:string="";
   flag:boolean=false;
   orderstock=new OrderStock;
@@ -30,10 +29,8 @@ export class RetailerPlaceOrderStockComponent implements OnInit {
     this.orderstock.requestedItem="ik";
     this.orderstock.requestedStock=lstocki;
     this.orderstock.vid=this.retailer[0].vid;
-    console.log(this.orderstock.requestedItem);
-    console.log(lstocki);
     this.retailerService.retailerPlaceOrderStock(this.orderstock).subscribe(data=>this.msg=data);
-    console.log(this.msg);
+
   }
 
   placeOrderStockl(lstockl:any)
@@ -42,8 +39,6 @@ export class RetailerPlaceOrderStockComponent implements OnInit {
     this.orderstock.requestedItem="lk";
     this.orderstock.requestedStock=lstockl;
     this.orderstock.vid=this.retailer[0].vid;
-    console.log(this.orderstock.requestedItem);
-    console.log(lstockl);
     this.retailerService.retailerPlaceOrderStock(this.orderstock).subscribe(data=>this.msg=data);
   }
   

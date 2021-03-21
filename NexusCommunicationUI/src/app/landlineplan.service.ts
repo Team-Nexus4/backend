@@ -12,7 +12,6 @@ export class LandlineplanService {
 
   getLandLinePlan():Observable<LandLine[]>
   {
-    console.log("ok")
     return this.httpClient.get<LandLine[]>("http://localhost:9070/connection/landlinePlan");
   }
 

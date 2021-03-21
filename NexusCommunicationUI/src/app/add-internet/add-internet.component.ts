@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+
 import { InternetServiceService } from '../internet-service.service';
 import { Internet } from '../internet.model';
 
@@ -10,12 +10,6 @@ import { Internet } from '../internet.model';
 })
 export class AddInternetComponent implements OnInit {
 
-  // netinfo=new FormGroup({
-  //   iid:new FormControl(),
-  //   speed:new FormControl(),
-  //   cost:new FormControl(),
-  //   duration:new FormControl()
-  // })
   constructor(public netser:InternetServiceService) { }
 
   ngOnInit(): void {
@@ -24,7 +18,7 @@ export class AddInternetComponent implements OnInit {
   msg:string="";
   storeNetDetail(internet:Internet){
     
-    console.log(internet);
+    
     this.netser.storeDetails(internet).subscribe(r=>this.msg=r);
   }
 

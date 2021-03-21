@@ -24,9 +24,7 @@ public class LandlineController
 {
 	@Autowired
 	LandlineService ls;
-	
-	//http://localhost:9070/connection/landlinePlan
-	
+
 	@GetMapping(value="landlinePlan",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<LandlinePlan> getAllLnadineConnection()
 	{
@@ -34,7 +32,7 @@ public class LandlineController
 		return listOfLandline;
 	}
 	
-	//http://localhost:9070/connection/addLandlinePlan
+
 	@PostMapping(value="addLandlinePlan",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String addLandline(@RequestBody LandlinePlan l)
 	{
@@ -42,7 +40,7 @@ public class LandlineController
 		return res;
 	}
 	
-	//http://localhost:9070/connection/deleteLandlinePlan/8888000001
+
 	@DeleteMapping(value="deleteLandlinePlan/{lid}",produces = MediaType.TEXT_PLAIN_VALUE)
 	public String deleteLandline(@PathVariable("lid") long lid)
 	{
@@ -51,7 +49,7 @@ public class LandlineController
 		return res;
 	}
 	
-	//http://localhost:9070/connection/updateLandlinePlan
+
 	@PutMapping(value="updateLandlinePlan",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String updateLandline(@RequestBody LandlinePlan l)
 	{

@@ -48,8 +48,7 @@ public class CustomerController {
 		return  cs.deleteCustomer(cid);	
 		
 	}
-	
-	//http://localhost:9070/customer/updateCustomer
+
 	@PutMapping(value ="updateCustomer" , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.TEXT_PLAIN_VALUE)
 	public String updateEmpRepo(@RequestBody Customer c) {
 		Customer cust=new Customer();
@@ -61,11 +60,7 @@ public class CustomerController {
 		return cs.updateCustomer(c);	
 	}
 	
-	//http://localhost:9070/customer/orderCustomer
-//	{
-//		a
-//
-//		}
+
 	@GetMapping(value="orderCustomer/{cid}/{pincode}/{reqPlan}" ,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String order(@PathVariable("cid") long cid,@PathVariable("pincode") int pincode,@PathVariable("reqPlan") long reqPlan,HttpServletRequest req)
 	{
@@ -83,7 +78,6 @@ public class CustomerController {
 	@PostMapping(value="loginCustomer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
 	public Customer loginCustomer(@RequestBody Customer c,HttpServletRequest request) {
 		Customer cust= cs.loginCustomer(c);
-		;
 		if(cust==null) {
 			return null;		
 		}
@@ -98,8 +92,6 @@ public class CustomerController {
 	public List<Order> getCustomersPlan(@PathVariable("cid") long cid)
 	{
 		List<Order> li=cs.getCustomersPlan(cid);
-		for(Order o:li)
-			System.out.println(o);
 		return li;
 	}
 	
@@ -107,8 +99,6 @@ public class CustomerController {
 	public List<PlanBill> getCustomersPlanBill(@PathVariable("cid") long cid)
 	{
 		List<PlanBill> li = cs.getCustomersPlanBill(cid);
-		for(PlanBill b:li)
-			System.out.println(b);
 		return li;
 	}
 }

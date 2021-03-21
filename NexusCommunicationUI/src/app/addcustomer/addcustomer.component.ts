@@ -14,10 +14,9 @@ export class AddcustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //addCustomer()
+
   addCustomerComponent(customer:Customer)
   {
-    console.log(customer);
     this.customerService.addCustomer(customer).subscribe(data=>this.msg = data)
   }
 

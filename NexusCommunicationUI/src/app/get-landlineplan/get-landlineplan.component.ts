@@ -32,7 +32,6 @@ export class GetLandlineplanComponent implements OnInit {
     sessionStorage.setItem("lid",lid);
     sessionStorage.setItem("cost",cost);
     sessionStorage.setItem("duration",duration);
-    console.log(lid,cost,duration)
     this.router.navigate(['/adminDashboard/updatelandlineplan'])
    
   }
@@ -40,7 +39,6 @@ export class GetLandlineplanComponent implements OnInit {
 
     for(let i=0;i<this.landlineInfo.length;++i)
     {
-      console.log(this.landlineInfo[i].lid)
       if(this.landlineInfo[i].lid==id)
       {
         this.landlineInfo.splice(i,1);

@@ -28,8 +28,7 @@ export class VendorViewOrdersComponent implements OnInit {
     {
       this.ost;
     }
-    
-    console.log(this.ost.length);
+
   }
 
   fulfillOrderStock(oid:any)

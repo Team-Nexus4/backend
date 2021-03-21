@@ -37,7 +37,6 @@ export class OrderlandlineplanComponent implements OnInit {
             this.flagc = true
 
           }
-          console.log(io)
 
         }
         if (this.flagc) {
@@ -50,19 +49,12 @@ export class OrderlandlineplanComponent implements OnInit {
         }
         j++;
         this.flagc = false;
-        console.log("check 3")
       }
 
-      for (let i of this.landlineArray) {
-        console.log(i.colori)
-      }
     });
   }
 
   orderLandline(lid: any,event:any) {
-    //customer = sessionStorage.getSession("customer")
-    // this.element = document.getElementById("myDiv");
-    // this.element.classList.add("bg-danger");
     
     this.customerService.placeLandlineOrder(lid).subscribe(res =>
       { this.msg = res
@@ -72,8 +64,6 @@ export class OrderlandlineplanComponent implements OnInit {
         }
       }
       );
-
-    console.log(this.msg);
   }
 
 }

@@ -15,7 +15,6 @@ export class PlaceOrderByTechnicalComponent implements OnInit {
 
   updateStatus(oid:any)
   {
-    //console.log(oid);
     this.technicalService.updateStatusInfo(oid).subscribe(result=>this.msg="Update Successfull");
   }
 }

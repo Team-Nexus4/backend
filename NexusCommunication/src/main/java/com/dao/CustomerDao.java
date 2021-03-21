@@ -89,7 +89,6 @@ public class CustomerDao
 		Query qry = manager.createQuery("select o from Order o where o.cid=?1");
 		qry.setParameter(1,cid);
 		listOfOrder = qry.getResultList();
-		System.out.println(listOfOrder.size());
 		manager.close();
 		return listOfOrder;
 

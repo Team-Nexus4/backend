@@ -5,7 +5,6 @@ export class ItemTypePipe implements PipeTransform
 {
     transform(value:any)
     {
-        console.log(value);
         if(value=="ik")
             return "Internet Kit";
         else

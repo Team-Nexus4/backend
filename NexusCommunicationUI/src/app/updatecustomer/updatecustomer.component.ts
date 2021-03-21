@@ -10,7 +10,6 @@ import { CustomerService } from '../customer.service';
 export class UpdatecustomerComponent implements OnInit {
   msg:string=""
   constructor(public customerService:CustomerService) { }
-  //updateCustomerComponent
   customer = new Customer
   ngOnInit(): void {
   }
