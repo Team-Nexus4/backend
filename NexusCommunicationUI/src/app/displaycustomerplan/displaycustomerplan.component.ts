@@ -89,7 +89,6 @@ export class DisplaycustomerplanComponent implements OnInit {
       this.flagl=true;
     }
 
-
   }
 }  
 

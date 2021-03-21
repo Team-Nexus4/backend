@@ -50,6 +50,6 @@ public class NetController {
     public String deletePlanDetails(@PathVariable("planid") long planid)
 	{
 	        return netService.deletePlan(planid);    
-	  }
+	}
 
 }
