@@ -17,3 +17,9 @@
     background-image: url("/src/assets/images/custlogin2.jpg");
     background-size: cover;
 }
+
+.activeTab
+{
+background-color: coral !important;
+border-radius: 5px;
+}

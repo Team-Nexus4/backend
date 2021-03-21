@@ -25,8 +25,6 @@ public List<Technical> displayTechnical(){
 	EntityManager manager = emf.createEntityManager();
 	Query qry = manager.createQuery("select t from Technical t where t.status='false'");
 	List<Technical> li = qry.getResultList();
-//	for(Technical t:li)
-//		System.out.println(t);
 	manager.close();
 	return li;
 }
@@ -46,7 +44,6 @@ public String placedOrderByTechnical(long oid) {
 	{
 		o.setStatus("true");
 		t.setStatus("true");
-		System.out.println("check 1");
 		tran.begin();
 			manager.merge(o);
 			manager.merge(t);

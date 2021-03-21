@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
-import { CustomerInternetPlanStatus } from '../customerinternetplanstatus.model';
-import { CustomerLandLinePlanStatus } from '../customerlandlineplanstatus';
 import { Internet } from '../internet.module';
 import { LandLine } from '../landline.module';
 import { Order } from '../order.model';
-import { LandlineplanService } from '../landlineplan.service';
 import { Customer } from '../customer.module';
 
 @Component({
@@ -55,10 +52,8 @@ export class DisplaycustomerplanComponent implements OnInit {
           }
           this.internetArray1.push(this.internetArray[j])
           this.flagi=true;
-          console.log(this.flagi)
         
         }
-        console.log("rohit")
       }});
     if(this.internetArray!=null)
     {
@@ -93,7 +88,7 @@ export class DisplaycustomerplanComponent implements OnInit {
     {
       this.flagl=true;
     }
-    console.log("ckeck")
+
 
   }
 }  

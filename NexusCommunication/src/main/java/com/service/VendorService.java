@@ -179,8 +179,6 @@ public class VendorService {
 	}
 
 	public List<OrderStock> displayOrdersbyvid(long vid) {
-		System.out.println(vendorDao.getOrdDetails(vid));
-		
 		return vendorDao.getOrdDetails(vid);
 	}
 }

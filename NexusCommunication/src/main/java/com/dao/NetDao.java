@@ -29,7 +29,7 @@ public class NetDao {
 	}
 
 	public int storePlan(InternetPlan i) {
-		System.out.println(i);
+
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 		InternetPlan p1 = manager.find(InternetPlan.class, i.getIid());
@@ -56,20 +56,18 @@ public class NetDao {
 			EntityManager manager = emf.createEntityManager();
 			EntityTransaction tran = manager.getTransaction();
 
-			InternetPlan p = manager.find(InternetPlan.class, planid); // primary key if record is available automatically												// convert record to object
-			if (p == null) { // select * from product where pid =1
+			InternetPlan p = manager.find(InternetPlan.class, planid); 												
+			if (p == null) {
 				manager.close();
 				return 0;
 			} else {
 				tran.begin();
-				manager.remove(p); // delete from product where pid = 1;
+				manager.remove(p);
 				tran.commit();
 				manager.close();
 				return 1;
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
-			
 			return 0;
 		}
 	}
@@ -79,7 +77,7 @@ public class NetDao {
 			EntityManager manager = emf.createEntityManager();
 			EntityTransaction tran = manager.getTransaction();
 
-			InternetPlan p = manager.find(InternetPlan.class, i.getIid()); // primary key
+			InternetPlan p = manager.find(InternetPlan.class, i.getIid()); 
 			if (p == null) {
 				manager.close();
 				return 0;
@@ -88,13 +86,12 @@ public class NetDao {
 				p.setCost(i.getCost());
 				p.setDuration(i.getDuration());
 				p.setSpeed(i.getSpeed());
-				manager.merge(p); // update price using pid column
+				manager.merge(p); 
 				tran.commit();
 				manager.close();
 				return 1;
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			return 0;
 		}
 	}

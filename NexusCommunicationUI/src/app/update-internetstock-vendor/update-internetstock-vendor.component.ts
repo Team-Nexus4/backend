@@ -1,11 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VendorServiceService } from '../vendor-service.service';
-
-
-
-import { Vendor } from '../vendor.model';
-
 
 @Component({
   selector: 'app-update-internetstock-vendor',
@@ -28,7 +23,6 @@ flag1:boolean=false;
   
   updateInternetStock(internetRef:any){
     this.vendorservice.updateInternetStock(internetRef).subscribe(result=>this.msg=result)
-    console.log(internetRef)
  
   }
   

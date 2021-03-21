@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Employee } from '../employee.model';
-//import { EmployeeService } from '../employee.service';
 import { RetailerService } from '../retailer.service';
 
 @Component({
@@ -26,7 +25,6 @@ export class ReplaceRetailerComponent implements OnInit {
 
   replaceRetailer(employee:Employee)
   {
-    console.log(this.retailerRef);
     this.retailerService.replaceRetailerInfo(employee).subscribe(data=>this.msg=data);
   }
 

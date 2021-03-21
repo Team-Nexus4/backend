@@ -38,8 +38,7 @@ public class LandlineDao
 		q2.setParameter(1, du);
 		
 		List res = q2.getResultList();
-		System.out.println(res);
-		//LandlinePlan l1 = manager.find(LandlinePlan.class, du);
+
 		if(res.isEmpty())
 		{
 			tran.begin();
@@ -81,7 +80,7 @@ public class LandlineDao
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 		LandlinePlan l1 = manager.find(LandlinePlan.class, l.getLid());
-		System.out.println(l);
+
 		if(l1==null)
 		{
 			manager.close();

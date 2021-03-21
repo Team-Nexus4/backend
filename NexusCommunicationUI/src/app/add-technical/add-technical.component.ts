@@ -16,15 +16,13 @@ export class AddTechnicalComponent implements OnInit {
   })
 
   msg:string=""
-  constructor(public technicalService:TechnicalService) { }    //DI for service class
+  constructor(public technicalService:TechnicalService) { }  
 
   ngOnInit(): void {
   }
 
   addTechnicalDetails(tech:Technical)
-  {
-    //console.log(this.technicalInfo.value)
- 
+  { 
     this.technicalService.addTechnicalInfo(tech).subscribe(result=>this.msg=result);
   }
 }

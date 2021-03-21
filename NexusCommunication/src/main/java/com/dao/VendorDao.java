@@ -165,8 +165,6 @@ public class VendorDao {
 					qry = manager.createNativeQuery("update retailer_table set vid = ? where rid = ?");
 					qry.setParameter(1, r.getVid());
 					qry.setParameter(2, li.next());
-					System.out.println(qry.executeUpdate());
-					
 				}
 				tran.commit();
 				manager.close();
@@ -182,9 +180,6 @@ public class VendorDao {
 		List<Long> list= qry.getResultList();
 		manager.close();
 		return Collections.max(list);
-		
-		
-		
 	}
 
 	public OrderStock getAllOrderStockDetails(long oid) {
@@ -258,7 +253,6 @@ public class VendorDao {
 
 	public List<OrderStock> getOrdDetails(long vid) {
 		EntityManager manager = emf.createEntityManager();
-		System.out.println(vid);
 		Query qry = manager.createQuery("select os from OrderStock os where os.vid=?1 and os.status='false'");
 		qry.setParameter(1, vid);
 		List<OrderStock> li = qry.getResultList();

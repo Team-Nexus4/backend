@@ -11,9 +11,11 @@ import com.bean.Order;
 
 import com.bean.OrderStock;
 import com.bean.Retailer;
+import com.bean.RetailerMapping;
 import com.bean.RetailerRegistration;
 import com.dao.EmployeeRepository;
 import com.dao.RetailerDao;
+import com.dao.RetailerMappingRepository;
 import com.dao.RetailerRepository;
 
 @Service
@@ -24,10 +26,11 @@ public class RetailerService {
 	RetailerRepository rr;
 	@Autowired
 	EmployeeRepository er;
-
+	@Autowired
+	RetailerMappingRepository rm;
+	
 	private void Retailer() {
-		// TODO Auto-generated method stub
-
+	
 	}
 
 	public List<Order> getAllOrderService(long rid) {
@@ -35,8 +38,6 @@ public class RetailerService {
 	}
 
 	public List<Retailer> getRetailerDetails(long rid) {
-		System.out.println(dao.getRetDetails(rid));
-
 		return dao.getRetDetails(rid);
 	}
 
@@ -74,6 +75,8 @@ public class RetailerService {
 		e1.setPassword(r.getPassword());
 		e1.setUsername(r.getUsername());
 		e1.setDesg("retailer");
+		
+		RetailerMapping rm1 = new RetailerMapping();
 		List<Employee> ee = er.findAll();
 		for (Employee eee : ee) {
 			if (eee.getUsername().equals(r.getUsername())) {
@@ -85,7 +88,10 @@ public class RetailerService {
 			if (rt != null) {
 				long empid = dao.getEmpId(r.getPincode());
 				e1.setEid(empid);
+				rm1.setRid(empid);
+				rm1.setPincode(r.getPincode());
 				Employee emp = er.save(e1);
+				rm.save(rm1);
 				if (emp != null) {
 					return "Retailer Registered Successfully";
 				} else {
@@ -101,7 +107,6 @@ public class RetailerService {
 	}
 
 	public String replaceRetailer(Employee e) {
-		System.out.println(e.getEid());
 		if (er.existsById(e.getEid())) {
 			Employee emp = er.getOne(e.getEid());
 			emp.setUsername(e.getUsername());

@@ -36,7 +36,6 @@ export class GetInternetComponent implements OnInit {
     sessionStorage.setItem("cost",cost);
     sessionStorage.setItem("speed",speed);
     sessionStorage.setItem("duration",duration);
-    console.log(iid,speed,cost,duration)
     this.router.navigate(['/adminDashboard/updateinternetplan'])
    
   }
@@ -44,7 +43,6 @@ export class GetInternetComponent implements OnInit {
 
     for(let i=0;i<this.netInfo.length;++i)
     {
-      console.log(this.netInfo[i].iid)
       if(this.netInfo[i].iid==id)
       {
         this.netInfo.splice(i,1);

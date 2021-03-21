@@ -28,21 +28,20 @@ public class VendorController
 {
 	@Autowired
 	VendorService vendorService;
-	
-	// http://localhost:9070/vendor/info
+
 	@GetMapping(value = "info")
 	public String simpleMessage()
 	{
 		return "Welcome to Spring Rest Nexus Vendor Controller";
 	}
-	// http://localhost:9070/vendor/allVendor
+
 	@GetMapping(value = "allVendor",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Vendor> getAllVendorDetails() 
 	{
 		return vendorService.getAllVendor();
 	}
 	
-	// http://localhost:9070/vendor/addVendor
+
 	@PostMapping(value = "addVendor",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String addVendor(@RequestBody VendorRegistration vr)
 	{
@@ -56,21 +55,21 @@ public class VendorController
 		return listOfVend;
 	}
 	
-	// http://localhost:9070/vendor/updateInternetKit
+
 	@PutMapping(value = "updateInternetKit",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String updateInternetKit(@RequestBody Vendor vv)
 	{
 		return vendorService.updateInternetKit(vv);
 	}
 		
-	// http://localhost:9070/vendor/updateLandlineKit
+
 	@PutMapping(value = "updateLandineKit",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String updateLAndL(@RequestBody Vendor vv)
 	{
 		return vendorService.updateLandlineKit(vv);
 	}
 		
-	// http://localhost:9070/vendor/deleteVendor/100
+
 	@PostMapping(value = "replaceRetailerVendor",produces = MediaType.APPLICATION_JSON_VALUE)
 	public String deletevendor(@RequestBody Retailer r)
 	{
@@ -82,7 +81,6 @@ public class VendorController
 	public Employee checkLogin(@RequestBody Employee e)
 	{
 		Employee ee = vendorService.checkEmployeeLogin(e);
-		System.out.println(ee);
 		return ee;
 	}
 	
@@ -97,7 +95,6 @@ public class VendorController
 	public List<OrderStock> displayOrdersbyVid(@PathVariable("vid") long vid)
 	{
 		List<OrderStock> listOfOrd=vendorService.displayOrdersbyvid(vid);
-		//System.out.println(listOfOrd);
 		return listOfOrd;
 	}
 	

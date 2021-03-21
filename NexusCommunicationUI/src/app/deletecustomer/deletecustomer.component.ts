@@ -30,7 +30,6 @@ export class DeletecustomerComponent implements OnInit {
     this.customerService.deleteCustomer(cid).subscribe(res => {this.msg = res 
       this.ngOnInit()});
 
-    console.log(cid);
   }
 
   

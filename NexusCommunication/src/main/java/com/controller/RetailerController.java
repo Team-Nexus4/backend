@@ -78,8 +78,7 @@ public class RetailerController
 	@GetMapping(value = "display"  ,produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Retailer> displayallretailer()
 	{
-		List<Retailer> listOfRetailer = rs.displayallretailer();
-		
+		List<Retailer> listOfRetailer = rs.displayallretailer();		
 		return listOfRetailer;
 	}
 
