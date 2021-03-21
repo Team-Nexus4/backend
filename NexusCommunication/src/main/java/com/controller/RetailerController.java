@@ -29,12 +29,7 @@ public class RetailerController
 {
 	@Autowired
 	RetailerService rs;
-	
-	public RetailerController()
-	{
-		
-	}
-	
+
 
 	@GetMapping(value = "display/{rid}"  ,produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Order> displayOrder(@PathVariable("rid") long rid)
@@ -59,9 +54,6 @@ public class RetailerController
 	{
 		return rs.placeOrderStockService(o);
 	}
-	
-	
-	
 	
 	@PostMapping(value="addRetailer",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String addRetailer(@RequestBody RetailerRegistration rr)
